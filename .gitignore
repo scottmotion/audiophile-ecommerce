@@ -35,4 +35,5 @@ design/
 # ignore old file versions
 old/
 
+# ignore starter code
 starter-code/
