@@ -11,6 +11,7 @@ export default {
         "dark-orange": "#d87d4a",
         "light-orange": "#fbaf85",
         "dark-grey": "#101010",
+        "medium-grey": "#4c4c4c",
         "light-grey": "#f1f1f1",
         "off-white": "#fafafa",
         "white": "#ffffff",
@@ -66,6 +67,41 @@ export default {
           letterSpacing: "1.3px",
           fontWeight: "bold",
           textTransform: "uppercase",
+        },
+      });
+    }),
+    plugin(function ({ addComponents, theme }) {
+      addComponents({
+        ".btn": {
+          padding: ".5rem 1rem",
+          borderRadius: "0",
+          fontSize: "13px",
+          fontWeight: "bold",
+          borderWidth: "1px",
+          borderColor: "transparent",
+        },
+        ".btn-orange": {
+          "backgroundColor": theme("colors.dark-orange"),
+          "color": theme("colors.white"),
+          "&:hover": {
+            backgroundColor: theme("colors.light-orange"),
+          },
+        },
+        ".btn-black": {
+          "backgroundColor": theme("colors.black"),
+          "color": theme("colors.white"),
+          "&:hover": {
+            backgroundColor: theme("colors.medium-grey"),
+          },
+        },
+        ".btn-clear": {
+          "backgroundColor": "transparent",
+          "borderColor": theme("colors.black"),
+          "color": theme("colors.black"),
+          "&:hover": {
+            color: theme("colors.white"),
+            backgroundColor: theme("colors.black"),
+          },
         },
       });
     }),
