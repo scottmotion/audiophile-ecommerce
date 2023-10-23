@@ -80,27 +80,34 @@ export default {
           borderWidth: "1px",
           borderColor: "transparent",
         },
-        ".btn-orange": {
+        ".btn-1": {
           "backgroundColor": theme("colors.dark-orange"),
           "color": theme("colors.white"),
           "&:hover": {
             backgroundColor: theme("colors.light-orange"),
           },
         },
-        ".btn-black": {
+        ".btn-2": {
           "backgroundColor": theme("colors.black"),
           "color": theme("colors.white"),
           "&:hover": {
             backgroundColor: theme("colors.medium-grey"),
           },
         },
-        ".btn-clear": {
+        ".btn-3": {
           "backgroundColor": "transparent",
           "borderColor": theme("colors.black"),
           "color": theme("colors.black"),
           "&:hover": {
             color: theme("colors.white"),
             backgroundColor: theme("colors.black"),
+          },
+        },
+        ".btn-4": {
+          "backgroundColor": "transparent",
+          "color": theme("colors.medium-grey"),
+          "&:hover": {
+            color: theme("colors.dark-orange"),
           },
         },
       });

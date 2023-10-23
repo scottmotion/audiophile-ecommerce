@@ -19,7 +19,7 @@ function App() {
       <div>
         <button
           onClick={() => setCount(count => count + 1)}
-          className="btn btn-clear"
+          className="btn btn-4"
         >
           count is {count}
         </button>
