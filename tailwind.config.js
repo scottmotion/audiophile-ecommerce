@@ -10,8 +10,9 @@ export default {
       colors: {
         "dark-orange": "#d87d4a",
         "light-orange": "#fbaf85",
-        "dark-grey": "#101010",
-        "medium-grey": "#4c4c4c",
+        "darkest-grey": "#101010",
+        "dark-grey": "#4c4c4c",
+        "medium-grey": "#979797",
         "light-grey": "#f1f1f1",
         "off-white": "#fafafa",
         "white": "#ffffff",
@@ -99,7 +100,7 @@ export default {
           "backgroundColor": theme("colors.black"),
           "color": theme("colors.white"),
           "&:hover": {
-            backgroundColor: theme("colors.medium-grey"),
+            backgroundColor: theme("colors.dark-grey"),
           },
         },
         ".btn-3": {
@@ -113,7 +114,7 @@ export default {
         },
         ".btn-4": {
           "backgroundColor": "transparent",
-          "color": theme("colors.medium-grey"),
+          "color": theme("colors.dark-grey"),
           "&:hover": {
             color: theme("colors.dark-orange"),
           },
