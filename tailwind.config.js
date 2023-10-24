@@ -118,6 +118,22 @@ export default {
             color: theme("colors.dark-orange"),
           },
         },
+        ".overline": {
+          fontSize: "14px",
+          lineHeight: "19px",
+          letterSpacing: "10px",
+          fontWeight: "400",
+          textTransform: "uppercase",
+          color: theme("colors.dark-orange"),
+        },
+        ".subtitle": {
+          fontSize: "13px",
+          lineHeight: "25px",
+          letterSpacing: "1px",
+          fontWeight: "700",
+          textTransform: "uppercase",
+          color: theme("colors.dark-orange"),
+        },
       });
     }),
   ],
