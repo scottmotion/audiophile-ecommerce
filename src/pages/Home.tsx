@@ -1,8 +1,10 @@
+import { ReactComponent as SiteLogo } from "/src/assets/logo.svg";
+
 export default function Home() {
   return (
     <>
       <nav className="flex flex-row justify-between gap-3 bg-black text-white">
-        <img src="/src/assets/logo.svg" />
+        <SiteLogo />
         <ul className="flex flex-row gap-3">
           <li>Headphones</li>
           <li>Speakers</li>
