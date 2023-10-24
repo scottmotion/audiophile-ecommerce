@@ -1,20 +1,14 @@
-import { useState } from "react";
-
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <h1>Vite + React</h1>
-      <div>
-        <button
-          onClick={() => setCount(count => count + 1)}
-          className="btn btn-1"
-        >
-          count is {count}
-        </button>
+      <div className="flex flex-row gap-3">
+        <button className="btn btn-1">Button 1</button>
+        <button className="btn btn-2">Button 2</button>
+        <button className="btn btn-3">Button 3</button>
+        <button className="btn btn-4">Button 4</button>
       </div>
-      <p>Click on the Vite and React logos to learn more</p>
+      <p>This is a Paragraph</p>
     </>
   );
 }
