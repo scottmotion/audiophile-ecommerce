@@ -12,7 +12,7 @@ export default {
         "light-orange": "#fbaf85",
         "darkest-grey": "#101010",
         "dark-grey": "#4c4c4c",
-        "medium-grey": "#979797",
+        "medium-grey": "#979797", // nav border
         "light-grey": "#f1f1f1",
         "off-white": "#fafafa",
         "white": "#ffffff",
