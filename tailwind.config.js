@@ -25,47 +25,55 @@ export default {
   plugins: [
     plugin(function ({ addBase, theme }) {
       addBase({
-        body: { fontSize: theme("fontSize.base"), lineHeight: "25px" },
-        h1: {
+        "@font-face": {
+          fontFamily: "Manrope",
+          src: 'url("./fonts/Manrope-VariableFont_wght.ttf")',
+        },
+        "body": {
+          fontSize: theme("fontSize.base"),
+          fontWeight: "500",
+          lineHeight: "25px",
+        },
+        "h1": {
           fontSize: "56px",
           lineHeight: "58px",
           letterSpacing: "2px",
-          fontWeight: "bold",
+          fontWeight: "700",
           textTransform: "uppercase",
         },
-        h2: {
+        "h2": {
           fontSize: "40px",
           lineHeight: "44px",
           letterSpacing: "1.5px",
-          fontWeight: "bold",
+          fontWeight: "700",
           textTransform: "uppercase",
         },
-        h3: {
+        "h3": {
           fontSize: "32px",
           lineHeight: "36px",
           letterSpacing: "1.15px",
-          fontWeight: "bold",
+          fontWeight: "700",
           textTransform: "uppercase",
         },
-        h4: {
+        "h4": {
           fontSize: "28px",
           lineHeight: "38px",
           letterSpacing: "2px",
-          fontWeight: "bold",
+          fontWeight: "700",
           textTransform: "uppercase",
         },
-        h5: {
+        "h5": {
           fontSize: "24px",
           lineHeight: "33px",
           letterSpacing: "1.7px",
-          fontWeight: "bold",
+          fontWeight: "700",
           textTransform: "uppercase",
         },
-        h6: {
+        "h6": {
           fontSize: "18px",
           lineHeight: "24px",
           letterSpacing: "1.3px",
-          fontWeight: "bold",
+          fontWeight: "700",
           textTransform: "uppercase",
         },
       });
@@ -76,7 +84,7 @@ export default {
           padding: ".5rem 1rem",
           borderRadius: "0",
           fontSize: "13px",
-          fontWeight: "bold",
+          fontWeight: "700",
           borderWidth: "1px",
           borderColor: "transparent",
         },
