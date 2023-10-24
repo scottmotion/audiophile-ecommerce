@@ -1,5 +1,3 @@
-import { ReactComponent as SiteLogo } from "/src/assets/logo.svg";
-
 export default function Home() {
   return (
     <>
