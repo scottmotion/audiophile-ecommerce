@@ -1,3 +1,7 @@
 export default function Headphones() {
-  return <h1>Headphones</h1>;
+  return (
+    <>
+      <h1>Headphones</h1>
+    </>
+  );
 }
