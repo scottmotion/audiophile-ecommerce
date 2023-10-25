@@ -98,6 +98,7 @@ export default {
           borderRadius: "0",
           fontSize: "13px",
           fontWeight: "700",
+          textTransform: "uppercase",
           borderWidth: "1px",
           borderColor: "transparent",
         },
@@ -126,7 +127,7 @@ export default {
         },
         ".btn-4": {
           "backgroundColor": "transparent",
-          "color": theme("colors.dark-grey"),
+          "color": theme("colors.medium-grey"),
           "&:hover": {
             color: theme("colors.dark-orange"),
           },
