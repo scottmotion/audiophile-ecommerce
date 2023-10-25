@@ -6,9 +6,9 @@ import { ReactComponent as InstagramIcon } from "/src/assets/icons/icon-instagra
 export default function Footer() {
   return (
     <>
-      <footer className="flex flex-col items-center gap-3 bg-darkest-grey text-white">
+      <footer className="flex flex-col items-center gap-12 bg-darkest-grey px-6 pb-10 pt-[3.25rem] text-white">
         <SiteLogo />
-        <ul className="flex flex-col text-center">
+        <ul className="flex flex-col gap-4 text-center">
           <li className="nav-item">Home</li>
           <li className="nav-item">Headphones</li>
           <li className="nav-item">Speakers</li>
@@ -21,7 +21,7 @@ export default function Footer() {
           demo facility - we’re open 7 days a week.
         </p>
         <p className="text-center">Copyright 2021. All Rights Reserved</p>
-        <div className="flex flex-row gap-3">
+        <div className="flex flex-row items-center gap-3">
           <FacebookIcon />
           <TwitterIcon />
           <InstagramIcon />
