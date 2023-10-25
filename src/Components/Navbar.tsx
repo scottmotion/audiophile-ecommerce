@@ -12,6 +12,7 @@ export default function Navbar() {
       <SiteLogo className="md:hidden" />
 
       <ul className="hidden flex-row items-center gap-3 lg:flex">
+        <li className="nav-item">Home</li>
         <li className="nav-item">Headphones</li>
         <li className="nav-item">Speakers</li>
         <li className="nav-item">Earphones</li>
