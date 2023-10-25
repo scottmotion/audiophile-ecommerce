@@ -119,6 +119,17 @@ export default {
             color: theme("colors.dark-orange"),
           },
         },
+        ".nav-item": {
+          "fontSize": "13px",
+          "lineHeight": "25px",
+          "letterSpacing": "2px",
+          "fontWeight": "700",
+          "textTransform": "uppercase",
+          "color": theme("colors.white"),
+          "&:hover": {
+            color: theme("colors.dark-orange"),
+          },
+        },
         ".overline": {
           fontSize: "14px",
           lineHeight: "19px",
