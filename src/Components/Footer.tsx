@@ -6,28 +6,6 @@ import { ReactComponent as InstagramIcon } from "/src/assets/icons/icon-instagra
 export default function Footer() {
   return (
     <>
-      {/* <footer className="flex flex-col items-center gap-12 bg-darkest-grey px-6 pb-10 pt-[3.25rem] text-white">
-        <SiteLogo />
-        <ul className="flex flex-col gap-4 text-center">
-          <li className="nav-item">Home</li>
-          <li className="nav-item">Headphones</li>
-          <li className="nav-item">Speakers</li>
-          <li className="nav-item">Earphones</li>
-        </ul>
-        <p className="text-center">
-          Audiophile is an all in one stop to fulfill your audio needs. We're a
-          small team of music lovers and sound specialists who are devoted to
-          helping you get the most out of personal audio. Come and visit our
-          demo facility - we’re open 7 days a week.
-        </p>
-        <p className="text-center">Copyright 2021. All Rights Reserved</p>
-        <div className="flex flex-row items-center gap-3">
-          <FacebookIcon />
-          <TwitterIcon />
-          <InstagramIcon />
-        </div>
-      </footer> */}
-
       <footer className="grid justify-items-center gap-12 bg-darkest-grey px-6 pb-10 pt-[3.25rem] text-white md:grid-cols-2 md:justify-items-start md:gap-8 lg:gap-9">
         <SiteLogo className="md:col-span-2 lg:col-span-1" />
         <ul className="flex flex-col gap-4 text-center md:col-span-2 md:flex-row lg:col-span-1 lg:justify-self-end">
