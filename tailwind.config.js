@@ -7,6 +7,17 @@ export default {
       sans: ["Manrope", "sans-serif"],
     },
     extend: {
+      backgroundImage: {
+        "home-mobile": "url('/src/assets/home/mobile/image-header.jpg')",
+        "home-tablet": "url('/src/assets/home/tablet/image-header.jpg')",
+        "home-desktop": "url('/src/assets/home/desktop/image-hero.jpg')",
+      },
+      content: {
+        "home-mobile": "url('/src/assets/home/mobile/image-header.jpg')",
+        "home-tablet": "url('/src/assets/home/tablet/image-header.jpg')",
+        "home-desktop": "url('/src/assets/home/desktop/image-hero.jpg')",
+      },
+
       colors: {
         "dark-orange": "#d87d4a",
         "light-orange": "#fbaf85",
@@ -131,7 +142,7 @@ export default {
             color: theme("colors.dark-orange"),
           },
         },
-        ".overline": {
+        ".text-overline": {
           fontSize: "14px",
           lineHeight: "19px",
           letterSpacing: "10px",
@@ -139,7 +150,7 @@ export default {
           textTransform: "uppercase",
           color: theme("colors.dark-orange"),
         },
-        ".subtitle": {
+        ".text-subtitle": {
           fontSize: "13px",
           lineHeight: "25px",
           letterSpacing: "1px",
