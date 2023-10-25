@@ -30,10 +30,11 @@ export default {
           fontFamily: "Manrope",
           src: 'url("./fonts/Manrope-VariableFont_wght.ttf")',
         },
-        "body": {
+        "body p": {
           fontSize: theme("fontSize.base"),
           fontWeight: "500",
           lineHeight: "25px",
+          opacity: "0.5",
         },
         "h1": {
           fontSize: "56px",
