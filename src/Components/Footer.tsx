@@ -21,7 +21,7 @@ export default function Footer() {
           demo facility - we’re open 7 days a week.
         </p>
         <p className="text-center md:self-end md:text-left lg:col-span-2">
-          Copyright 2021. All Rights Reserved
+          Copyright {new Date().getFullYear()}. All Rights Reserved
         </p>
         <div className="flex flex-row items-center gap-3 md:self-end md:justify-self-end lg:col-start-2 lg:row-start-2 lg:mb-5">
           <FacebookIcon />
