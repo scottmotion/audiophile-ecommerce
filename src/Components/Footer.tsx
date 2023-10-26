@@ -2,6 +2,7 @@ import { ReactComponent as SiteLogo } from "/src/assets/logo.svg";
 import { ReactComponent as FacebookIcon } from "/src/assets/icons/icon-facebook.svg";
 import { ReactComponent as TwitterIcon } from "/src/assets/icons/icon-twitter.svg";
 import { ReactComponent as InstagramIcon } from "/src/assets/icons/icon-instagram.svg";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -10,10 +11,18 @@ export default function Footer() {
         {/* <div className="h-1 w-[6.25rem] bg-dark-orange"></div> */}
         <SiteLogo className="md:col-span-2 lg:col-span-1" />
         <ul className="flex flex-col gap-4 text-center md:col-span-2 md:flex-row lg:col-span-1 lg:justify-self-end">
-          <li className="nav-item">Home</li>
-          <li className="nav-item">Headphones</li>
-          <li className="nav-item">Speakers</li>
-          <li className="nav-item">Earphones</li>
+          <li className="nav-item">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/headphones">Headphones</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/speakers">Speakers</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/earphones">Earphones</Link>
+          </li>
         </ul>
         <p className="text-center md:col-span-2 md:mb-12 md:text-left lg:col-span-1 lg:mb-5">
           Audiophile is an all in one stop to fulfill your audio needs. We're a
