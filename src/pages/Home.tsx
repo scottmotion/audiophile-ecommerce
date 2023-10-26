@@ -12,7 +12,7 @@ export default function Home() {
         <p>This is a Paragraph</p>
       </div> */}
       {/* <div className="mb-[7.5rem] flex flex-col gap-[7.5rem]"> */}
-      <header className="-mt-[90px] mb-[5.75rem] flex flex-col">
+      <header className="-mt-[90px] mb-[5.75rem] flex flex-col items-center">
         <div className="bg-black">
           <img
             src="src/assets/home/mobile/image-header.jpg"
@@ -20,10 +20,10 @@ export default function Home() {
             className="w-full opacity-50 content-home-mobile md:content-home-tablet lg:content-home-desktop"
           ></img>
         </div>
-        <div className="absolute mt-[90px]">
+        <div className="absolute mt-[90px] flex flex-col items-center">
           <p className="text-overline text-white opacity-50">New Product</p>
-          <h2 className="text-white">XX99 Mark II HeadphoneS</h2>
-          <p className="text-white opacity-75">
+          <h2 className="text-center text-white">XX99 Mark II HeadphoneS</h2>
+          <p className="text-center text-white opacity-75">
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
