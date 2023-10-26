@@ -4,7 +4,7 @@ import { ReactComponent as MobileMenuIcon } from "/src/assets/icons/icon-hamburg
 
 export default function Navbar() {
   return (
-    <nav className="flex flex-row items-center justify-between gap-3 bg-darkest-grey text-white">
+    <nav className="sticky top-0 z-50 flex flex-row items-center justify-between gap-3 border-b border-white/[.10] bg-black px-6 py-8 text-white">
       <div className="flex flex-row items-center gap-3">
         <MobileMenuIcon className="lg:hidden" />
         <SiteLogo className="hidden md:block" />
