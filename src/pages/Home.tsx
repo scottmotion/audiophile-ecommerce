@@ -20,7 +20,7 @@ export default function Home() {
               className="w-full opacity-50 content-home-mobile md:content-home-tablet lg:content-home-desktop"
             ></img>
           </div>
-          <div className="absolute">
+          <div className="absolute mt-[90px]">
             <p className="text-overline text-white opacity-50">New Product</p>
             <h2 className="text-white">XX99 Mark II HeadphoneS</h2>
             <p className="text-white opacity-75">
