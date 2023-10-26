@@ -32,17 +32,40 @@ export default function Home() {
       </header>
 
       <div className="mb-[7.5rem] flex flex-col gap-[7.5rem]">
-        <section className="mx-6 flex flex-col items-center gap-8">
-          <div className="rounded-lg bg-light-grey p-6">
-            <p>Headphones</p>
+        <section className="mx-6 flex flex-col gap-16">
+          <div className="flex flex-col items-center rounded-lg bg-light-grey p-6">
+            <img
+              src="src/assets/shared/thumbnails/image-category-thumbnail-headphones.png"
+              alt="Headphones"
+              className="-mt-[25%] w-1/2"
+            ></img>
+            <p className="text-center font-bold uppercase text-black opacity-100">
+              Headphones
+            </p>
             <button className="btn btn-4">Shop</button>
           </div>
-          <div className="rounded-lg bg-light-grey p-6">
-            <p>Speakers</p>
+          <div className="flex flex-col items-center rounded-lg bg-light-grey p-6">
+            <img
+              src="src/assets/shared/thumbnails/image-category-thumbnail-speakers.png"
+              alt="Headphones"
+              className="-mt-[25%] w-1/2"
+            ></img>
+
+            <p className="text-center font-bold uppercase text-black opacity-100">
+              Speakers
+            </p>
             <button className="btn btn-4">Shop</button>
           </div>
-          <div className="rounded-lg bg-light-grey p-6">
-            <p>Earphones</p>
+          <div className="flex flex-col items-center rounded-lg bg-light-grey p-6">
+            <img
+              src="src/assets/shared/thumbnails/image-category-thumbnail-earphones.png"
+              alt="Headphones"
+              className="-mt-[25%] w-1/2"
+            ></img>
+
+            <p className="text-center font-bold uppercase text-black opacity-100">
+              Earphones
+            </p>
             <button className="btn btn-4">Shop</button>
           </div>
         </section>
