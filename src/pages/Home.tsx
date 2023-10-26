@@ -12,12 +12,12 @@ export default function Home() {
         <p>This is a Paragraph</p>
       </div> */}
       <div className="flex flex-col">
-        <section className="flex flex-col">
-          <div className="relative bg-black">
+        <section className="-mt-[90px] flex flex-col">
+          <div className="bg-black">
             <img
               src="src/assets/home/mobile/image-header.jpg"
               alt="Page header"
-              className="content-home-mobile md:content-home-tablet lg:content-home-desktop w-full"
+              className="w-full opacity-50 content-home-mobile md:content-home-tablet lg:content-home-desktop"
             ></img>
           </div>
           <div className="absolute">
