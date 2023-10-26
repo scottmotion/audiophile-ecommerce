@@ -16,6 +16,7 @@ export default {
         "home-mobile": "url('/src/assets/home/mobile/image-header.jpg')",
         "home-tablet": "url('/src/assets/home/tablet/image-header.jpg')",
         "home-desktop": "url('/src/assets/home/desktop/image-hero.jpg')",
+        "icon-arrow-right": "url('/src/assets/icons/icon-arrow-right.svg')",
       },
 
       colors: {
@@ -130,6 +131,11 @@ export default {
           "color": theme("colors.medium-grey"),
           "&:hover": {
             color: theme("colors.dark-orange"),
+          },
+          "&:after": {
+            content: theme("content.icon-arrow-right"),
+            marginLeft: ".75rem",
+            verticalAlign: "middle",
           },
         },
         ".nav-item": {
