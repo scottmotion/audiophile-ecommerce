@@ -8,6 +8,11 @@ import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const mobileMenuVisibility = showMobileMenu ? "visible" : "invisible";
+
+  const [showCart, setShowCart] = useState(false);
+  const cartVisibility = showCart ? "visible" : "invisible";
+
   const match = useMatch("/");
   const scrollPosition = useScrollPosition();
   const backgroundColor =
@@ -18,9 +23,12 @@ export default function Navbar() {
     setShowMobileMenu(!showMobileMenu);
   }
 
-  const mobileMenuVisibility = showMobileMenu ? "visible" : "invisible";
+  function toggleCart() {
+    console.log("Toggle Cart");
+    setShowCart(!showCart);
+  }
 
-  // hide overflow on body when modal is open
+  // hide overflow on body when mobile menu / modal is open
   useEffect(() => {
     if (showMobileMenu) {
       document.body.classList.add("overflow-hidden");
@@ -61,7 +69,7 @@ export default function Navbar() {
           </li>
         </ul>
         <div className="flex shrink basis-1/5 flex-row justify-end">
-          <CartIcon />
+          <CartIcon onClick={toggleCart} />
         </div>
       </nav>
       <div className={`${mobileMenuVisibility} z-40 w-full lg:invisible`}>
