@@ -102,6 +102,8 @@ export default {
           textTransform: "uppercase",
           borderWidth: "1px",
           borderColor: "transparent",
+          display: "flex",
+          lineHeight: "18px",
         },
         ".btn-1": {
           "backgroundColor": theme("colors.dark-orange"),
@@ -129,6 +131,7 @@ export default {
         ".btn-4": {
           "backgroundColor": "transparent",
           "color": theme("colors.medium-grey"),
+          "padding": "0",
           "&:hover": {
             color: theme("colors.dark-orange"),
           },
