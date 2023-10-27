@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Home() {
   return (
     <>
@@ -21,8 +23,12 @@ export default function Home() {
       </header>
 
       <main className="mb-[7.5rem] flex flex-col gap-[7.5rem] md:gap-24">
-        <section className="mx-6 flex flex-col justify-center gap-16 md:flex-row md:gap-3">
-          <div className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5">
+        <section className="flex w-full flex-col justify-start gap-20 p-6 md:flex-row md:justify-center md:gap-3">
+          <Link
+            to={"/headphones"}
+            className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5"
+          >
+            {/* <div className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5"> */}
             <img
               src="src/assets/shared/thumbnails/image-category-thumbnail-headphones.png"
               alt="Headphones"
@@ -32,9 +38,14 @@ export default function Home() {
               Headphones
             </p>
             <button className="btn btn-4">Shop</button>
-          </div>
+            {/* </div> */}
+          </Link>
 
-          <div className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5">
+          <Link
+            to={"/speakers"}
+            className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5"
+          >
+            {/* <div className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5"> */}
             <img
               src="src/assets/shared/thumbnails/image-category-thumbnail-speakers.png"
               alt="Headphones"
@@ -44,9 +55,14 @@ export default function Home() {
               Speakers
             </p>
             <button className="btn btn-4">Shop</button>
-          </div>
+            {/* </div> */}
+          </Link>
 
-          <div className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5">
+          <Link
+            to={"/earphones"}
+            className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5"
+          >
+            {/* <div className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5"> */}
             <img
               src="src/assets/shared/thumbnails/image-category-thumbnail-earphones.png"
               alt="Headphones"
@@ -56,7 +72,8 @@ export default function Home() {
               Earphones
             </p>
             <button className="btn btn-4">Shop</button>
-          </div>
+            {/* </div> */}
+          </Link>
         </section>
 
         <section className="mx-6 flex flex-col items-center gap-8">
