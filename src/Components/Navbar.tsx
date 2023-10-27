@@ -27,7 +27,12 @@ export default function Navbar() {
       >
         <div className="flex shrink basis-1/5 flex-row items-center gap-3">
           <MobileMenuIcon className="lg:hidden" onClick={toggleMobileMenu} />
-          <SiteLogo className="hidden md:block" />
+          <Link to={"/"}>
+            <SiteLogo
+              className="hidden md:block"
+              onClick={() => setShowMobileMenu(false)}
+            />
+          </Link>
         </div>
         <SiteLogo className="overflow-visible md:hidden" />
 
