@@ -1,17 +1,6 @@
 export default function Home() {
   return (
     <>
-      {/* <div className="bg-home-mobile bg-black bg-cover bg-center bg-no-repeat">
-        <h1>Home</h1>
-        <div className="flex flex-row gap-3">
-          <button className="btn btn-1">Button 1</button>
-          <button className="btn btn-2">Button 2</button>
-          <button className="btn btn-3">Button 3</button>
-          <button className="btn btn-4">Button 4</button>
-        </div>
-        <p>This is a Paragraph</p>
-      </div> */}
-      {/* <div className="mb-[7.5rem] flex flex-col gap-[7.5rem]"> */}
       <header className="-mt-[90px] mb-[5.75rem] flex flex-col items-center">
         <div className="bg-black">
           <img
