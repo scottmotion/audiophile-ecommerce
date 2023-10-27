@@ -7,6 +7,7 @@ export default function Navbar() {
   const match = useMatch("/");
 
   const backgroundColor = match ? "" : "bg-black";
+
   return (
     <nav
       className={`${backgroundColor} sticky top-0 z-50 flex flex-row items-center justify-between gap-3 border-b border-white/[.10] px-6 py-8 text-white`}
