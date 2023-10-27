@@ -2,11 +2,12 @@ import { ReactComponent as SiteLogo } from "/src/assets/logo.svg";
 import { ReactComponent as CartIcon } from "/src/assets/icons/icon-cart.svg";
 import { ReactComponent as MobileMenuIcon } from "/src/assets/icons/icon-hamburger.svg";
 import { Link, useMatch } from "react-router-dom";
+import { useScrollPosition } from "../hooks/useScrollPosition";
 
 export default function Navbar() {
   const match = useMatch("/");
-
-  const backgroundColor = match ? "" : "bg-black";
+  const scrollPosition = useScrollPosition();
+  const backgroundColor = !match || scrollPosition > 0 ? "bg-black" : "";
 
   return (
     <nav
