@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import BestGear from "../Components/BestGear";
 import CategoryNav from "../Components/CategoryNav";
 
