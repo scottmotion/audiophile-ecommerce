@@ -8,8 +8,9 @@ export default function Footer() {
   return (
     <>
       <footer className="grid justify-items-center gap-12 bg-darkest-grey px-6 pb-10 pt-[3.25rem] text-white md:grid-cols-2 md:justify-items-start md:gap-8 lg:gap-9">
-        {/* <div className="h-1 w-[6.25rem] bg-dark-orange"></div> */}
-        <SiteLogo className="md:col-span-2 lg:col-span-1" />
+        <Link to={"/"}>
+          <SiteLogo className="md:col-span-2 lg:col-span-1" />
+        </Link>
         <ul className="flex flex-col gap-4 text-center md:col-span-2 md:flex-row lg:col-span-1 lg:justify-self-end">
           <li className="nav-item">
             <Link to="/">Home</Link>
