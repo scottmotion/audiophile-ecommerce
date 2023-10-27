@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <header className="-mt-[90px] mb-[5.75rem] flex flex-col items-center">
+      <header className="-mt-[90px] mb-[5.75rem] flex flex-col items-center md:mb-36">
         <div className="bg-black">
           <img
             src="src/assets/home/mobile/image-header.jpg"
@@ -21,8 +21,8 @@ export default function Home() {
       </header>
 
       <div className="mb-[7.5rem] flex flex-col gap-[7.5rem]">
-        <section className="mx-6 flex flex-col gap-16">
-          <div className="flex flex-col items-center rounded-lg bg-light-grey p-6">
+        <section className="mx-6 flex flex-col justify-center gap-16 md:flex-row">
+          <div className="flex flex-col content-end items-center rounded-lg bg-light-grey p-6">
             <img
               src="src/assets/shared/thumbnails/image-category-thumbnail-headphones.png"
               alt="Headphones"
@@ -33,7 +33,7 @@ export default function Home() {
             </p>
             <button className="btn btn-4">Shop</button>
           </div>
-          <div className="flex flex-col items-center rounded-lg bg-light-grey p-6">
+          <div className="flex flex-col content-end items-center rounded-lg bg-light-grey p-6">
             <img
               src="src/assets/shared/thumbnails/image-category-thumbnail-speakers.png"
               alt="Headphones"
@@ -45,7 +45,7 @@ export default function Home() {
             </p>
             <button className="btn btn-4">Shop</button>
           </div>
-          <div className="flex flex-col items-center rounded-lg bg-light-grey p-6">
+          <div className="flex flex-col content-end items-center rounded-lg bg-light-grey p-6">
             <img
               src="src/assets/shared/thumbnails/image-category-thumbnail-earphones.png"
               alt="Headphones"
