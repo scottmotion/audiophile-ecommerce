@@ -20,39 +20,39 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="mb-[7.5rem] flex flex-col gap-[7.5rem]">
-        <section className="mx-6 flex flex-col justify-center gap-16 md:flex-row">
-          <div className="flex flex-col content-end items-center rounded-lg bg-light-grey p-6">
+      <div className="mb-[7.5rem] flex flex-col gap-[7.5rem] md:gap-24">
+        <section className="mx-6 flex flex-col justify-center gap-16 md:flex-row md:gap-3">
+          <div className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5">
             <img
               src="src/assets/shared/thumbnails/image-category-thumbnail-headphones.png"
               alt="Headphones"
-              className="-mt-[5.25rem] w-40"
+              className="-mt-[5rem] w-40"
             ></img>
-            <p className="text-center font-bold uppercase tracking-[1.07px] text-black opacity-100">
+            <p className="pb-3 text-center font-bold uppercase tracking-[1.07px] text-black opacity-100">
               Headphones
             </p>
             <button className="btn btn-4">Shop</button>
           </div>
-          <div className="flex flex-col content-end items-center rounded-lg bg-light-grey p-6">
+
+          <div className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5">
             <img
               src="src/assets/shared/thumbnails/image-category-thumbnail-speakers.png"
               alt="Headphones"
               className="-mt-[5rem] w-40"
             ></img>
-
-            <p className="text-center font-bold uppercase tracking-[1.07px] text-black opacity-100">
+            <p className="pb-3 text-center font-bold uppercase tracking-[1.07px] text-black opacity-100">
               Speakers
             </p>
             <button className="btn btn-4">Shop</button>
           </div>
-          <div className="flex flex-col content-end items-center rounded-lg bg-light-grey p-6">
+
+          <div className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5">
             <img
               src="src/assets/shared/thumbnails/image-category-thumbnail-earphones.png"
               alt="Headphones"
-              className="-mt-[4.75rem] w-44"
+              className="-mt-[5rem] w-48"
             ></img>
-
-            <p className="text-center font-bold uppercase tracking-[1.07px] text-black opacity-100">
+            <p className="pb-3 text-center font-bold uppercase tracking-[1.07px] text-black opacity-100">
               Earphones
             </p>
             <button className="btn btn-4">Shop</button>
