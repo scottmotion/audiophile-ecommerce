@@ -4,7 +4,7 @@ import { ReactComponent as MobileMenuIcon } from "/src/assets/icons/icon-hamburg
 import { Link, useMatch } from "react-router-dom";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import MobileMenu from "./MobileMenu";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Navbar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -49,7 +49,7 @@ export default function Navbar() {
           <CartIcon />
         </div>
       </nav>
-      <div className={`${mobileMenuVisibility} z-40 w-full`}>
+      <div className={`${mobileMenuVisibility} z-40 w-full lg:invisible`}>
         <MobileMenu toggleMobileMenu={toggleMobileMenu} />
       </div>
     </>
