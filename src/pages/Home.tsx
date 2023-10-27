@@ -37,9 +37,9 @@ export default function Home() {
             <img
               src="src/assets/shared/thumbnails/image-category-thumbnail-headphones.png"
               alt="Headphones"
-              className="-mt-[25%] w-1/2"
+              className="-mt-[5.25rem] w-40"
             ></img>
-            <p className="text-center font-bold uppercase text-black opacity-100">
+            <p className="text-center font-bold uppercase tracking-[1.07px] text-black opacity-100">
               Headphones
             </p>
             <button className="btn btn-4">Shop</button>
@@ -48,10 +48,10 @@ export default function Home() {
             <img
               src="src/assets/shared/thumbnails/image-category-thumbnail-speakers.png"
               alt="Headphones"
-              className="-mt-[25%] w-1/2"
+              className="-mt-[5rem] w-40"
             ></img>
 
-            <p className="text-center font-bold uppercase text-black opacity-100">
+            <p className="text-center font-bold uppercase tracking-[1.07px] text-black opacity-100">
               Speakers
             </p>
             <button className="btn btn-4">Shop</button>
@@ -60,10 +60,10 @@ export default function Home() {
             <img
               src="src/assets/shared/thumbnails/image-category-thumbnail-earphones.png"
               alt="Headphones"
-              className="-mt-[25%] w-1/2"
+              className="-mt-[4.75rem] w-44"
             ></img>
 
-            <p className="text-center font-bold uppercase text-black opacity-100">
+            <p className="text-center font-bold uppercase tracking-[1.07px] text-black opacity-100">
               Earphones
             </p>
             <button className="btn btn-4">Shop</button>
