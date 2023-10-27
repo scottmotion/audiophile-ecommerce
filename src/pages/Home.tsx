@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <header className="-mt-[90px] mb-[5.75rem] flex flex-col items-center md:mb-36">
+      <header className="relative -mt-[90px] mb-[5.75rem] flex flex-col items-center md:mb-36">
         <div className="bg-black">
           <img
             src="src/assets/home/mobile/image-header.jpg"
@@ -20,7 +20,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="mb-[7.5rem] flex flex-col gap-[7.5rem] md:gap-24">
+      <main className="mb-[7.5rem] flex flex-col gap-[7.5rem] md:gap-24">
         <section className="mx-6 flex flex-col justify-center gap-16 md:flex-row md:gap-3">
           <div className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5">
             <img
@@ -96,7 +96,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div>
+      </main>
     </>
   );
 }
