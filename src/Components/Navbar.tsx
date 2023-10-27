@@ -1,10 +1,13 @@
+import { useState, useEffect } from "react";
+import { Link, useMatch } from "react-router-dom";
+import { useScrollPosition } from "../hooks/useScrollPosition";
+
 import { ReactComponent as SiteLogo } from "/src/assets/logo.svg";
 import { ReactComponent as CartIcon } from "/src/assets/icons/icon-cart.svg";
 import { ReactComponent as MobileMenuIcon } from "/src/assets/icons/icon-hamburger.svg";
-import { Link, useMatch } from "react-router-dom";
-import { useScrollPosition } from "../hooks/useScrollPosition";
+
 import MobileMenu from "./MobileMenu";
-import { useState, useEffect } from "react";
+import CartModal from "./CartModal";
 
 export default function Navbar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -108,6 +111,9 @@ export default function Navbar() {
       </nav>
       <div className={`${mobileMenuVisibility} z-40 w-full lg:invisible`}>
         <MobileMenu toggleMobileMenu={toggleMobileMenu} />
+      </div>
+      <div className={`${cartVisibility} z-40 w-full lg:invisible`}>
+        <CartModal toggleCart={toggleCart} />
       </div>
     </>
   );
