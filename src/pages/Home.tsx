@@ -23,7 +23,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mb-[7.5rem] flex flex-col gap-[7.5rem] md:gap-24">
+      <main className="mb-[7.5rem] flex max-w-[1100px] flex-col gap-[7.5rem] md:gap-24">
         <CategoryNav />
         <section className="mx-6 flex flex-col items-center gap-8">
           <div className="flex flex-col items-center gap-8 rounded-lg bg-dark-orange px-8 py-14">
