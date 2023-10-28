@@ -112,7 +112,7 @@ export default function Navbar() {
       <div className={`${mobileMenuVisibility} z-40 w-full lg:invisible`}>
         <MobileMenu toggleMobileMenu={toggleMobileMenu} />
       </div>
-      <div className={`${cartVisibility} z-40 w-full lg:invisible`}>
+      <div className={`${cartVisibility} z-40 w-full`}>
         <CartModal toggleCart={toggleCart} />
       </div>
     </>
