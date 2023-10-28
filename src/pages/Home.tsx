@@ -12,10 +12,16 @@ export default function Home() {
             className="w-full opacity-50 content-home-mobile md:content-home-tablet lg:content-home-desktop"
           ></img>
         </div>
-        <div className="absolute mt-[90px] flex flex-col items-center">
-          <p className="text-overline text-white opacity-50">New Product</p>
-          <h2 className="text-center text-white">XX99 Mark II HeadphoneS</h2>
-          <p className="text-center text-white opacity-75">
+        <div className="absolute flex h-full w-full max-w-[1100px] flex-col items-center justify-center pt-[90px] text-center lg:items-start lg:text-left">
+          <p className="text-overline mb-4 text-white opacity-50">
+            New Product
+          </p>
+          <h2 className="mb-6 text-white">
+            XX99 Mark II
+            <br />
+            Headphones
+          </h2>
+          <p className="mb-7 max-w-[30ch] text-white opacity-75 md:max-w-[40ch]">
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
