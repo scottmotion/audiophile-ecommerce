@@ -95,6 +95,9 @@ export default {
     plugin(function ({ addComponents, theme }) {
       addComponents({
         ".btn": {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
           padding: ".5rem 1rem",
           borderRadius: "0",
           fontSize: "13px",

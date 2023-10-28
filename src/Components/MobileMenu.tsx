@@ -16,7 +16,7 @@ export default function MobileMenu({ toggleMobileMenu }: MobileMenuProps) {
         <Link
           to={"/headphones"}
           onClick={toggleMobileMenu}
-          className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5"
+          className="flex basis-1/3 flex-col items-center rounded-lg bg-light-grey p-5"
         >
           <img
             src="src/assets/shared/thumbnails/image-category-thumbnail-headphones.png"
@@ -32,7 +32,7 @@ export default function MobileMenu({ toggleMobileMenu }: MobileMenuProps) {
         <Link
           to={"/speakers"}
           onClick={toggleMobileMenu}
-          className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5"
+          className="flex basis-1/3 flex-col items-center rounded-lg bg-light-grey p-5"
         >
           <img
             src="src/assets/shared/thumbnails/image-category-thumbnail-speakers.png"
@@ -48,7 +48,7 @@ export default function MobileMenu({ toggleMobileMenu }: MobileMenuProps) {
         <Link
           to={"/earphones"}
           onClick={toggleMobileMenu}
-          className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5"
+          className="flex basis-1/3 flex-col items-center rounded-lg bg-light-grey p-5"
         >
           <img
             src="src/assets/shared/thumbnails/image-category-thumbnail-earphones.png"
