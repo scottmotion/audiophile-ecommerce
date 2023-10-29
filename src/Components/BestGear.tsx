@@ -1,6 +1,6 @@
 export default function BestGear() {
   return (
-    <section className="mx-6 flex flex-col items-center">
+    <section className="flex max-w-[1100px] flex-col items-center">
       <div className="flex columns-2 flex-col items-center gap-8 lg:flex-row-reverse">
         <picture>
           <source

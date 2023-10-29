@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function CategoryNav() {
   return (
-    <section className="flex w-full flex-col justify-start gap-20 p-6 md:flex-row md:justify-center md:gap-3">
+    <section className="flex w-full max-w-[1100px] flex-col justify-start gap-20 py-6 md:flex-row md:justify-center md:gap-3">
       <Link
         to={"/headphones"}
         className="flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5"
