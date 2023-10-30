@@ -1,8 +1,8 @@
 export default function BestGear() {
   return (
     <section className="flex max-w-[1100px] flex-col items-center">
-      <div className="flex columns-2 flex-col items-center gap-8 lg:flex-row-reverse">
-        <picture>
+      <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1">
+        <picture className="col-span-1 lg:col-start-2">
           <source
             media="(min-width: 1024px)"
             srcSet="src/assets/shared/desktop/image-best-gear.jpg"
@@ -16,7 +16,7 @@ export default function BestGear() {
             className="rounded-lg"
           />
         </picture>
-        <div className="flex basis-1/2 flex-col items-center gap-6 text-center lg:items-start lg:text-left">
+        <div className="col-span-1 flex flex-col items-center gap-6 text-center lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left">
           <p>Bringing you the best audio gear</p>
           <p>
             Located at the heart of New York City, Audiophile is the premier
