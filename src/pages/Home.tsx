@@ -5,8 +5,8 @@ import BestGear from "../Components/BestGear";
 export default function Home() {
   return (
     <>
-      <header className="relative -z-10 -mt-[90px] mb-[5.75rem] flex flex-col items-center md:mb-36">
-        <div className="bg-black">
+      <header className="relative -z-10 -mt-[90px] mb-[5.75rem] flex w-full flex-col items-center bg-dark-orange md:mb-36">
+        <div className="w-full bg-black">
           <img
             src="src/assets/home/mobile/image-header.jpg"
             alt="Page header"
