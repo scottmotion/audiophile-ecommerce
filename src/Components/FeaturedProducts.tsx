@@ -3,10 +3,25 @@ export default function FeaturedProducts() {
     <section className="flex w-full max-w-[1100px] flex-col items-center gap-8">
       <div className="grid w-full grid-cols-1 gap-x-3 gap-y-6 md:grid-cols-2">
         <div className="col-span-1 flex w-full flex-col items-center gap-8 rounded-lg bg-dark-orange px-8 py-14 md:col-span-2">
+          <picture className="flex justify-center">
+            <source
+              media="(min-width: 1024px)"
+              srcSet="src/assets/home/desktop/image-speaker-zx9.png"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcSet="src/assets/home/tablet/image-speaker-zx9.png"
+            />
+            <img
+              src="src/assets/home/mobile/image-speaker-zx9.png"
+              className="w-2/3"
+            />
+          </picture>
+          {/* 
           <img
             className="w-2/3"
             src="src/assets/home/mobile/image-speaker-zx9.png"
-          ></img>
+          ></img> */}
           <div className="flex flex-col items-center gap-6 text-center">
             <p>ZX9 Speaker</p>
             <p>
