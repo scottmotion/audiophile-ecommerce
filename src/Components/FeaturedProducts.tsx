@@ -20,7 +20,7 @@ export default function FeaturedProducts() {
               />
               <img
                 src="src/assets/home/mobile/image-speaker-zx9.png"
-                className="w-2/3 md:w-1/2"
+                className="w-1/2"
               />
             </picture>
           </div>
@@ -34,7 +34,8 @@ export default function FeaturedProducts() {
             <button className="btn btn-2">See Product</button>
           </div>
         </div>
-        <div className="col-span-1 flex w-full flex-col items-center gap-8 rounded-lg bg-dark-orange px-8 py-14 md:col-span-2">
+
+        {/* <div className="col-span-1 flex w-full flex-col items-center gap-8 rounded-lg bg-dark-orange px-8 py-14 md:col-span-2">
           <picture className="flex justify-center">
             <source
               media="(min-width: 1024px)"
@@ -57,7 +58,7 @@ export default function FeaturedProducts() {
             </p>
             <button className="btn btn-2">See Product</button>
           </div>
-        </div>
+        </div> */}
 
         <div className="col-span-1 flex flex-col justify-center rounded-lg bg-medium-grey md:col-span-2">
           <picture>
