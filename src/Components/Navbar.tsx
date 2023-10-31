@@ -65,7 +65,7 @@ export default function Navbar() {
           <Link to={"/"}>
             <SiteLogo className="overflow-visible md:hidden" />
           </Link>
-          <ul className="hidden shrink-0 basis-3/4 flex-row items-center justify-center gap-3 lg:flex">
+          <ul className="hidden shrink-0 basis-3/5 flex-row items-center justify-center gap-3 lg:flex">
             <li className="nav-item">
               <Link to="/">Home</Link>
             </li>
