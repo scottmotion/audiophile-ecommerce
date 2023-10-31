@@ -5,7 +5,7 @@ export default function Headphones() {
     <>
       <header className="mb-[4rem] flex w-full flex-col items-center bg-black md:mb-[7.5rem]">
         <div className="flex w-full flex-col items-center justify-center bg-black py-8 md:py-24">
-          <h1 className="text-3xl text-white">Headphones</h1>
+          <h1 className="text-3xl text-white md:text-4xl">Headphones</h1>
         </div>
       </header>
 
