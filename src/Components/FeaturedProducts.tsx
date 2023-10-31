@@ -25,7 +25,7 @@ export default function FeaturedProducts() {
             </picture>
           </div>
 
-          <div className="flex flex-col items-center gap-6 text-center">
+          <div className="flex flex-col items-center gap-6 text-center lg:justify-center">
             <p>ZX9 Speaker</p>
             <p>
               Upgrade to premium speakers that are phenomenally built to deliver
