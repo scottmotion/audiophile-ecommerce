@@ -2,11 +2,11 @@ export default function FeaturedProducts() {
   return (
     <section className="flex w-full max-w-[1100px] flex-col items-center gap-8">
       <div className="grid w-full grid-cols-1 gap-x-3 gap-y-6 md:grid-cols-2">
-        <div className="grid grid-cols-1 grid-rows-2 rounded-lg bg-dark-orange">
-          <div className="flex w-full flex-col">
+        <div className="col-span-1 grid grid-cols-1 grid-rows-2 overflow-hidden rounded-lg bg-dark-orange md:col-span-2">
+          <div className="relative flex w-full flex-col items-center justify-center">
             <img
               src="src/assets/home/desktop/pattern-circles.svg"
-              className="absolute"
+              className="absolute max-w-none"
             ></img>
 
             <picture className="flex justify-center">
