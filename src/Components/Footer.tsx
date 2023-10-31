@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <>
-      <footer className="flex w-full flex-row items-center justify-center bg-darkest-grey px-6">
-        <div className="grid max-w-[1100px] justify-items-center gap-12 pb-10 pt-[3.25rem] text-white md:grid-cols-2 md:justify-items-start md:gap-8 lg:gap-9">
+      <footer className="flex w-full flex-row items-center justify-center bg-darkest-grey px-6 md:px-10">
+        <div className="grid max-w-[1100px] justify-items-center gap-12 pb-10 pt-[3.25rem] text-white md:grid-cols-2 md:justify-items-start md:gap-8 md:pb-[2.875rem] md:pt-[3.75rem] lg:gap-9 lg:pb-12 lg:pt-[4.75rem]">
           <Link to={"/"}>
             <SiteLogo className="md:col-span-2 lg:col-span-1" />
           </Link>

@@ -32,7 +32,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:gap-24">
+      <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:gap-24 md:px-10">
         <CategoryNav />
         <FeaturedProducts />
         <BestGear />

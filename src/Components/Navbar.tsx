@@ -48,7 +48,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`${backgroundColor} sticky top-0 z-50 flex w-full flex-row items-center justify-center gap-3 px-6 text-white`}
+        className={`${backgroundColor} sticky top-0 z-50 flex w-full flex-row items-center justify-center gap-3 px-6 text-white md:px-10`}
       >
         <div
           className={`${navBorder} flex w-full max-w-[1100px] flex-row items-center justify-between gap-3 py-8`}
