@@ -2,7 +2,7 @@ export default function FeaturedProducts() {
   return (
     <section className="flex w-full max-w-[1100px] flex-col items-center gap-8">
       <div className="grid w-full grid-cols-1 gap-x-3 gap-y-6 md:grid-cols-2">
-        <div className="col-span-1 grid grid-cols-1 grid-rows-2 overflow-hidden rounded-lg bg-dark-orange md:col-span-2">
+        <div className="col-span-1 grid grid-cols-1 grid-rows-2 overflow-hidden rounded-lg bg-dark-orange md:col-span-2 lg:grid-cols-2 lg:grid-rows-1">
           <div className="relative flex w-full flex-col items-center justify-center">
             <img
               src="src/assets/home/desktop/pattern-circles.svg"
@@ -20,7 +20,7 @@ export default function FeaturedProducts() {
               />
               <img
                 src="src/assets/home/mobile/image-speaker-zx9.png"
-                className="w-2/3"
+                className="w-2/3 md:w-1/2"
               />
             </picture>
           </div>
