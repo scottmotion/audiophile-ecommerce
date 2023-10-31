@@ -5,7 +5,7 @@ import BestGear from "../Components/BestGear";
 export default function Home() {
   return (
     <>
-      <header className="relative -z-10 -mt-[90px] mb-[5.75rem] flex w-full flex-col items-center bg-dark-orange md:mb-36">
+      <header className="relative -z-10 -mt-[90px] mb-6 flex w-full flex-col items-center bg-dark-orange md:mb-[4.5rem]">
         <div className="w-full bg-black">
           <img
             src="src/assets/home/mobile/image-header.jpg"
@@ -32,7 +32,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:gap-24 md:px-10">
+      <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:gap-24 md:px-10 lg:gap-[12.5rem]">
         <CategoryNav />
         <FeaturedProducts />
         <BestGear />
