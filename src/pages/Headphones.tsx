@@ -3,7 +3,7 @@ import BestGear from "../Components/BestGear";
 export default function Headphones() {
   return (
     <>
-      <header className="mb-[5.75rem] flex w-full flex-col items-center bg-black md:mb-36">
+      <header className="flex w-full flex-col items-center bg-black">
         <div className="flex w-full flex-col items-center justify-center bg-black">
           <h1 className="text-white">Headphones</h1>
         </div>
