@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { fetchCategory } from "../api/fetchApi";
+import { fetchCategory, fetchProduct } from "../api/fetchApi";
 import { ProductData } from "../types/ProductType";
 
 import CategoryNav from "../Components/CategoryNav";
@@ -31,6 +31,32 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
   }, [category]);
 
   console.log("products: ", products);
+
+  // TEST
+  const productId = 1;
+  const [currentProduct, setCurrentProduct] = useState<ProductData | null>(
+    null,
+  );
+  // Get single product data
+  useEffect(() => {
+    async function startFetching() {
+      setCurrentProduct(null);
+      const result = await fetchProduct(productId);
+      if (!ignore && result) {
+        setCurrentProduct(result);
+      } else {
+        setCurrentProduct(null);
+      }
+    }
+
+    let ignore = false;
+    startFetching();
+    return () => {
+      ignore = true;
+    };
+  }, [productId]);
+
+  console.log("currentProduct: ", currentProduct);
 
   return (
     <>
