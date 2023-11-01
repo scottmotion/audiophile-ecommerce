@@ -1,26 +1,48 @@
+import { useState, useEffect } from "react";
+
+import { fetchData, fetchCategory } from "../api/fetchApi";
+import { ProductData } from "../types/ProductType";
+
 import CategoryNav from "../Components/CategoryNav";
 import BestGear from "../Components/BestGear";
-
-import { fetchData } from "../api/fetchApi";
-import { ProductData } from "../types/ProductType";
 
 type CategoryLayoutProps = {
   category: string;
 };
 
-const allData: ProductData[] = await fetchData();
+// const allData: ProductData[] = await fetchData();
 
 export default function CategoryLayout({ category }: CategoryLayoutProps) {
-  console.log("All Data: ", allData);
+  const [products, setProducts] = useState<ProductData[] | null>(null);
 
-  let categoryData: {}[] = [];
-  allData.forEach((element: ProductData) => {
-    if (element.category == category) {
-      categoryData.push(element);
+  useEffect(() => {
+    async function startFetching() {
+      setProducts(null);
+      const result = await fetchCategory(category);
+      if (!ignore) {
+        setProducts(result);
+      }
     }
-  });
 
-  console.log("categoryData: ", categoryData);
+    let ignore = false;
+    startFetching();
+    return () => {
+      ignore = true;
+    };
+  }, [category]);
+
+  console.log("products: ", products);
+
+  // console.log("All Data: ", allData);
+
+  // let categoryData: {}[] = [];
+  // allData.forEach((element: ProductData) => {
+  //   if (element.category == category) {
+  //     categoryData.push(element);
+  //   }
+  // });
+
+  // console.log("categoryData: ", categoryData);
 
   return (
     <>
