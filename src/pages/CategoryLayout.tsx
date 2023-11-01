@@ -10,7 +10,7 @@ const allData = await fetchData();
 // console.log("Product Data: ", productData);
 
 export default function CategoryLayout({ category }: CategoryLayoutProps) {
-  console.log("Product Data: ", allData);
+  console.log("All Data: ", allData);
 
   return (
     <>
