@@ -2,17 +2,6 @@ import CategoryNav from "../Components/CategoryNav";
 import FeaturedProducts from "../Components/FeaturedProducts";
 import BestGear from "../Components/BestGear";
 
-// let apiUrl = "src/data.json";
-// let productData = "";
-
-// async function getJson(url: string) {
-//   let response = await fetch(url);
-//   let data = await response.json();
-//   return data;
-// }
-// productData = await getJson(apiUrl);
-// console.log("Product Data: ", productData);
-
 export default function Home() {
   return (
     <>
