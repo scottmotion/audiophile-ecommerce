@@ -2,15 +2,25 @@ import CategoryNav from "../Components/CategoryNav";
 import BestGear from "../Components/BestGear";
 
 import { fetchData } from "../api/fetchApi";
+import { ProductData } from "../types/ProductType";
 
 type CategoryLayoutProps = {
   category: string;
 };
-const allData = await fetchData();
-// console.log("Product Data: ", productData);
+
+const allData: ProductData[] = await fetchData();
 
 export default function CategoryLayout({ category }: CategoryLayoutProps) {
   console.log("All Data: ", allData);
+
+  let newData: {}[] = [];
+  allData.forEach((element: ProductData) => {
+    if (element.category == category) {
+      newData.push(element);
+    }
+  });
+
+  console.log("newData: ", newData);
 
   return (
     <>
