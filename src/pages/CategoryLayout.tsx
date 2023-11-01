@@ -6,11 +6,11 @@ import { fetchData } from "../api/fetchApi";
 type CategoryLayoutProps = {
   category: string;
 };
-const productData = await fetchData();
+const allData = await fetchData();
 // console.log("Product Data: ", productData);
 
 export default function CategoryLayout({ category }: CategoryLayoutProps) {
-  console.log("Product Data: ", productData);
+  console.log("Product Data: ", allData);
 
   return (
     <>
