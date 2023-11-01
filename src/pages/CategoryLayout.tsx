@@ -14,7 +14,7 @@ type CategoryLayoutProps = {
 export default function CategoryLayout({ category }: CategoryLayoutProps) {
   const [products, setProducts] = useState<ProductData[] | null>(null);
 
-  // Get category product data
+  // Get category products data
   useEffect(() => {
     async function startFetching() {
       setProducts(null);
