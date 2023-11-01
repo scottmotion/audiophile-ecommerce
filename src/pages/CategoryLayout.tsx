@@ -13,14 +13,14 @@ const allData: ProductData[] = await fetchData();
 export default function CategoryLayout({ category }: CategoryLayoutProps) {
   console.log("All Data: ", allData);
 
-  let newData: {}[] = [];
+  let categoryData: {}[] = [];
   allData.forEach((element: ProductData) => {
     if (element.category == category) {
-      newData.push(element);
+      categoryData.push(element);
     }
   });
 
-  console.log("newData: ", newData);
+  console.log("categoryData: ", categoryData);
 
   return (
     <>
