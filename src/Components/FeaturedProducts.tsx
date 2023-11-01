@@ -5,21 +5,21 @@ export default function FeaturedProducts() {
         <div className="col-span-1 grid grid-cols-1 grid-rows-2 overflow-hidden rounded-lg bg-dark-orange md:col-span-2 lg:grid-cols-2 lg:grid-rows-1">
           <div className="relative flex w-full flex-col items-center justify-center">
             <img
-              src="src/assets/home/desktop/pattern-circles.svg"
+              src="/src/assets/home/desktop/pattern-circles.svg"
               className="absolute max-w-none"
             ></img>
 
             <picture className="flex justify-center">
               <source
                 media="(min-width: 1024px)"
-                srcSet="src/assets/home/desktop/image-speaker-zx9.png"
+                srcSet="/src/assets/home/desktop/image-speaker-zx9.png"
               />
               <source
                 media="(min-width: 768px)"
-                srcSet="src/assets/home/tablet/image-speaker-zx9.png"
+                srcSet="/src/assets/home/tablet/image-speaker-zx9.png"
               />
               <img
-                src="src/assets/home/mobile/image-speaker-zx9.png"
+                src="/src/assets/home/mobile/image-speaker-zx9.png"
                 className="w-1/2"
               />
             </picture>
