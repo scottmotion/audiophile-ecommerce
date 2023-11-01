@@ -1,4 +1,4 @@
-const apiUrl = "src/data.json";
+const apiUrl = "../src/data.json";
 import { ProductData } from "../types/ProductType";
 
 export async function fetchData() {

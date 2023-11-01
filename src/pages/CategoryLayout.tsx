@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { fetchCategory } from "../api/fetchApi";
 import { ProductData } from "../types/ProductType";
@@ -41,6 +42,33 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
       </header>
 
       <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:px-10 lg:mb-[12.5rem] lg:gap-[10rem]">
+        {products?.map(product => (
+          <section className="flex max-w-[1100px] flex-col items-center">
+            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1">
+              <picture className="col-span-1 lg:col-start-2">
+                <source
+                  media="(min-width: 1024px)"
+                  srcSet="src/assets/shared/desktop/image-best-gear.jpg"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcSet="src/assets/shared/tablet/image-best-gear.jpg"
+                />
+                <img
+                  src="src/assets/shared/mobile/image-best-gear.jpg"
+                  className="rounded-lg"
+                />
+              </picture>
+              <div className="col-span-1 flex flex-col items-center gap-6 text-center lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left">
+                <p>{product.name}</p>
+                <p>{product.description}</p>
+                <Link to={`${product.id}`}>
+                  <button className="btn btn-1">See Product</button>
+                </Link>
+              </div>
+            </div>
+          </section>
+        ))}
         <CategoryNav />
         <BestGear />
       </main>

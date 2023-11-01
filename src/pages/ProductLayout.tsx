@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import { fetchProduct } from "../api/fetchApi";
 import { ProductData } from "../types/ProductType";
@@ -6,13 +7,15 @@ import { ProductData } from "../types/ProductType";
 import CategoryNav from "../Components/CategoryNav";
 import BestGear from "../Components/BestGear";
 
-type ProductLayoutProps = {
-  id: number;
-};
+// type ProductLayoutProps = {
+//   id: number;
+// };
 
-export default function ProductLayout({ id }: ProductLayoutProps) {
+export default function ProductLayout() {
+  let params = useParams();
   // TEST
-  const productId = 1;
+  const productId = Number(params.id);
+  console.log("productId: ", productId);
   const [currentProduct, setCurrentProduct] = useState<ProductData | null>(
     null,
   );
