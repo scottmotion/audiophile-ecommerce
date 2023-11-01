@@ -1,25 +1,30 @@
 import { useState, useEffect } from "react";
 
-import { fetchCategory } from "../api/fetchApi";
+import { fetchProduct } from "../api/fetchApi";
 import { ProductData } from "../types/ProductType";
 
 import CategoryNav from "../Components/CategoryNav";
 import BestGear from "../Components/BestGear";
 
-type CategoryLayoutProps = {
-  category: string;
+type ProductLayoutProps = {
+  id: number;
 };
 
-export default function CategoryLayout({ category }: CategoryLayoutProps) {
-  const [products, setProducts] = useState<ProductData[] | null>(null);
-
-  // Get category product data
+export default function ProductLayout({ id }: ProductLayoutProps) {
+  // TEST
+  const productId = 1;
+  const [currentProduct, setCurrentProduct] = useState<ProductData | null>(
+    null,
+  );
+  // Get single product data
   useEffect(() => {
     async function startFetching() {
-      setProducts(null);
-      const result = await fetchCategory(category);
-      if (!ignore) {
-        setProducts(result);
+      setCurrentProduct(null);
+      const result = await fetchProduct(productId);
+      if (!ignore && result) {
+        setCurrentProduct(result);
+      } else {
+        setCurrentProduct(null);
       }
     }
 
@@ -28,15 +33,17 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
     return () => {
       ignore = true;
     };
-  }, [category]);
+  }, [productId]);
 
-  console.log("products: ", products);
+  console.log("currentProduct: ", currentProduct);
 
   return (
     <>
       <header className="mb-[4rem] flex w-full flex-col items-center bg-black md:mb-[7.5rem]">
         <div className="flex w-full flex-col items-center justify-center bg-black py-8 md:py-24">
-          <h1 className="text-3xl text-white md:text-4xl">{category}</h1>
+          <h1 className="text-3xl text-white md:text-4xl">
+            {currentProduct?.name}
+          </h1>
         </div>
       </header>
 
