@@ -1,11 +1,17 @@
 import CategoryNav from "../Components/CategoryNav";
 import BestGear from "../Components/BestGear";
 
+import { fetchData } from "../api/fetchApi";
+
 type CategoryLayoutProps = {
   category: string;
 };
+const productData = await fetchData();
+// console.log("Product Data: ", productData);
 
 export default function CategoryLayout({ category }: CategoryLayoutProps) {
+  console.log("Product Data: ", productData);
+
   return (
     <>
       <header className="mb-[4rem] flex w-full flex-col items-center bg-black md:mb-[7.5rem]">
