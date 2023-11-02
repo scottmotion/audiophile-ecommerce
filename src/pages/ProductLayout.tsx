@@ -71,6 +71,7 @@ export default function ProductLayout() {
               <div className="col-span-1 flex flex-col items-center gap-6 text-center lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left">
                 <p>{currentProduct.name}</p>
                 <p>{currentProduct.description}</p>
+                <button className="btn btn-1">Add to Cart</button>
               </div>
             </div>
           </section>
