@@ -52,10 +52,7 @@ export default function ProductLayout() {
 
       <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:px-10 lg:mb-[12.5rem] lg:gap-[10rem]">
         {currentProduct && (
-          <section
-            className="flex max-w-[1100px] flex-col items-center"
-            key={currentProduct.id}
-          >
+          <section className="flex max-w-[1100px] flex-col items-center">
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1">
               <picture className="col-span-1 lg:col-start-2">
                 <source
