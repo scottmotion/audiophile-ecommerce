@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function FeaturedProducts() {
   return (
     <section className="flex w-full max-w-[1100px] flex-col items-center gap-8">
@@ -31,7 +33,9 @@ export default function FeaturedProducts() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <button className="btn btn-2">See Product</button>
+            <Link to={"/speakers/6"}>
+              <button className="btn btn-2">See Product</button>
+            </Link>
           </div>
         </div>
 
@@ -75,14 +79,12 @@ export default function FeaturedProducts() {
               className="w-full rounded-lg"
             />
           </picture>
-
-          {/* <img
-            src="src/assets/home/mobile/image-speaker-zx7.jpg"
-            className="w-full rounded-lg"
-          ></img> */}
           <div className="absolute p-6">
             <p>ZX7 Speaker</p>
-            <button className="btn btn-3">See Product</button>
+            <Link to={"/speakers/5"}>
+              {" "}
+              <button className="btn btn-3">See Product</button>
+            </Link>
           </div>
         </div>
 
@@ -95,7 +97,9 @@ export default function FeaturedProducts() {
           </div>
           <div className="col-span-1 flex flex-col items-start justify-center rounded-lg bg-light-grey p-6">
             <p>YX1 Earphones</p>
-            <button className="btn btn-3">See Product</button>
+            <Link to={"/earphones/1"}>
+              <button className="btn btn-3">See Product</button>
+            </Link>
           </div>
         </div>
       </div>

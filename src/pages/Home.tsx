@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import CategoryNav from "../Components/CategoryNav";
 import FeaturedProducts from "../Components/FeaturedProducts";
 import BestGear from "../Components/BestGear";
@@ -27,7 +29,9 @@ export default function Home() {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <button className="btn btn-1">See Product</button>
+            <Link to={"/headphones"}>
+              <button className="btn btn-1">See Product</button>
+            </Link>
           </div>
         </div>
       </header>
