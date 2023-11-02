@@ -9,12 +9,11 @@ import BestGear from "../Components/BestGear";
 
 export default function ProductLayout() {
   let params = useParams();
-  // TEST
   const productId = Number(params.id);
-  // console.log("productId: ", productId);
   const [currentProduct, setCurrentProduct] = useState<ProductData | null>(
     null,
   );
+
   // Get single product data
   useEffect(() => {
     async function startFetching() {
@@ -33,8 +32,6 @@ export default function ProductLayout() {
       ignore = true;
     };
   }, [params]);
-
-  // console.log("currentProduct: ", currentProduct);
 
   return (
     <>
