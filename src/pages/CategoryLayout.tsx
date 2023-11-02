@@ -20,7 +20,7 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
       setProducts(null);
       const result = await fetchCategory(category);
       if (!ignore) {
-        setProducts(result);
+        setProducts(result.reverse());
       }
     }
 
@@ -65,6 +65,7 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
                 />
               </picture>
               <div className="col-span-1 flex flex-col items-center gap-6 text-center lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left">
+                {product.new && <p>New Product</p>}
                 <p>{product.name}</p>
                 <p>{product.description}</p>
                 <Link to={`${product.id}`}>
