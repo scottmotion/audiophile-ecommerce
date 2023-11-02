@@ -60,7 +60,7 @@ export default function ProductLayout() {
               <picture className="col-span-1 lg:col-start-2">
                 <source
                   media="(min-width: 1024px)"
-                  srcSet={currentProduct.image.mobile}
+                  srcSet={currentProduct.image.desktop}
                 />
                 <source
                   media="(min-width: 768px)"
@@ -73,6 +73,64 @@ export default function ProductLayout() {
                 <p>{currentProduct.name}</p>
                 <p>{currentProduct.description}</p>
                 <button className="btn btn-1">Add to Cart</button>
+              </div>
+              <div>
+                <p>Features</p>
+                <p>{currentProduct.features}</p>
+              </div>
+              <div>
+                <p>In the Box</p>
+                <ul>
+                  {currentProduct.includes.map(i => (
+                    <li key={currentProduct.includes.indexOf(i)}>{i.item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet={currentProduct.gallery.first.desktop}
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcSet={currentProduct.gallery.first.tablet}
+                  />
+                  <img
+                    src={currentProduct.gallery.first.mobile}
+                    className="rounded-lg"
+                  />
+                </picture>
+
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet={currentProduct.gallery.second.desktop}
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcSet={currentProduct.gallery.second.tablet}
+                  />
+                  <img
+                    src={currentProduct.gallery.second.mobile}
+                    className="rounded-lg"
+                  />
+                </picture>
+
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet={currentProduct.gallery.third.desktop}
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcSet={currentProduct.gallery.third.tablet}
+                  />
+                  <img
+                    src={currentProduct.gallery.third.mobile}
+                    className="rounded-lg"
+                  />
+                </picture>
               </div>
             </div>
           </section>
