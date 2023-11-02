@@ -51,14 +51,14 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
               <picture className="col-span-1 lg:col-start-2">
                 <source
                   media="(min-width: 1024px)"
-                  srcSet="src/assets/shared/desktop/image-best-gear.jpg"
+                  srcSet={product.categoryImage.desktop}
                 />
                 <source
                   media="(min-width: 768px)"
-                  srcSet="src/assets/shared/tablet/image-best-gear.jpg"
+                  srcSet={product.categoryImage.tablet}
                 />
                 <img
-                  src="src/assets/shared/mobile/image-best-gear.jpg"
+                  src={product.categoryImage.mobile}
                   className="rounded-lg"
                 />
               </picture>

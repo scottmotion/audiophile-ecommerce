@@ -5,14 +5,14 @@ export default function BestGear() {
         <picture className="col-span-1 lg:col-start-2">
           <source
             media="(min-width: 1024px)"
-            srcSet="/src/assets/shared/desktop/image-best-gear.jpg"
+            srcSet="/assets/shared/desktop/image-best-gear.jpg"
           />
           <source
             media="(min-width: 768px)"
-            srcSet="/src/assets/shared/tablet/image-best-gear.jpg"
+            srcSet="/assets/shared/tablet/image-best-gear.jpg"
           />
           <img
-            src="/src/assets/shared/mobile/image-best-gear.jpg"
+            src="/assets/shared/mobile/image-best-gear.jpg"
             className="rounded-lg"
           />
         </picture>

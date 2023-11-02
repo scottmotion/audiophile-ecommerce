@@ -10,7 +10,7 @@ export default function Home() {
       <header className="relative -mt-[90px] mb-10 flex w-full flex-col items-center bg-black md:mb-[6rem] lg:mb-[7.5rem]">
         <div className="w-full bg-black">
           <img
-            src="src/assets/home/mobile/image-header.jpg"
+            src="/assets/home/tablet/image-header.jpg"
             alt="Page header"
             className="w-full opacity-50 content-home-mobile md:content-home-tablet lg:content-home-desktop"
           ></img>

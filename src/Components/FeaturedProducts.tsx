@@ -7,21 +7,21 @@ export default function FeaturedProducts() {
         <div className="col-span-1 grid grid-cols-1 grid-rows-2 overflow-hidden rounded-lg bg-dark-orange md:col-span-2 lg:grid-cols-2 lg:grid-rows-1">
           <div className="relative flex w-full flex-col items-center justify-center">
             <img
-              src="/src/assets/home/desktop/pattern-circles.svg"
+              src="/assets/home/desktop/pattern-circles.svg"
               className="absolute max-w-none"
             ></img>
 
             <picture className="flex justify-center">
               <source
                 media="(min-width: 1024px)"
-                srcSet="/src/assets/home/desktop/image-speaker-zx9.png"
+                srcSet="/assets/home/desktop/image-speaker-zx9.png"
               />
               <source
                 media="(min-width: 768px)"
-                srcSet="/src/assets/home/tablet/image-speaker-zx9.png"
+                srcSet="/assets/home/tablet/image-speaker-zx9.png"
               />
               <img
-                src="/src/assets/home/mobile/image-speaker-zx9.png"
+                src="/assets/home/mobile/image-speaker-zx9.png"
                 className="w-1/2"
               />
             </picture>
@@ -43,14 +43,14 @@ export default function FeaturedProducts() {
           <picture className="flex justify-center">
             <source
               media="(min-width: 1024px)"
-              srcSet="src/assets/home/desktop/image-speaker-zx9.png"
+              srcSet="/assets/home/desktop/image-speaker-zx9.png"
             />
             <source
               media="(min-width: 768px)"
-              srcSet="src/assets/home/tablet/image-speaker-zx9.png"
+              srcSet="/assets/home/tablet/image-speaker-zx9.png"
             />
             <img
-              src="src/assets/home/mobile/image-speaker-zx9.png"
+              src="/assets/home/mobile/image-speaker-zx9.png"
               className="w-2/3"
             />
           </picture>
@@ -68,14 +68,14 @@ export default function FeaturedProducts() {
           <picture>
             <source
               media="(min-width: 1024px)"
-              srcSet="src/assets/home/desktop/image-speaker-zx7.jpg"
+              srcSet="/assets/home/desktop/image-speaker-zx7.jpg"
             />
             <source
               media="(min-width: 768px)"
-              srcSet="src/assets/home/tablet/image-speaker-zx7.jpg"
+              srcSet="/assets/home/tablet/image-speaker-zx7.jpg"
             />
             <img
-              src="src/assets/home/mobile/image-speaker-zx7.jpg"
+              src="/assets/home/mobile/image-speaker-zx7.jpg"
               className="w-full rounded-lg"
             />
           </picture>
@@ -90,7 +90,7 @@ export default function FeaturedProducts() {
         <div className="col-span-1 grid grid-cols-1 grid-rows-2 gap-x-3 gap-y-6 md:col-span-2 md:grid-cols-2 md:grid-rows-1">
           <div className="col-span-1 rounded-lg bg-dark-grey">
             <img
-              src="src/assets/home/mobile/image-earphones-yx1.jpg"
+              src="/assets/home/mobile/image-earphones-yx1.jpg"
               className="w-full rounded-lg"
             ></img>
           </div>

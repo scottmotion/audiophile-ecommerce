@@ -7,15 +7,10 @@ export default {
       sans: ["Manrope", "sans-serif"],
     },
     extend: {
-      backgroundImage: {
-        "home-mobile": "url('/src/assets/home/mobile/image-header.jpg')",
-        "home-tablet": "url('/src/assets/home/tablet/image-header.jpg')",
-        "home-desktop": "url('/src/assets/home/desktop/image-hero.jpg')",
-      },
       content: {
-        "home-mobile": "url('/src/assets/home/mobile/image-header.jpg')",
-        "home-tablet": "url('/src/assets/home/tablet/image-header.jpg')",
-        "home-desktop": "url('/src/assets/home/desktop/image-hero.jpg')",
+        "home-mobile": "url('/assets/home/mobile/image-header.jpg')",
+        "home-tablet": "url('/assets/home/tablet/image-header.jpg')",
+        "home-desktop": "url('/assets/home/desktop/image-hero.jpg')",
         "icon-arrow-right": "url('/src/assets/icons/icon-arrow-right.svg')",
       },
 
