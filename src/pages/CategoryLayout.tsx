@@ -49,7 +49,7 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
             className="flex max-w-[1100px] flex-col items-center"
             key={product.id}
           >
-            <div className="grid grid-cols-1 grid-rows-2 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1">
+            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1">
               <picture
                 className={`col-span-1 lg:row-start-1 ${
                   products.indexOf(product) % 2 == 0
