@@ -25,13 +25,11 @@ export default function Navbar() {
   const navBorder = scrollPosition > 0 ? "" : "border-b border-white/[.10]";
 
   function toggleMobileMenu() {
-    console.log("Toggle Mobile Menu");
     setShowCart(false);
     setShowMobileMenu(!showMobileMenu);
   }
 
   function toggleCart() {
-    console.log("Toggle Cart");
     setShowMobileMenu(false);
     setShowCart(!showCart);
   }

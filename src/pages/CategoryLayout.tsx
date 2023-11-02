@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
 
 import { fetchCategory } from "../api/fetchApi";
 import { ProductData } from "../types/ProductType";
@@ -31,8 +30,6 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
       ignore = true;
     };
   }, [category]);
-
-  // console.log("products: ", products);
 
   return (
     <>
