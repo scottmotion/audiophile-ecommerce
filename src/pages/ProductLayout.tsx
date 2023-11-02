@@ -52,8 +52,11 @@ export default function ProductLayout() {
 
       <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:px-10 lg:mb-[12.5rem] lg:gap-[10rem]">
         {currentProduct && (
-          <section className="flex max-w-[1100px] flex-col items-center">
-            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1">
+          <section className="flex max-w-[1100px] flex-col items-center gap-20">
+            <div
+              id="productDescription"
+              className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1"
+            >
               <picture className="col-span-1 lg:col-start-2">
                 <source
                   media="(min-width: 1024px)"
@@ -71,64 +74,70 @@ export default function ProductLayout() {
                 <p>{currentProduct.description}</p>
                 <button className="btn btn-1">Add to Cart</button>
               </div>
-              <div>
-                <p>Features</p>
-                <p>{currentProduct.features}</p>
-              </div>
-              <div>
-                <p>In the Box</p>
-                <ul>
-                  {currentProduct.includes.map(i => (
-                    <li key={currentProduct.includes.indexOf(i)}>{i.item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <picture>
-                  <source
-                    media="(min-width: 1024px)"
-                    srcSet={currentProduct.gallery.first.desktop}
-                  />
-                  <source
-                    media="(min-width: 768px)"
-                    srcSet={currentProduct.gallery.first.tablet}
-                  />
-                  <img
-                    src={currentProduct.gallery.first.mobile}
-                    className="rounded-lg"
-                  />
-                </picture>
+            </div>
 
-                <picture>
-                  <source
-                    media="(min-width: 1024px)"
-                    srcSet={currentProduct.gallery.second.desktop}
-                  />
-                  <source
-                    media="(min-width: 768px)"
-                    srcSet={currentProduct.gallery.second.tablet}
-                  />
-                  <img
-                    src={currentProduct.gallery.second.mobile}
-                    className="rounded-lg"
-                  />
-                </picture>
+            <div id="productFeatures">
+              <p>Features</p>
+              <p>{currentProduct.features}</p>
+            </div>
 
-                <picture>
-                  <source
-                    media="(min-width: 1024px)"
-                    srcSet={currentProduct.gallery.third.desktop}
-                  />
-                  <source
-                    media="(min-width: 768px)"
-                    srcSet={currentProduct.gallery.third.tablet}
-                  />
-                  <img
-                    src={currentProduct.gallery.third.mobile}
-                    className="rounded-lg"
-                  />
-                </picture>
-              </div>
+            <div id="productIncludes">
+              <p>In the Box</p>
+              <ul>
+                {currentProduct.includes.map(i => (
+                  <li key={currentProduct.includes.indexOf(i)}>{i.item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div id="productGallery">
+              <picture>
+                <source
+                  media="(min-width: 1024px)"
+                  srcSet={currentProduct.gallery.first.desktop}
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcSet={currentProduct.gallery.first.tablet}
+                />
+                <img
+                  src={currentProduct.gallery.first.mobile}
+                  className="rounded-lg"
+                />
+              </picture>
+
+              <picture>
+                <source
+                  media="(min-width: 1024px)"
+                  srcSet={currentProduct.gallery.second.desktop}
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcSet={currentProduct.gallery.second.tablet}
+                />
+                <img
+                  src={currentProduct.gallery.second.mobile}
+                  className="rounded-lg"
+                />
+              </picture>
+
+              <picture>
+                <source
+                  media="(min-width: 1024px)"
+                  srcSet={currentProduct.gallery.third.desktop}
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcSet={currentProduct.gallery.third.tablet}
+                />
+                <img
+                  src={currentProduct.gallery.third.mobile}
+                  className="rounded-lg"
+                />
+              </picture>
+            </div>
+            <div id="productOthers">
+              <p>Others</p>
             </div>
           </section>
         )}
