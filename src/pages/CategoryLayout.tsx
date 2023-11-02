@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import { fetchCategory } from "../api/fetchApi";
 import { ProductData } from "../types/ProductType";
 
+import ProductCard from "../Components/ProductCard";
 import CategoryNav from "../Components/CategoryNav";
 import BestGear from "../Components/BestGear";
 
@@ -45,48 +46,11 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
 
       <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:px-10 lg:mb-[12.5rem] lg:gap-[10rem]">
         {products?.map(product => (
-          <section
-            className="flex max-w-[1100px] flex-col items-center"
+          <ProductCard
             key={product.id}
-          >
-            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1">
-              <picture
-                className={`col-span-1 lg:row-start-1 ${
-                  products.indexOf(product) % 2 == 0
-                    ? "lg:col-start-1"
-                    : "lg:col-start-2"
-                }`}
-              >
-                <source
-                  media="(min-width: 1024px)"
-                  srcSet={product.categoryImage.desktop}
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcSet={product.categoryImage.tablet}
-                />
-                <img
-                  src={product.categoryImage.mobile}
-                  className="rounded-lg"
-                />
-              </picture>
-
-              <div
-                className={`col-span-1 flex flex-col items-center gap-6 text-center lg:row-start-1 lg:items-start lg:text-left ${
-                  products.indexOf(product) % 2 == 0
-                    ? "lg:col-start-2"
-                    : "lg:col-start-1"
-                }`}
-              >
-                {product.new && <p>New Product</p>}
-                <p>{product.name}</p>
-                <p>{product.description}</p>
-                <Link to={`${product.id}`}>
-                  <button className="btn btn-1">See Product</button>
-                </Link>
-              </div>
-            </div>
-          </section>
+            product={product}
+            reverseOrder={products.indexOf(product) % 2 == 0 ? true : false}
+          />
         ))}
         <CategoryNav />
         <BestGear />
