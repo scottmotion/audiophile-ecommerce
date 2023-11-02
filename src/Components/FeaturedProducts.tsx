@@ -82,7 +82,6 @@ export default function FeaturedProducts() {
           <div className="absolute p-6">
             <p>ZX7 Speaker</p>
             <Link to={"/speakers/5"}>
-              {" "}
               <button className="btn btn-3">See Product</button>
             </Link>
           </div>
