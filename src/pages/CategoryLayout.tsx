@@ -72,7 +72,7 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
               </picture>
 
               <div
-                className={`col-span-1 flex flex-col items-center gap-6 text-center lg:row-start-1 lg:items-start lg:text-left${
+                className={`col-span-1 flex flex-col items-center gap-6 text-center lg:row-start-1 lg:items-start lg:text-left ${
                   products.indexOf(product) % 2 == 0
                     ? "lg:col-start-2"
                     : "lg:col-start-1"
