@@ -7,15 +7,11 @@ import { ProductData } from "../types/ProductType";
 import CategoryNav from "../Components/CategoryNav";
 import BestGear from "../Components/BestGear";
 
-// type ProductLayoutProps = {
-//   id: number;
-// };
-
 export default function ProductLayout() {
   let params = useParams();
   // TEST
   const productId = Number(params.id);
-  console.log("productId: ", productId);
+  // console.log("productId: ", productId);
   const [currentProduct, setCurrentProduct] = useState<ProductData | null>(
     null,
   );
@@ -38,7 +34,7 @@ export default function ProductLayout() {
     };
   }, [params]);
 
-  console.log("currentProduct: ", currentProduct);
+  // console.log("currentProduct: ", currentProduct);
 
   return (
     <>

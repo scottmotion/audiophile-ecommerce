@@ -32,7 +32,7 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
     };
   }, [category]);
 
-  console.log("products: ", products);
+  // console.log("products: ", products);
 
   return (
     <>
