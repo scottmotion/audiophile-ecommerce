@@ -50,7 +50,13 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
             key={product.id}
           >
             <div className="grid grid-cols-1 grid-rows-2 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1">
-              <picture className="col-span-1 lg:col-start-2 lg:row-start-1">
+              <picture
+                className={`col-span-1 lg:row-start-1 ${
+                  products.indexOf(product) % 2 == 0
+                    ? "lg:col-start-1"
+                    : "lg:col-start-2"
+                }`}
+              >
                 <source
                   media="(min-width: 1024px)"
                   srcSet={product.categoryImage.desktop}
@@ -65,7 +71,13 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
                 />
               </picture>
 
-              <div className="col-span-1 flex flex-col items-center gap-6 text-center lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left">
+              <div
+                className={`col-span-1 flex flex-col items-center gap-6 text-center lg:row-start-1 lg:items-start lg:text-left${
+                  products.indexOf(product) % 2 == 0
+                    ? "lg:col-start-2"
+                    : "lg:col-start-1"
+                }`}
+              >
                 {product.new && <p>New Product</p>}
                 <p>{product.name}</p>
                 <p>{product.description}</p>
