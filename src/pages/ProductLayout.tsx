@@ -36,7 +36,7 @@ export default function ProductLayout() {
     return () => {
       ignore = true;
     };
-  }, [productId]);
+  }, [params]);
 
   console.log("currentProduct: ", currentProduct);
 
