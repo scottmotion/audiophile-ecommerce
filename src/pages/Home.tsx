@@ -29,7 +29,7 @@ export default function Home() {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <Link to={"/headphones"}>
+            <Link to={"/headphones/4"}>
               <button className="btn btn-1">See Product</button>
             </Link>
           </div>
