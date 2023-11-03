@@ -40,13 +40,13 @@ export default function ProductLayout() {
 
   return (
     <>
-      <header className="mb-[4rem] flex w-full flex-col items-center bg-black md:mb-[7.5rem]">
-        <div className="flex w-full flex-col items-center justify-center bg-black py-8 md:py-24">
-          <h1 className="text-center text-3xl text-white md:text-4xl">
-            {currentProduct?.name}
-          </h1>
+      <nav className="flex w-full flex-col items-center justify-center px-6 md:px-10">
+        <div className="flex w-full max-w-[1100px] flex-row pb-6 pt-4 md:pt-8 lg:pb-14 lg:pt-20">
+          <button>
+            <p>Go Back</p>
+          </button>
         </div>
-      </header>
+      </nav>
 
       <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:px-10 lg:mb-[12.5rem] lg:gap-[10rem]">
         {currentProduct && (
