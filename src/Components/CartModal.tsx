@@ -12,7 +12,7 @@ export default function CartModal({ toggleCart }: CartModalProps) {
       ></div>
       <div
         id="cart"
-        className="fixed right-6 top-28 z-40 flex max-h-[calc(100vh-8rem)] w-full max-w-[calc(100vw-3rem)] flex-col justify-start gap-3 overflow-y-auto rounded-lg bg-white p-6 md:right-10 md:max-w-[23.5rem]"
+        className="absolute right-0 top-20 z-40 flex max-h-[calc(100vh-8rem)] w-full max-w-[calc(100vw-3rem)] flex-col justify-start gap-3 overflow-y-auto rounded-lg bg-white p-6 md:max-w-[23.5rem]"
       >
         <div className="flex flex-row items-center justify-between">
           <p>Cart</p>

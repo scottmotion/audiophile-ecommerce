@@ -46,16 +46,15 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`${backgroundColor} sticky top-0 z-50 flex w-full flex-row items-center justify-center gap-3 px-6 text-white md:px-10`}
+        className={`${backgroundColor} sticky top-0 z-50 flex w-full flex-row items-center justify-center gap-3 px-6 md:px-10`}
       >
         <div
           className={`${navBorder} flex w-full max-w-[1100px] flex-row items-center justify-between gap-3 py-8`}
         >
           <div className="flex shrink basis-1/5 flex-row items-center gap-3">
-            <MobileMenuIcon
-              className="hover:cursor-pointer lg:hidden"
-              onClick={toggleMobileMenu}
-            />
+            <button className="lg:hidden">
+              <MobileMenuIcon onClick={toggleMobileMenu} />
+            </button>
             <Link to={"/"}>
               <SiteLogo
                 className="hidden md:block"
@@ -66,7 +65,7 @@ export default function Navbar() {
           <Link to={"/"}>
             <SiteLogo className="overflow-visible md:hidden" />
           </Link>
-          <ul className="hidden shrink-0 basis-3/5 flex-row items-center justify-center gap-3 lg:flex">
+          <ul className="hidden shrink-0 basis-3/5 flex-row items-center justify-center gap-3 text-white lg:flex">
             <li className="nav-item">
               <Link to="/">Home</Link>
             </li>
@@ -80,17 +79,22 @@ export default function Navbar() {
               <Link to="/earphones">Earphones</Link>
             </li>
           </ul>
-          <div className="flex shrink basis-1/5 flex-row justify-end">
-            <CartIcon onClick={toggleCart} className="hover:cursor-pointer" />
+          <div className="relative flex shrink basis-1/5 flex-row justify-end">
+            <button>
+              <CartIcon onClick={toggleCart} />
+            </button>
+            <div className={`${cartVisibility} fixed z-40 w-full`}>
+              <CartModal toggleCart={toggleCart} />
+            </div>
           </div>
         </div>
       </nav>
       <div className={`${mobileMenuVisibility} z-40 w-full lg:invisible`}>
         <MobileMenu toggleMobileMenu={toggleMobileMenu} />
       </div>
-      <div className={`${cartVisibility} z-40 w-full`}>
+      {/* <div className={`${cartVisibility} z-40 w-full`}>
         <CartModal toggleCart={toggleCart} />
-      </div>
+      </div> */}
     </>
   );
 }
