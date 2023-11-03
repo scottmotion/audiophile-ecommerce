@@ -19,16 +19,16 @@ const router = createBrowserRouter(
         path="headphones"
         element={<CategoryLayout category="headphones" />}
       ></Route>
-      <Route path="headphones/:id" element={<ProductLayout />} />
+      <Route path="headphones/:slug" element={<ProductLayout />} />
 
       <Route path="speakers" element={<CategoryLayout category="speakers" />} />
-      <Route path="speakers/:id" element={<ProductLayout />} />
+      <Route path="speakers/:slug" element={<ProductLayout />} />
 
       <Route
         path="earphones"
         element={<CategoryLayout category="earphones" />}
       />
-      <Route path="earphones/:id" element={<ProductLayout />} />
+      <Route path="earphones/:slug" element={<ProductLayout />} />
     </Route>,
   ),
   {

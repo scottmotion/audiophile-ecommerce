@@ -7,8 +7,12 @@ import { ProductData } from "../types/ProductType";
 import CategoryNav from "../Components/CategoryNav";
 import BestGear from "../Components/BestGear";
 
+type ProductLayoutParams = {
+  slug: string;
+};
+
 export default function ProductLayout() {
-  let params = useParams();
+  const params = useParams() as ProductLayoutParams;
   const productSlug = params.slug;
   const [currentProduct, setCurrentProduct] = useState<ProductData | null>(
     null,
