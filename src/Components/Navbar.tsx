@@ -87,7 +87,7 @@ export default function Navbar() {
               <CartIcon onClick={toggleCart} />
             </button>
             <div className={`${cartVisibility} fixed -z-10 w-full`}>
-              <CartModal toggleCart={toggleCart} />
+              <CartModal toggleCart={toggleCart} setShowCart={setShowCart} />
             </div>
           </div>
         </div>

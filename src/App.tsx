@@ -10,6 +10,7 @@ import CategoryLayout from "./pages/CategoryLayout";
 import ProductLayout from "./pages/ProductLayout";
 
 import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
         element={<CategoryLayout category="earphones" />}
       />
       <Route path="earphones/:slug" element={<ProductLayout />} />
+      <Route path="checkout" element={<Checkout />} />
     </Route>,
   ),
   {

@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
+
 type CartModalProps = {
   toggleCart: React.MouseEventHandler;
+  setShowCart: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function CartModal({ toggleCart }: CartModalProps) {
+export default function CartModal({ toggleCart, setShowCart }: CartModalProps) {
   return (
     <>
       <div
@@ -41,7 +44,13 @@ export default function CartModal({ toggleCart }: CartModalProps) {
           <p>$12345</p>
         </div>
 
-        <button className="btn btn-1">Checkout</button>
+        <Link
+          to={"/checkout"}
+          className="btn btn-1"
+          onClick={() => setShowCart(false)}
+        >
+          <button>Checkout</button>
+        </Link>
       </div>
     </>
   );
