@@ -73,7 +73,14 @@ export default function ProductLayout() {
                 <p>{currentProduct.name}</p>
                 <p>{currentProduct.description}</p>
                 <p>${currentProduct.price}</p>
-                <button className="btn btn-1">Add to Cart</button>
+                <div className="flex flex-row items-start gap-4">
+                  <div className="flex flex-row items-center justify-center bg-light-grey">
+                    <button className="btn">-</button>
+                    <p className="btn">1</p>
+                    <button className="btn">+</button>
+                  </div>
+                  <button className="btn btn-1">Add to Cart</button>
+                </div>
               </div>
             </div>
 
