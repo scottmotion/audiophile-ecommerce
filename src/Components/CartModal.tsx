@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
 
 type CartModalProps = {
-  toggleCart: React.MouseEventHandler;
   setShowCart: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function CartModal({ toggleCart, setShowCart }: CartModalProps) {
+export default function CartModal({ setShowCart }: CartModalProps) {
   return (
     <>
       <div
         id="cartBackdrop"
         className="fixed left-1/2 top-1/2 h-screen w-screen -translate-x-1/2 -translate-y-1/2 bg-black opacity-50"
-        onClick={e => toggleCart(e)}
+        onClick={() => setShowCart(false)}
       ></div>
       <div
         id="cart"
