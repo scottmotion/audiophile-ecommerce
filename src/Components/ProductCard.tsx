@@ -40,7 +40,7 @@ export default function ProductCard({
           {product.new && <p>New Product</p>}
           <p>{product.name}</p>
           <p>{product.description}</p>
-          <Link to={`${product.id}`}>
+          <Link to={`${product.slug}`}>
             <button className="btn btn-1">See Product</button>
           </Link>
         </div>

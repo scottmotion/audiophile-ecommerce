@@ -33,7 +33,7 @@ export default function FeaturedProducts() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Link to={"/speakers/6"}>
+            <Link to={"/speakers/zx9-speaker"}>
               <button className="btn btn-2">See Product</button>
             </Link>
           </div>
@@ -81,7 +81,7 @@ export default function FeaturedProducts() {
           </picture>
           <div className="absolute p-6">
             <p>ZX7 Speaker</p>
-            <Link to={"/speakers/5"}>
+            <Link to={"/speakers/zx7-speaker"}>
               <button className="btn btn-3">See Product</button>
             </Link>
           </div>
@@ -96,7 +96,7 @@ export default function FeaturedProducts() {
           </div>
           <div className="col-span-1 flex flex-col items-start justify-center rounded-lg bg-light-grey p-6">
             <p>YX1 Earphones</p>
-            <Link to={"/earphones/1"}>
+            <Link to={"/earphones/yx1-earphones"}>
               <button className="btn btn-3">See Product</button>
             </Link>
           </div>

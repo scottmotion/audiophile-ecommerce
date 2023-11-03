@@ -7,9 +7,13 @@ import { ProductData } from "../types/ProductType";
 import CategoryNav from "../Components/CategoryNav";
 import BestGear from "../Components/BestGear";
 
+type ProductLayoutParams = {
+  slug: string;
+};
+
 export default function ProductLayout() {
-  let params = useParams();
-  const productId = Number(params.id);
+  const params = useParams() as ProductLayoutParams;
+  const productSlug = params.slug;
   const [currentProduct, setCurrentProduct] = useState<ProductData | null>(
     null,
   );
@@ -18,7 +22,7 @@ export default function ProductLayout() {
   useEffect(() => {
     async function startFetching() {
       setCurrentProduct(null);
-      const result = await fetchProduct(productId);
+      const result = await fetchProduct(productSlug);
       if (!ignore && result) {
         setCurrentProduct(result);
       } else {
