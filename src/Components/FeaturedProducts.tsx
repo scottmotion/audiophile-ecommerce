@@ -9,7 +9,7 @@ export default function FeaturedProducts() {
             <img
               src="/assets/home/desktop/pattern-circles.svg"
               className="absolute max-w-none"
-            ></img>
+            />
 
             <picture className="flex justify-center">
               <source

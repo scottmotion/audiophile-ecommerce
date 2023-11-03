@@ -14,7 +14,30 @@ export default function CartModal({ toggleCart }: CartModalProps) {
         id="cart"
         className="fixed right-6 top-28 z-40 flex max-h-[calc(100vh-8rem)] w-full max-w-[calc(100vw-3rem)] flex-col justify-start gap-3 overflow-y-auto rounded-lg bg-white p-6"
       >
-        <p>Cart Modal</p>
+        <div className="flex flex-row items-center justify-between">
+          <p>Cart</p>
+          <p>Removel All</p>
+        </div>
+        <div className="flex flex-row gap-4">
+          <img
+            src="/assets/cart/image-zx9-speaker.jpg"
+            className="w-16 rounded-lg"
+          />
+          <div className="flex flex-col justify-center">
+            <p>Short Name</p>
+            <p>$Price</p>
+          </div>
+          <div className="flex flex-row items-center justify-center bg-light-grey">
+            <button className="btn">-</button>
+            <p className="btn">1</p>
+            <button className="btn">+</button>
+          </div>
+        </div>
+        <div className="flex flex-row items-center justify-between">
+          <p>Total</p>
+          <p>$12345</p>
+        </div>
+
         <button className="btn btn-1">Checkout</button>
       </div>
     </>
