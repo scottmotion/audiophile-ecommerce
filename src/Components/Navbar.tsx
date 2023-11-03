@@ -65,7 +65,10 @@ export default function Navbar() {
           <Link to={"/"}>
             <SiteLogo className="overflow-visible md:hidden" />
           </Link>
-          <ul className="hidden shrink-0 basis-3/5 flex-row items-center justify-center gap-3 text-white lg:flex">
+          <ul
+            className="hidden shrink-0 basis-3/5 flex-row items-center justify-center gap-3 text-white lg:flex"
+            onClick={() => setShowCart(false)}
+          >
             <li className="nav-item">
               <Link to="/">Home</Link>
             </li>
