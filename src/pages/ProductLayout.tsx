@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { fetchProduct } from "../api/fetchApi";
 import { ProductData } from "../types/ProductType";
@@ -42,9 +42,11 @@ export default function ProductLayout() {
     <>
       <nav className="flex w-full flex-col items-center justify-center px-6 md:px-10">
         <div className="flex w-full max-w-[1100px] flex-row pb-6 pt-4 md:pt-8 lg:pb-14 lg:pt-20">
-          <button>
-            <p>Go Back</p>
-          </button>
+          <Link to={".."} relative="path">
+            <button>
+              <p>Go Back</p>
+            </button>
+          </Link>
         </div>
       </nav>
 
