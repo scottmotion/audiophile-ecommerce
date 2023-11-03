@@ -46,7 +46,7 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
           <ProductCard
             key={product.id}
             product={product}
-            reverseOrder={products.indexOf(product) % 2 == 0 ? true : false}
+            reverseOrder={products.indexOf(product) % 2 == 0 ? false : true}
           />
         ))}
         <CategoryNav />

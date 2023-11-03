@@ -18,7 +18,7 @@ export default function ProductCard({
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1">
         <picture
           className={`col-span-1 lg:row-start-1 ${
-            reverseOrder ? "lg:col-start-1" : "lg:col-start-2"
+            reverseOrder ? "lg:col-start-2" : "lg:col-start-1"
           }`}
         >
           <source
@@ -34,7 +34,7 @@ export default function ProductCard({
 
         <div
           className={`col-span-1 flex flex-col items-center gap-6 text-center lg:row-start-1 lg:items-start lg:text-left ${
-            reverseOrder ? "lg:col-start-2" : "lg:col-start-1"
+            reverseOrder ? "lg:col-start-1" : "lg:col-start-2"
           }`}
         >
           {product.new && <p>New Product</p>}
