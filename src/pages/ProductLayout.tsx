@@ -48,9 +48,9 @@ export default function ProductLayout() {
           <section className="flex max-w-[1100px] flex-col items-center gap-20">
             <div
               id="productDescription"
-              className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1"
+              className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:grid-rows-1"
             >
-              <picture className="col-span-1 lg:col-start-2">
+              <picture className="col-span-1 col-start-1">
                 <source
                   media="(min-width: 1024px)"
                   srcSet={currentProduct.image.desktop}
@@ -61,7 +61,7 @@ export default function ProductLayout() {
                 />
                 <img src={currentProduct.image.mobile} className="rounded-lg" />
               </picture>
-              <div className="col-span-1 flex flex-col items-center gap-6 text-center lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left">
+              <div className="col-span-1 flex flex-col items-center gap-6 text-center md:col-start-2 md:row-start-1 md:items-start md:text-left">
                 {currentProduct.new && <p>New Product</p>}
                 <p>{currentProduct.name}</p>
                 <p>{currentProduct.description}</p>
