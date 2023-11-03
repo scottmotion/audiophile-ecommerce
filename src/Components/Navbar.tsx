@@ -58,7 +58,7 @@ export default function Navbar() {
             <Link to={"/"}>
               <SiteLogo
                 className="hidden md:block"
-                onClick={() => setShowMobileMenu(false)}
+                onClick={() => (setShowMobileMenu(false), setShowCart(false))}
               />
             </Link>
           </div>
@@ -83,7 +83,7 @@ export default function Navbar() {
             <button>
               <CartIcon onClick={toggleCart} />
             </button>
-            <div className={`${cartVisibility} fixed z-40 w-full`}>
+            <div className={`${cartVisibility} fixed -z-10 w-full`}>
               <CartModal toggleCart={toggleCart} />
             </div>
           </div>
