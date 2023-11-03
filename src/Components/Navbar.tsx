@@ -52,7 +52,10 @@ export default function Navbar() {
           className={`${navBorder} flex w-full max-w-[1100px] flex-row items-center justify-between gap-3 py-8`}
         >
           <div className="flex shrink basis-1/5 flex-row items-center gap-3">
-            <MobileMenuIcon className="lg:hidden" onClick={toggleMobileMenu} />
+            <MobileMenuIcon
+              className="hover:cursor-pointer lg:hidden"
+              onClick={toggleMobileMenu}
+            />
             <Link to={"/"}>
               <SiteLogo
                 className="hidden md:block"
@@ -78,7 +81,7 @@ export default function Navbar() {
             </li>
           </ul>
           <div className="flex shrink basis-1/5 flex-row justify-end">
-            <CartIcon onClick={toggleCart} />
+            <CartIcon onClick={toggleCart} className="hover:cursor-pointer" />
           </div>
         </div>
       </nav>
