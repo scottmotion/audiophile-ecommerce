@@ -93,7 +93,9 @@ export default function ProductLayout() {
               <p>In the Box</p>
               <ul>
                 {currentProduct.includes.map(i => (
-                  <li key={currentProduct.includes.indexOf(i)}>{i.item}</li>
+                  <li key={currentProduct.includes.indexOf(i)}>
+                    <p>{i.item}</p>
+                  </li>
                 ))}
               </ul>
             </div>
