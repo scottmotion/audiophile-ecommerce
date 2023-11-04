@@ -7,13 +7,6 @@ export default {
       sans: ["Manrope", "sans-serif"],
     },
     extend: {
-      content: {
-        "home-mobile": "url('/assets/home/mobile/image-header.jpg')",
-        "home-tablet": "url('/assets/home/tablet/image-header.jpg')",
-        "home-desktop": "url('/assets/home/desktop/image-hero.jpg')",
-        "icon-arrow-right": "url('/src/assets/icons/icon-arrow-right.svg')",
-      },
-
       colors: {
         "dark-orange": "#d87d4a",
         "light-orange": "#fbaf85",
@@ -24,6 +17,12 @@ export default {
         "off-white": "#fafafa",
         "white": "#ffffff",
         "black": "#000000",
+      },
+      content: {
+        "home-mobile": "url('/assets/home/mobile/image-header.jpg')",
+        "home-tablet": "url('/assets/home/tablet/image-header.jpg')",
+        "home-desktop": "url('/assets/home/desktop/image-hero.jpg')",
+        "icon-arrow-right": "url('/src/assets/icons/icon-arrow-right.svg')",
       },
       fontSize: {
         base: "0.9375rem",
@@ -37,12 +36,13 @@ export default {
           fontFamily: "Manrope",
           src: 'url("./fonts/Manrope-VariableFont_wght.ttf")',
         },
-        "body p": {
+        "body": {
           fontSize: theme("fontSize.base"),
           fontWeight: "500",
           lineHeight: "25px",
-          opacity: "0.5",
+          letterSpacing: "0px",
         },
+        "p": { opacity: "0.5" },
         "h1": {
           fontSize: "56px",
           lineHeight: "58px",
