@@ -18,7 +18,7 @@ export default function CartModal({ setShowCart }: CartModalProps) {
       >
         <div className="flex flex-row items-center justify-between">
           <p>Cart</p>
-          <p>Removel All</p>
+          <p>Remove All</p>
         </div>
         <div className="flex flex-row justify-between gap-4">
           <div className="flex flex-row gap-4">
