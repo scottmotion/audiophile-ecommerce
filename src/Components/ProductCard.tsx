@@ -37,7 +37,7 @@ export default function ProductCard({
             reverseOrder ? "lg:col-start-1" : "lg:col-start-2"
           }`}
         >
-          {product.new && <p>New Product</p>}
+          {product.new && <div className="text-overline">New Product</div>}
           <p>{product.name}</p>
           <p>{product.description}</p>
           <Link to={`${product.slug}`}>
