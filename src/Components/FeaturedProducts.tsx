@@ -4,8 +4,8 @@ export default function FeaturedProducts() {
   return (
     <section className="flex w-full max-w-[1100px] flex-col items-center gap-8">
       <div className="grid w-full grid-cols-1 gap-x-3 gap-y-6 md:grid-cols-2">
-        <div className="col-span-1 grid grid-cols-1 grid-rows-2 overflow-hidden rounded-lg bg-dark-orange md:col-span-2 lg:grid-cols-2 lg:grid-rows-1">
-          <div className="relative flex w-full flex-col items-center justify-center">
+        <div className="col-span-1 grid grid-cols-1 grid-rows-2 overflow-hidden rounded-lg bg-dark-orange py-14 md:col-span-2 lg:grid-cols-2 lg:grid-rows-1">
+          <div className="relative flex w-full flex-col items-center justify-center pb-8">
             <img
               src="/assets/home/desktop/pattern-circles.svg"
               className="absolute max-w-none"
@@ -27,9 +27,9 @@ export default function FeaturedProducts() {
             </picture>
           </div>
 
-          <div className="z-10 flex flex-col items-center gap-6 text-center lg:justify-center">
-            <p>ZX9 Speaker</p>
-            <p>
+          <div className="z-10 flex flex-col items-center justify-between gap-6 text-center lg:justify-center">
+            <p className="text-white opacity-100">ZX9 Speaker</p>
+            <p className="text-white opacity-100">
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
