@@ -13,16 +13,16 @@ export default function Footer() {
             <SiteLogo className="md:col-span-2 lg:col-span-1" />
           </Link>
           <ul className="flex flex-col gap-4 text-center md:col-span-2 md:flex-row lg:col-span-1 lg:justify-self-end">
-            <li className="text-nav-item">
+            <li className="nav-item">
               <Link to="/">Home</Link>
             </li>
-            <li className="text-nav-item">
+            <li className="nav-item">
               <Link to="/headphones">Headphones</Link>
             </li>
-            <li className="text-nav-item">
+            <li className="nav-item">
               <Link to="/speakers">Speakers</Link>
             </li>
-            <li className="text-nav-item">
+            <li className="nav-item">
               <Link to="/earphones">Earphones</Link>
             </li>
           </ul>

@@ -71,16 +71,16 @@ export default function Navbar() {
             className="hidden shrink-0 basis-3/5 flex-row items-center justify-center gap-3 lg:flex"
             onClick={() => closeAllModals()}
           >
-            <li className="text-nav-item">
+            <li className="nav-item">
               <Link to="/">Home</Link>
             </li>
-            <li className="text-nav-item">
+            <li className="nav-item">
               <Link to="/headphones">Headphones</Link>
             </li>
-            <li className="text-nav-item">
+            <li className="nav-item">
               <Link to="/speakers">Speakers</Link>
             </li>
-            <li className="text-nav-item">
+            <li className="nav-item">
               <Link to="/earphones">Earphones</Link>
             </li>
           </ul>

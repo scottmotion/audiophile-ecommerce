@@ -139,7 +139,7 @@ export default {
             verticalAlign: "middle",
           },
         },
-        ".text-nav-item": {
+        ".nav-item": {
           "fontSize": "13px",
           "lineHeight": "25px",
           "letterSpacing": "2px",
