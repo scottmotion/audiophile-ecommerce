@@ -68,19 +68,19 @@ export default function Navbar() {
             <SiteLogo className="overflow-visible md:hidden" />
           </Link>
           <ul
-            className="hidden shrink-0 basis-3/5 flex-row items-center justify-center gap-3 text-white lg:flex"
+            className="hidden shrink-0 basis-3/5 flex-row items-center justify-center gap-3 lg:flex"
             onClick={() => closeAllModals()}
           >
-            <li className="nav-item">
+            <li className="text-nav-item">
               <Link to="/">Home</Link>
             </li>
-            <li className="nav-item">
+            <li className="text-nav-item">
               <Link to="/headphones">Headphones</Link>
             </li>
-            <li className="nav-item">
+            <li className="text-nav-item">
               <Link to="/speakers">Speakers</Link>
             </li>
-            <li className="nav-item">
+            <li className="text-nav-item">
               <Link to="/earphones">Earphones</Link>
             </li>
           </ul>
