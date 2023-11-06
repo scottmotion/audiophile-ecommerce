@@ -9,7 +9,7 @@ type ProductOthersProps = {
 
 export default function ProductOthers({ products }: ProductOthersProps) {
   return (
-    <section className="flex max-w-[1100px] flex-col items-center">
+    <section className="flex max-w-[1100px] flex-col items-center gap-10">
       <h4 className="heading-6 md:heading-4">You May Also Like</h4>
       <div className="grid grid-cols-1 gap-x-3 gap-y-14 md:grid-cols-3">
         {products.map(other => (

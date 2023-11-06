@@ -1,7 +1,7 @@
 export default function BestGear() {
   return (
     <section className="flex max-w-[1100px] flex-col items-center">
-      <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1">
+      <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:grid-rows-1">
         <picture className="col-span-1 lg:col-start-2">
           <source
             media="(min-width: 1024px)"
@@ -16,7 +16,7 @@ export default function BestGear() {
             className="rounded-lg"
           />
         </picture>
-        <div className="col-span-1 flex flex-col items-center gap-6 text-center lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left">
+        <div className="col-span-1 flex flex-col items-center gap-8 text-center lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left">
           <h2 className="heading-5 max-w-[24ch] md:heading-2 lg:max-w-[18ch]">
             Bringing you the <span className="text-dark-orange">best</span>{" "}
             audio gear
