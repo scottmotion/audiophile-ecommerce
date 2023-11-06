@@ -44,7 +44,7 @@ export default function ProductLayout() {
         <div className="flex w-full max-w-[1100px] flex-row pb-6 pt-4 md:pt-8 lg:pb-14 lg:pt-20">
           <Link to={".."} relative="path">
             <button>
-              <p>Go Back</p>
+              <p className="hover:text-dark-orange">Go Back</p>
             </button>
           </Link>
         </div>

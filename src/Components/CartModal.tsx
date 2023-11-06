@@ -18,7 +18,9 @@ export default function CartModal({ setShowCart }: CartModalProps) {
       >
         <div className="flex flex-row items-center justify-between">
           <p>Cart</p>
-          <p>Remove All</p>
+          <button className="opacity-50 hover:text-dark-orange hover:opacity-100">
+            Remove All
+          </button>
         </div>
         <div className="flex flex-row justify-between gap-4">
           <div className="flex flex-row gap-4">
@@ -40,7 +42,7 @@ export default function CartModal({ setShowCart }: CartModalProps) {
         </div>
         <div className="flex flex-row items-center justify-between">
           <p>Total</p>
-          <p>$12345</p>
+          <p className="let heading-7 opacity-100">$12345</p>
         </div>
 
         <Link
