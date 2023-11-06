@@ -23,7 +23,7 @@ export default function ProductOthers({ products }: ProductOthersProps) {
               <img src={other.image.mobile} className="rounded-lg" />
             </picture>
             <div className="flex flex-col items-center gap-8">
-              <p>{other.name}</p>
+              <h5 className="heading-6">{other.name}</h5>
               <Link to="/">
                 <button className="btn btn-1">See Product</button>
               </Link>
