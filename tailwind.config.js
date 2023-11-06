@@ -139,42 +139,42 @@ export default {
             verticalAlign: "middle",
           },
         },
-        "heading-1": {
+        ".heading-1": {
           fontSize: "56px",
           lineHeight: "58px",
           letterSpacing: "2px",
           fontWeight: "700",
           textTransform: "uppercase",
         },
-        "heading-2": {
+        ".heading-2": {
           fontSize: "40px",
           lineHeight: "44px",
           letterSpacing: "1.5px",
           fontWeight: "700",
           textTransform: "uppercase",
         },
-        "heading-3": {
+        ".heading-3": {
           fontSize: "32px",
           lineHeight: "36px",
           letterSpacing: "1.15px",
           fontWeight: "700",
           textTransform: "uppercase",
         },
-        "heading-4": {
+        ".heading-4": {
           fontSize: "28px",
           lineHeight: "38px",
           letterSpacing: "2px",
           fontWeight: "700",
           textTransform: "uppercase",
         },
-        "heading-5": {
+        ".heading-5": {
           fontSize: "24px",
           lineHeight: "33px",
           letterSpacing: "1.7px",
           fontWeight: "700",
           textTransform: "uppercase",
         },
-        "heading-6": {
+        ".heading-6": {
           fontSize: "18px",
           lineHeight: "24px",
           letterSpacing: "1.3px",
