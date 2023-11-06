@@ -154,27 +154,34 @@ export default {
           textTransform: "uppercase",
         },
         ".heading-3": {
+          fontSize: "36px",
+          lineHeight: "40px",
+          letterSpacing: "1.29px",
+          fontWeight: "700",
+          textTransform: "uppercase",
+        },
+        ".heading-4": {
           fontSize: "32px",
           lineHeight: "36px",
           letterSpacing: "1.15px",
           fontWeight: "700",
           textTransform: "uppercase",
         },
-        ".heading-4": {
+        ".heading-5": {
           fontSize: "28px",
           lineHeight: "38px",
           letterSpacing: "2px",
           fontWeight: "700",
           textTransform: "uppercase",
         },
-        ".heading-5": {
+        ".heading-6": {
           fontSize: "24px",
           lineHeight: "33px",
           letterSpacing: "1.7px",
           fontWeight: "700",
           textTransform: "uppercase",
         },
-        ".heading-6": {
+        ".heading-7": {
           fontSize: "18px",
           lineHeight: "24px",
           letterSpacing: "1.3px",
