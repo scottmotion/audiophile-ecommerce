@@ -58,7 +58,7 @@ export default function FeaturedProducts() {
               className="w-full rounded-lg"
             />
           </picture>
-          <div className="absolute p-6">
+          <div className="absolute flex flex-col gap-8 p-6">
             <h2 className="heading-5">ZX7 Speaker</h2>
             <Link to={"/speakers/zx7-speaker"}>
               <button className="btn btn-3">See Product</button>
@@ -73,7 +73,7 @@ export default function FeaturedProducts() {
               className="w-full rounded-lg"
             ></img>
           </div>
-          <div className="col-span-1 flex flex-col items-start justify-center rounded-lg bg-light-grey p-6">
+          <div className="col-span-1 flex flex-col items-start justify-center gap-8 rounded-lg bg-light-grey p-6">
             <h2 className="heading-5">YX1 Earphones</h2>
             <Link to={"/earphones/yx1-earphones"}>
               <button className="btn btn-3">See Product</button>
