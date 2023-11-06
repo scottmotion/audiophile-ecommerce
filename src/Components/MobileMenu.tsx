@@ -23,7 +23,7 @@ export default function MobileMenu({ toggleMobileMenu }: MobileMenuProps) {
             alt="Headphones"
             className="-mt-[5rem] w-40"
           ></img>
-          <p className="pb-3 text-center font-bold uppercase tracking-[1.07px] text-black opacity-100">
+          <p className="heading-8 lg:heading-7 pb-3 text-center text-black opacity-100">
             Headphones
           </p>
           <button className="btn btn-4">Shop</button>
@@ -39,7 +39,7 @@ export default function MobileMenu({ toggleMobileMenu }: MobileMenuProps) {
             alt="Headphones"
             className="-mt-[5rem] w-40"
           ></img>
-          <p className="pb-3 text-center font-bold uppercase tracking-[1.07px] text-black opacity-100">
+          <p className="heading-8 lg:heading-7 pb-3 text-center text-black opacity-100">
             Speakers
           </p>
           <button className="btn btn-4">Shop</button>
@@ -55,7 +55,7 @@ export default function MobileMenu({ toggleMobileMenu }: MobileMenuProps) {
             alt="Headphones"
             className="-mt-[5rem] w-48"
           ></img>
-          <p className="pb-3 text-center font-bold uppercase tracking-[1.07px] text-black opacity-100">
+          <p className="heading-8 lg:heading-7 pb-3 text-center text-black opacity-100">
             Earphones
           </p>
           <button className="btn btn-4">Shop</button>
