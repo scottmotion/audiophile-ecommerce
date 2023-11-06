@@ -68,7 +68,7 @@ export default function ProductLayout() {
                 />
                 <img src={currentProduct.image.mobile} className="rounded-lg" />
               </picture>
-              <div className="col-span-1 flex flex-col items-center gap-6 text-center md:col-start-2 md:row-start-1 md:items-start md:text-left">
+              <div className="col-span-1 flex flex-col gap-6 md:col-start-2 md:row-start-1 md:items-start md:text-left">
                 {currentProduct.new && (
                   <p className="text-overline opacity-100">New Product</p>
                 )}
@@ -88,20 +88,20 @@ export default function ProductLayout() {
               </div>
             </div>
 
-            <div id="productFeatures">
-              <p>Features</p>
+            <div id="productFeatures" className="flex w-full flex-col">
+              <h3 className="heading-6 md:heading-4">Features</h3>
               <p>{currentProduct.features}</p>
             </div>
 
-            <div id="productIncludes">
-              <p>In the Box</p>
+            <div id="productIncludes" className="flex w-full flex-col">
+              <h3 className="heading-6 md:heading-4">In the Box</h3>
               <ul>
                 {currentProduct.includes.map(i => (
                   <li
                     key={currentProduct.includes.indexOf(i)}
                     className="flex flex-row gap-2"
                   >
-                    <p className="font-bold text-dark-orange">1X</p>
+                    <p className="font-bold text-dark-orange opacity-100">1X</p>
                     <p className="font-bold">{i.item}</p>
                   </li>
                 ))}
