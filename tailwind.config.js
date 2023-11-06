@@ -51,7 +51,7 @@ export default {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          padding: "1rem 1.75rem",
+          padding: "1rem 2rem",
           fontSize: "13px",
           lineHeight: "16px",
           letterSpacing: "1px",
