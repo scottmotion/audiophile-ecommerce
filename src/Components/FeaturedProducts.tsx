@@ -8,7 +8,7 @@ export default function FeaturedProducts() {
           <div className="relative flex w-full flex-col items-center justify-center pb-8">
             <img
               src="/assets/home/desktop/pattern-circles.svg"
-              className="absolute max-w-none"
+              className="absolute w-[170%] max-w-none"
             />
 
             <picture className="flex justify-center">
@@ -22,18 +22,18 @@ export default function FeaturedProducts() {
               />
               <img
                 src="/assets/home/mobile/image-speaker-zx9.png"
-                className="w-1/2"
+                className="z-10 w-1/2"
               />
             </picture>
           </div>
 
-          <div className="z-10 flex flex-col items-center justify-between gap-6 text-center lg:justify-center">
-            <h2 className="heading-3 md:heading-1 text-white opacity-100">
+          <div className="z-10 flex flex-col items-center justify-between gap-6 px-6 text-center lg:justify-center">
+            <h2 className="heading-3 text-white opacity-100 md:heading-1">
               ZX9
               <br />
               Speaker
             </h2>
-            <p className="text-white opacity-100">
+            <p className="text-white opacity-75">
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
