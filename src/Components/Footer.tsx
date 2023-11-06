@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <>
       <footer className="flex w-full flex-row items-center justify-center bg-darkest-grey px-6 md:px-10">
-        <div className="grid max-w-[1100px] justify-items-center gap-12 pb-10 pt-[3.25rem] font-bold text-white md:grid-cols-2 md:justify-items-start md:gap-8 md:pb-[2.875rem] md:pt-[3.75rem] lg:gap-9 lg:pb-12 lg:pt-[4.75rem]">
+        <div className="grid max-w-[1100px] justify-items-center gap-12 pb-10 pt-[3.25rem] md:grid-cols-2 md:justify-items-start md:gap-8 md:pb-[2.875rem] md:pt-[3.75rem] lg:gap-9 lg:pb-12 lg:pt-[4.75rem]">
           <Link to={"/"}>
             <SiteLogo className="md:col-span-2 lg:col-span-1" />
           </Link>
@@ -26,19 +26,19 @@ export default function Footer() {
               <Link to="/earphones">Earphones</Link>
             </li>
           </ul>
-          <p className="text-center md:col-span-2 md:mb-12 md:text-left lg:col-span-1 lg:mb-5">
+          <p className="text-center text-white md:col-span-2 md:mb-12 md:text-left lg:col-span-1 lg:mb-5">
             Audiophile is an all in one stop to fulfill your audio needs. We're
             a small team of music lovers and sound specialists who are devoted
             to helping you get the most out of personal audio. Come and visit
             our demo facility - we’re open 7 days a week.
           </p>
-          <p className="text-center font-bold md:self-end md:text-left lg:col-span-2">
+          <p className="text-center font-bold text-white md:self-end md:text-left lg:col-span-2">
             Copyright {new Date().getFullYear()}. All Rights Reserved
           </p>
           <div className="flex flex-row items-center gap-3 md:self-end md:justify-self-end lg:col-start-2 lg:row-start-2 lg:mb-5">
-            <FacebookIcon />
-            <TwitterIcon />
-            <InstagramIcon />
+            <FacebookIcon className="fill-white hover:cursor-pointer hover:fill-dark-orange" />
+            <TwitterIcon className="fill-white hover:cursor-pointer hover:fill-dark-orange" />
+            <InstagramIcon className="fill-white hover:cursor-pointer hover:fill-dark-orange" />
           </div>
         </div>
       </footer>
