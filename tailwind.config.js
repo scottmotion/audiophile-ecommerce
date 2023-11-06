@@ -146,6 +146,13 @@ export default {
           fontWeight: "700",
           textTransform: "uppercase",
         },
+        ".heading-8": {
+          fontSize: "15px",
+          lineHeight: "20px",
+          letterSpacing: "1.07px",
+          fontWeight: "700",
+          textTransform: "uppercase",
+        },
         ".nav-item": {
           "fontSize": "13px",
           "lineHeight": "25px",
