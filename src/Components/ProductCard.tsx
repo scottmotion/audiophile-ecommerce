@@ -15,7 +15,7 @@ export default function ProductCard({
       className="flex max-w-[1100px] flex-col items-center"
       key={product.id}
     >
-      <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:grid-rows-1">
+      <div className="grid grid-cols-1 items-center gap-8 md:gap-[3.25rem] lg:grid-cols-2 lg:grid-rows-1">
         <picture
           className={`col-span-1 lg:row-start-1 ${
             reverseOrder ? "lg:col-start-2" : "lg:col-start-1"
@@ -38,8 +38,10 @@ export default function ProductCard({
           }`}
         >
           {product.new && <div className="text-overline">New Product</div>}
-          <h2 className="heading-5 md:heading-2">{product.name}</h2>
-          <p>{product.description}</p>
+          <h2 className="heading-5 max-w-[15ch] md:heading-2">
+            {product.name}
+          </h2>
+          <p className="max-w-[61ch]">{product.description}</p>
           <Link to={`${product.slug}`}>
             <button className="btn btn-1">See Product</button>
           </Link>

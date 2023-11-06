@@ -93,9 +93,14 @@ export default function ProductLayout() {
               <p>{currentProduct.features}</p>
             </div>
 
-            <div id="productIncludes" className="flex w-full flex-col gap-6">
-              <h3 className="heading-6 md:heading-4">In the Box</h3>
-              <ul className="flex flex-col gap-2">
+            <div
+              id="productIncludes"
+              className="flex w-full flex-col gap-6 md:flex-row"
+            >
+              <h3 className="heading-6 md:heading-4 md:basis-1/2">
+                In the Box
+              </h3>
+              <ul className="flex flex-col gap-2 md:basis-1/2">
                 {currentProduct.includes.map(i => (
                   <li
                     key={currentProduct.includes.indexOf(i)}

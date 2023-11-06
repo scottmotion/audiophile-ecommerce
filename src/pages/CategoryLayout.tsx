@@ -34,8 +34,8 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
   return (
     <>
       <header className="mb-[4rem] flex w-full flex-col items-center bg-black md:mb-[7.5rem]">
-        <div className="flex w-full flex-col items-center justify-center bg-black py-8 md:py-24">
-          <h1 className="heading-5 md:heading-2 text-center text-white">
+        <div className="flex w-full flex-col items-center justify-center bg-black py-8 md:py-[6.25rem]">
+          <h1 className="heading-5 text-center text-white md:heading-2">
             {category}
           </h1>
         </div>
