@@ -7,7 +7,10 @@ import BestGear from "../Components/BestGear";
 export default function Home() {
   return (
     <>
-      <header className="relative -mt-[90px] mb-10 flex w-full flex-col items-center bg-black md:mb-[6rem] lg:mb-[7.5rem]">
+      <header
+        id="heroHome"
+        className="relative -mt-[90px] mb-10 flex w-full flex-col items-center bg-black md:mb-[6rem] lg:mb-[7.5rem]"
+      >
         <div className="w-full bg-black">
           <img
             src="/assets/home/tablet/image-header.jpg"
