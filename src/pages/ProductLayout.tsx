@@ -93,8 +93,12 @@ export default function ProductLayout() {
               <p>In the Box</p>
               <ul>
                 {currentProduct.includes.map(i => (
-                  <li key={currentProduct.includes.indexOf(i)}>
-                    <p>{i.item}</p>
+                  <li
+                    key={currentProduct.includes.indexOf(i)}
+                    className="flex flex-row gap-2"
+                  >
+                    <p className="font-bold text-dark-orange">1X</p>
+                    <p className="font-bold">{i.item}</p>
                   </li>
                 ))}
               </ul>
