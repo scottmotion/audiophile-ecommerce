@@ -69,8 +69,12 @@ export default function ProductLayout() {
                 <img src={currentProduct.image.mobile} className="rounded-lg" />
               </picture>
               <div className="col-span-1 flex flex-col items-center gap-6 text-center md:col-start-2 md:row-start-1 md:items-start md:text-left">
-                {currentProduct.new && <p>New Product</p>}
-                <p>{currentProduct.name}</p>
+                {currentProduct.new && (
+                  <p className="text-overline opacity-100">New Product</p>
+                )}
+                <h2 className="heading-5 lg:heading-2">
+                  {currentProduct.name}
+                </h2>
                 <p>{currentProduct.description}</p>
                 <p>${currentProduct.price}</p>
                 <div className="flex flex-row items-start gap-4">

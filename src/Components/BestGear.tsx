@@ -17,7 +17,9 @@ export default function BestGear() {
           />
         </picture>
         <div className="col-span-1 flex flex-col items-center gap-6 text-center lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left">
-          <p>Bringing you the best audio gear</p>
+          <h2 className="heading-5 md:heading-2">
+            Bringing you the best audio gear
+          </h2>
           <p>
             Located at the heart of New York City, Audiophile is the premier
             store for high end headphones, earphones, speakers, and audio

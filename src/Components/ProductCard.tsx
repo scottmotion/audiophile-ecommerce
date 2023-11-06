@@ -38,7 +38,7 @@ export default function ProductCard({
           }`}
         >
           {product.new && <div className="text-overline">New Product</div>}
-          <p>{product.name}</p>
+          <h2 className="heading-5 md:heading-2">{product.name}</h2>
           <p>{product.description}</p>
           <Link to={`${product.slug}`}>
             <button className="btn btn-1">See Product</button>

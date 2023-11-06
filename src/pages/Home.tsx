@@ -23,7 +23,7 @@ export default function Home() {
             <p className="text-overline mb-4 text-white opacity-50">
               New Product
             </p>
-            <h2 className="mb-6 text-white">
+            <h2 className="heading-3 md:heading-1 mb-6 text-white">
               XX99 Mark II
               <br />
               Headphones

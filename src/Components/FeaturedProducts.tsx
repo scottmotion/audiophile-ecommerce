@@ -28,7 +28,11 @@ export default function FeaturedProducts() {
           </div>
 
           <div className="z-10 flex flex-col items-center justify-between gap-6 text-center lg:justify-center">
-            <p className="text-white opacity-100">ZX9 Speaker</p>
+            <h2 className="heading-3 md:heading-1 text-white opacity-100">
+              ZX9
+              <br />
+              Speaker
+            </h2>
             <p className="text-white opacity-100">
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
@@ -38,31 +42,6 @@ export default function FeaturedProducts() {
             </Link>
           </div>
         </div>
-
-        {/* <div className="col-span-1 flex w-full flex-col items-center gap-8 rounded-lg bg-dark-orange px-8 py-14 md:col-span-2">
-          <picture className="flex justify-center">
-            <source
-              media="(min-width: 1024px)"
-              srcSet="/assets/home/desktop/image-speaker-zx9.png"
-            />
-            <source
-              media="(min-width: 768px)"
-              srcSet="/assets/home/tablet/image-speaker-zx9.png"
-            />
-            <img
-              src="/assets/home/mobile/image-speaker-zx9.png"
-              className="w-2/3"
-            />
-          </picture>
-          <div className="flex flex-col items-center gap-6 text-center">
-            <p>ZX9 Speaker</p>
-            <p>
-              Upgrade to premium speakers that are phenomenally built to deliver
-              truly remarkable sound.
-            </p>
-            <button className="btn btn-2">See Product</button>
-          </div>
-        </div> */}
 
         <div className="col-span-1 flex flex-col justify-center rounded-lg bg-medium-grey md:col-span-2">
           <picture>
@@ -80,7 +59,7 @@ export default function FeaturedProducts() {
             />
           </picture>
           <div className="absolute p-6">
-            <p>ZX7 Speaker</p>
+            <h2 className="heading-5">ZX7 Speaker</h2>
             <Link to={"/speakers/zx7-speaker"}>
               <button className="btn btn-3">See Product</button>
             </Link>
@@ -95,7 +74,7 @@ export default function FeaturedProducts() {
             ></img>
           </div>
           <div className="col-span-1 flex flex-col items-start justify-center rounded-lg bg-light-grey p-6">
-            <p>YX1 Earphones</p>
+            <h2 className="heading-5">YX1 Earphones</h2>
             <Link to={"/earphones/yx1-earphones"}>
               <button className="btn btn-3">See Product</button>
             </Link>
