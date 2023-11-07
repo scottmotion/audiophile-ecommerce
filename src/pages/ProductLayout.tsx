@@ -41,7 +41,7 @@ export default function ProductLayout() {
   return (
     <>
       <nav className="flex w-full flex-col items-center justify-center px-6 md:px-10">
-        <div className="max-w-content flex w-full flex-row pb-6 pt-4 md:pt-8 lg:pb-14 lg:pt-20">
+        <div className="flex w-full max-w-content flex-row pb-6 pt-4 md:pt-8 lg:pb-14 lg:pt-20">
           <Link to={".."} relative="path">
             <button>
               <p className="hover:text-dark-orange">Go Back</p>
@@ -52,7 +52,7 @@ export default function ProductLayout() {
 
       <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:px-10 lg:mb-[12.5rem] lg:gap-[10rem]">
         {currentProduct && (
-          <section className="max-w-content flex flex-col items-center gap-20">
+          <section className="flex max-w-content flex-col items-center gap-20">
             <div
               id="productDescription"
               className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:grid-rows-1 md:gap-0 lg:gap-5"
@@ -113,7 +113,9 @@ export default function ProductLayout() {
                     key={currentProduct.includes.indexOf(i)}
                     className="flex flex-row gap-2"
                   >
-                    <p className="font-bold text-dark-orange opacity-100">1X</p>
+                    <p className="font-bold text-dark-orange opacity-100">
+                      {i.quantity}X
+                    </p>
                     <p className="font-bold">{i.item}</p>
                   </li>
                 ))}
