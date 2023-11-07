@@ -55,7 +55,7 @@ export default function ProductLayout() {
           <section className="flex max-w-[1100px] flex-col items-center gap-20">
             <div
               id="productDescription"
-              className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:grid-rows-1"
+              className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:grid-rows-1 md:gap-0 lg:gap-5"
             >
               <picture className="col-span-1 col-start-1">
                 <source
@@ -66,9 +66,12 @@ export default function ProductLayout() {
                   media="(min-width: 768px)"
                   srcSet={currentProduct.image.tablet}
                 />
-                <img src={currentProduct.image.mobile} className="rounded-lg" />
+                <img
+                  src={currentProduct.image.mobile}
+                  className="rounded-lg md:w-[82%] lg:w-full"
+                />
               </picture>
-              <div className="col-span-1 flex flex-col gap-6 md:col-start-2 md:row-start-1 md:items-start md:text-left">
+              <div className="col-span-1 flex flex-col gap-6 md:col-start-2 md:row-start-1 md:items-start md:text-left lg:pl-[6.5rem]">
                 {currentProduct.new && (
                   <p className="text-overline opacity-100">New Product</p>
                 )}
@@ -82,7 +85,7 @@ export default function ProductLayout() {
                     <button className="btn-quantity opacity-50 hover:text-dark-orange hover:opacity-100">
                       -
                     </button>
-                    <p className="btn-quantity opacity-100">1</p>
+                    <p className="btn-quantity select-none opacity-100">1</p>
                     <button className="btn-quantity opacity-50 hover:text-dark-orange hover:opacity-100">
                       +
                     </button>
