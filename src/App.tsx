@@ -7,6 +7,8 @@ import {
   Route,
 } from "react-router-dom";
 
+import { useLocalStorage } from "./hooks/useLocalStorage";
+
 import Layout from "./pages/Layout";
 import CategoryLayout from "./pages/CategoryLayout";
 import ProductLayout from "./pages/ProductLayout";
@@ -41,13 +43,20 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  const [cart, setCart] = useState({ id: 1, quantity: 3 });
+  const defaultCart = [
+    { id: 1, quantity: 3 },
+    { id: 2, quantity: 1 },
+  ];
+  const [cart, setCart] = useLocalStorage("cart", defaultCart);
+  console.log("useLocalStorage cart: ", cart);
 
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+  // const [cart, setCart] = useState({ id: 1, quantity: 3 });
 
-  console.log("localstorage: ", localStorage.getItem("cart"));
+  // useEffect(() => {
+  //   localStorage.setItem("cart", JSON.stringify(cart));
+  // }, [cart]);
+
+  // console.log("localstorage: ", localStorage.getItem("cart"));
 
   return <RouterProvider router={router} />;
 }
