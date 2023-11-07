@@ -66,7 +66,7 @@ export default function FeaturedProducts() {
           </div>
         </div>
 
-        <div className="col-span-1 grid grid-cols-1 grid-rows-2 gap-x-3 gap-y-6 md:col-span-2 md:grid-cols-2 md:grid-rows-1">
+        <div className="col-span-1 grid grid-cols-1 grid-rows-2 gap-x-6 gap-y-6 md:col-span-2 md:grid-cols-2 md:grid-rows-1">
           <div className="col-span-1 rounded-lg bg-dark-grey">
             <picture>
               <source
