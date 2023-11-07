@@ -28,7 +28,7 @@ export default {
         base: "0.9375rem",
       },
       maxWidth: {
-        content: "1100px",
+        content: "1110px",
       },
     },
   },

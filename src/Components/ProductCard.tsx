@@ -12,10 +12,10 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <section
-      className="max-w-content flex flex-col items-center"
+      className="flex max-w-content flex-col items-center"
       key={product.id}
     >
-      <div className="grid grid-cols-1 items-center gap-8 md:gap-[3.25rem] lg:grid-cols-2 lg:grid-rows-1">
+      <div className="grid grid-cols-1 items-center gap-8 md:gap-[3.25rem] lg:grid-cols-2 lg:grid-rows-1 lg:gap-8">
         <picture
           className={`col-span-1 lg:row-start-1 ${
             reverseOrder ? "lg:col-start-2" : "lg:col-start-1"
@@ -34,7 +34,7 @@ export default function ProductCard({
 
         <div
           className={`col-span-1 flex flex-col items-center gap-6 text-center lg:row-start-1 lg:items-start lg:text-left ${
-            reverseOrder ? "lg:col-start-1" : "lg:col-start-2"
+            reverseOrder ? "pr-24 lg:col-start-1" : "pl-24 lg:col-start-2"
           }`}
         >
           {product.new && <div className="text-overline">New Product</div>}

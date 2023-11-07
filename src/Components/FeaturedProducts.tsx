@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function FeaturedProducts() {
   return (
-    <section className="max-w-content flex w-full flex-col items-center gap-8">
-      <div className="grid w-full grid-cols-1 gap-x-3 gap-y-6 md:grid-cols-2">
+    <section className="flex w-full max-w-content flex-col items-center gap-8">
+      <div className="grid w-full grid-cols-1 gap-y-6 lg:gap-y-12">
         <div className="col-span-1 grid grid-cols-1 grid-rows-2 overflow-hidden rounded-lg bg-dark-orange py-12 md:col-span-2 lg:grid-cols-2 lg:grid-rows-1">
           <div className="relative flex w-full flex-col items-center justify-center pb-8">
             <img
@@ -66,7 +66,7 @@ export default function FeaturedProducts() {
           </div>
         </div>
 
-        <div className="col-span-1 grid grid-cols-1 grid-rows-2 gap-x-6 gap-y-6 md:col-span-2 md:grid-cols-2 md:grid-rows-1">
+        <div className="col-span-1 grid grid-cols-1 grid-rows-2 gap-x-3 gap-y-6 md:col-span-2 md:grid-cols-2 md:grid-rows-1 lg:gap-x-8">
           <div className="col-span-1 rounded-lg bg-dark-grey">
             <picture>
               <source
