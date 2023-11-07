@@ -12,7 +12,7 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <section
-      className="flex max-w-[1100px] flex-col items-center"
+      className="max-w-content flex flex-col items-center"
       key={product.id}
     >
       <div className="grid grid-cols-1 items-center gap-8 md:gap-[3.25rem] lg:grid-cols-2 lg:grid-rows-1">

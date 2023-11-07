@@ -54,7 +54,7 @@ export default function Navbar() {
         className={`${backgroundColor} sticky top-0 z-50 flex w-full flex-row items-center justify-center gap-3 px-6 md:px-10`}
       >
         <div
-          className={`${navBorder} flex w-full max-w-[1100px] flex-row items-center justify-between gap-3 py-8`}
+          className={`${navBorder} max-w-content flex w-full flex-row items-center justify-between gap-3 py-8`}
         >
           <div className="flex shrink basis-1/5 flex-row items-center gap-3">
             <button className="lg:hidden" onClick={toggleMobileMenu}>

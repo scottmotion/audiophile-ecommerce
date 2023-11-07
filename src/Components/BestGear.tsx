@@ -1,6 +1,6 @@
 export default function BestGear() {
   return (
-    <section className="flex max-w-[1100px] flex-col items-center">
+    <section className="max-w-content flex flex-col items-center">
       <div className="grid grid-cols-1 items-center gap-10 md:gap-16 lg:grid-cols-2 lg:grid-rows-1">
         <picture className="col-span-1 lg:col-start-2">
           <source

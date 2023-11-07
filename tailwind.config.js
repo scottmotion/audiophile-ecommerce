@@ -27,6 +27,9 @@ export default {
       fontSize: {
         base: "0.9375rem",
       },
+      maxWidth: {
+        content: "1100px",
+      },
     },
   },
   plugins: [
