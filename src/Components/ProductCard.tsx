@@ -34,7 +34,7 @@ export default function ProductCard({
 
         <div
           className={`col-span-1 flex flex-col items-center gap-6 text-center lg:row-start-1 lg:items-start lg:text-left ${
-            reverseOrder ? "pr-24 lg:col-start-1" : "pl-24 lg:col-start-2"
+            reverseOrder ? "lg:col-start-1 lg:pr-24" : "lg:col-start-2 lg:pl-24"
           }`}
         >
           {product.new && <div className="text-overline">New Product</div>}

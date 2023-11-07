@@ -122,36 +122,41 @@ export default function ProductLayout() {
               </ul>
             </div>
 
-            <div id="productGallery">
-              <picture>
-                <source
-                  media="(min-width: 1024px)"
-                  srcSet={currentProduct.gallery.first.desktop}
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcSet={currentProduct.gallery.first.tablet}
-                />
-                <img
-                  src={currentProduct.gallery.first.mobile}
-                  className="rounded-lg"
-                />
-              </picture>
+            <div
+              id="productGallery"
+              className="flex flex-col gap-5 md:flex-row lg:gap-8"
+            >
+              <div className="flex flex-col gap-5 lg:gap-8">
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet={currentProduct.gallery.first.desktop}
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcSet={currentProduct.gallery.first.tablet}
+                  />
+                  <img
+                    src={currentProduct.gallery.first.mobile}
+                    className="rounded-lg"
+                  />
+                </picture>
 
-              <picture>
-                <source
-                  media="(min-width: 1024px)"
-                  srcSet={currentProduct.gallery.second.desktop}
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcSet={currentProduct.gallery.second.tablet}
-                />
-                <img
-                  src={currentProduct.gallery.second.mobile}
-                  className="rounded-lg"
-                />
-              </picture>
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet={currentProduct.gallery.second.desktop}
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcSet={currentProduct.gallery.second.tablet}
+                  />
+                  <img
+                    src={currentProduct.gallery.second.mobile}
+                    className="rounded-lg"
+                  />
+                </picture>
+              </div>
 
               <picture>
                 <source
