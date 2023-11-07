@@ -31,6 +31,7 @@ export default function CartModal({ setShowCart }: CartModalProps) {
             <div className="flex flex-col justify-center">
               <p className="font-bold uppercase opacity-100">Short Name</p>
               <p>$ Price</p>
+              {/* add  toLocaleString() */}
             </div>
           </div>
 
@@ -47,6 +48,7 @@ export default function CartModal({ setShowCart }: CartModalProps) {
         <div className="flex flex-row items-center justify-between">
           <p>Total</p>
           <p className="heading-7 opacity-100">$12345</p>
+          {/* add toLocaleString() */}
         </div>
 
         <Link
