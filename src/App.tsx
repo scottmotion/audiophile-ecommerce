@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -39,6 +41,14 @@ const router = createBrowserRouter(
 );
 
 function App() {
+  const [cart, setCart] = useState({ id: 1, quantity: 3 });
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+  console.log("localstorage: ", localStorage.getItem("cart"));
+
   return <RouterProvider router={router} />;
 }
 
