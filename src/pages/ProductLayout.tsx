@@ -95,31 +95,36 @@ export default function ProductLayout() {
               </div>
             </div>
 
-            <div id="productFeatures" className="flex w-full flex-col gap-6">
-              <h3 className="heading-6 md:heading-4">Features</h3>
-              <p>{currentProduct.features}</p>
-            </div>
+            <div className="flex flex-col gap-20 lg:flex-row lg:gap-12">
+              <div
+                id="productFeatures"
+                className="flex w-full basis-3/5 flex-col gap-6"
+              >
+                <h3 className="heading-6 md:heading-4">Features</h3>
+                <p>{currentProduct.features}</p>
+              </div>
 
-            <div
-              id="productIncludes"
-              className="flex w-full flex-col gap-6 md:flex-row"
-            >
-              <h3 className="heading-6 md:heading-4 md:basis-1/2">
-                In the Box
-              </h3>
-              <ul className="flex flex-col gap-2 md:basis-1/2">
-                {currentProduct.includes.map(i => (
-                  <li
-                    key={currentProduct.includes.indexOf(i)}
-                    className="flex flex-row gap-2"
-                  >
-                    <p className="font-bold text-dark-orange opacity-100">
-                      {i.quantity}X
-                    </p>
-                    <p className="font-bold">{i.item}</p>
-                  </li>
-                ))}
-              </ul>
+              <div
+                id="productIncludes"
+                className="flex w-full basis-2/5 flex-col gap-6 md:flex-row lg:flex-col lg:pl-20"
+              >
+                <h3 className="heading-6 md:heading-4 md:basis-1/2 lg:basis-auto">
+                  In the Box
+                </h3>
+                <ul className="flex flex-col gap-2 md:basis-1/2 lg:basis-auto">
+                  {currentProduct.includes.map(i => (
+                    <li
+                      key={currentProduct.includes.indexOf(i)}
+                      className="flex flex-row gap-5 lg:gap-6"
+                    >
+                      <p className="font-bold text-dark-orange opacity-100">
+                        {i.quantity}X
+                      </p>
+                      <p className="font-bold">{i.item}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             <div

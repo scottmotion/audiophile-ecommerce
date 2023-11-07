@@ -45,7 +45,7 @@ export default {
           lineHeight: "25px",
           letterSpacing: "0px",
         },
-        "p": { opacity: "0.5" },
+        "p": { opacity: "0.5", whiteSpace: "pre-line" },
       });
     }),
     plugin(function ({ addComponents, theme }) {
