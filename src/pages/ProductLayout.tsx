@@ -79,9 +79,13 @@ export default function ProductLayout() {
                 <p className="heading-7 opacity-100">${currentProduct.price}</p>
                 <div className="flex flex-row items-start gap-4">
                   <div className="flex flex-row items-center justify-center bg-light-grey">
-                    <button className="btn">-</button>
-                    <p className="btn">1</p>
-                    <button className="btn">+</button>
+                    <button className="btn-quantity opacity-50 hover:text-dark-orange hover:opacity-100">
+                      -
+                    </button>
+                    <p className="btn-quantity opacity-100">1</p>
+                    <button className="btn-quantity opacity-50 hover:text-dark-orange hover:opacity-100">
+                      +
+                    </button>
                   </div>
                   <button className="btn btn-1">Add to Cart</button>
                 </div>
