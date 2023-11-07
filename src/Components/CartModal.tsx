@@ -17,32 +17,36 @@ export default function CartModal({ setShowCart }: CartModalProps) {
         className="absolute right-0 top-20 z-40 flex max-h-[calc(100vh-8rem)] w-full max-w-[calc(100vw-3rem)] flex-col justify-start gap-3 overflow-y-auto rounded-lg bg-white p-6 md:max-w-[23.5rem]"
       >
         <div className="flex flex-row items-center justify-between">
-          <p>Cart</p>
-          <button className="opacity-50 hover:text-dark-orange hover:opacity-100">
+          <p className="heading-7 opacity-100">Cart</p>
+          <button className="underline opacity-50 hover:text-dark-orange hover:opacity-100">
             Remove All
           </button>
         </div>
-        <div className="flex flex-row justify-between gap-4">
+        <div className="flex flex-row items-center justify-between gap-4">
           <div className="flex flex-row gap-4">
             <img
               src="/assets/cart/image-zx9-speaker.jpg"
               className="w-16 rounded-lg"
             />
             <div className="flex flex-col justify-center">
-              <p>Short Name</p>
-              <p>$Price</p>
+              <p className="font-bold uppercase opacity-100">Short Name</p>
+              <p>$ Price</p>
             </div>
           </div>
 
           <div className="flex flex-row items-center justify-center bg-light-grey">
-            <button className="btn">-</button>
-            <p className="btn">1</p>
-            <button className="btn">+</button>
+            <button className="btn-quantity opacity-50 hover:text-dark-orange hover:opacity-100">
+              -
+            </button>
+            <p className="btn-quantity select-none opacity-100">1</p>
+            <button className="btn-quantity opacity-50 hover:text-dark-orange hover:opacity-100">
+              +
+            </button>
           </div>
         </div>
         <div className="flex flex-row items-center justify-between">
           <p>Total</p>
-          <p className="let heading-7 opacity-100">$12345</p>
+          <p className="heading-7 opacity-100">$12345</p>
         </div>
 
         <Link
