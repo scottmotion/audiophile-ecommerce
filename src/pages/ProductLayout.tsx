@@ -4,9 +4,9 @@ import { Link, useParams } from "react-router-dom";
 import { fetchProduct } from "../api/fetchApi";
 import { ProductData } from "../types/ProductType";
 
-import ProductOthers from "../Components/ProductOthers";
-import CategoryNav from "../Components/CategoryNav";
-import BestGear from "../Components/BestGear";
+import ProductOthers from "../components/ProductOthers";
+import CategoryNav from "../components/CategoryNav";
+import BestGear from "../components/BestGear";
 
 type ProductLayoutParams = {
   slug: string;
