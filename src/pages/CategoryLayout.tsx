@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import { fetchCategory } from "../api/fetchApi";
 import { ProductData } from "../types/ProductType";
 
-import ProductCard from "../Components/ProductCard";
-import CategoryNav from "../Components/CategoryNav";
-import BestGear from "../Components/BestGear";
+import ProductCard from "../components/ProductCard";
+import CategoryNav from "../components/CategoryNav";
+import BestGear from "../components/BestGear";
 
 type CategoryLayoutProps = {
   category: string;

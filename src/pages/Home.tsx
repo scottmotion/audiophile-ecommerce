@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import CategoryNav from "../Components/CategoryNav";
-import FeaturedProducts from "../Components/FeaturedProducts";
-import BestGear from "../Components/BestGear";
+import CategoryNav from "../components/CategoryNav";
+import FeaturedProducts from "../components/FeaturedProducts";
+import BestGear from "../components/BestGear";
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
           ></img>
         </div>
         <div className="absolute flex h-full w-full flex-col items-center justify-center px-6 pt-[90px] md:px-10">
-          <div className="max-w-content flex w-full flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="flex w-full max-w-content flex-col items-center text-center lg:items-start lg:text-left">
             <p className="text-overline mb-4 text-white opacity-50">
               New Product
             </p>
