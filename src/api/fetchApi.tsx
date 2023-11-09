@@ -27,3 +27,12 @@ export async function fetchProduct(slug: string) {
   );
   return productData;
 }
+
+export async function fetchProductById(id: number) {
+  let response = await fetch(apiUrl);
+  let data: ProductData[] = await response.json();
+  let productData: ProductData | undefined = data.find(
+    element => element.id == id,
+  );
+  return productData;
+}
