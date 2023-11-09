@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import { useLocalStorage } from "./hooks/useLocalStorage";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 import Layout from "./pages/Layout";
 import CategoryLayout from "./pages/CategoryLayout";
@@ -48,7 +49,11 @@ function App() {
   const [cart, setCart] = useLocalStorage("cart", defaultCart);
   console.log("useLocalStorage cart: ", cart);
 
-  return <RouterProvider router={router} />;
+  return (
+    <ShoppingCartProvider>
+      <RouterProvider router={router} />
+    </ShoppingCartProvider>
+  );
 }
 
 export default App;
