@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
-import { fetchProduct } from "../api/fetchApi";
+import { fetchProductBySlug } from "../api/fetchApi";
 import { ProductData } from "../types/ProductType";
 
 import ProductOthers from "../components/ProductOthers";
@@ -26,7 +26,7 @@ export default function ProductLayout() {
   useEffect(() => {
     async function startFetching() {
       setCurrentProduct(null);
-      const result = await fetchProduct(productSlug);
+      const result = await fetchProductBySlug(productSlug);
       if (!ignore && result) {
         setCurrentProduct(result);
       } else {
