@@ -36,6 +36,8 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     0,
   );
 
+  //   console.log("cartItems: ", cartItems, " - cartQuantity: ", cartQuantity);
+
   function getItemQuantity(id: number) {
     return cartItems.find((item: CartItem) => item.id === id)?.quantity || 0;
   }
