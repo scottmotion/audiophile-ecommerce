@@ -41,7 +41,7 @@ export default function CartModal({ setShowCart }: CartModalProps) {
   }, [cartItems]);
 
   // console.log("cart modal cartItems: ", cartItems);
-  console.log("cart modal currentCart: ", currentCart);
+  // console.log("cart modal currentCart: ", currentCart);
 
   return (
     <>
