@@ -26,7 +26,6 @@ export function useShoppingCart() {
 }
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
-  //   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
     "shopping-cart",
     [],
@@ -36,8 +35,6 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     (quantity, item) => item.quantity + quantity,
     0,
   );
-
-  console.log("cartItems: ", cartItems, " - cartQuantity: ", cartQuantity);
 
   function getItemQuantity(id: number) {
     return cartItems.find((item: CartItem) => item.id === id)?.quantity || 0;
