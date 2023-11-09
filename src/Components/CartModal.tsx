@@ -10,8 +10,12 @@ type CartModalProps = {
 };
 
 export default function CartModal({ setShowCart }: CartModalProps) {
-  const { cartItems, increaseItemQuantity, decreaseItemQuantity } =
-    useShoppingCart();
+  const {
+    cartItems,
+    cartQuantity,
+    increaseItemQuantity,
+    decreaseItemQuantity,
+  } = useShoppingCart();
 
   const [currentCart, setCurrentCart] = useState<ProductData[] | null>(null);
 
@@ -51,7 +55,7 @@ export default function CartModal({ setShowCart }: CartModalProps) {
       >
         {/* Cart Header */}
         <div className="flex flex-row items-center justify-between">
-          <p className="heading-7 opacity-100">Cart (1)</p>
+          <p className="heading-7 opacity-100">Cart ({cartQuantity})</p>
           <button className="underline opacity-50 hover:text-dark-orange hover:opacity-100">
             Remove All
           </button>
