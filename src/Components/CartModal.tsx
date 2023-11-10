@@ -24,12 +24,12 @@ export default function CartModal({ setShowCart }: CartModalProps) {
   useEffect(() => {
     let tempCart: ProductData[] = [];
     async function startFetching() {
-      cartItems.forEach(async item => {
-        const result = await fetchProductById(item.id);
+      for (let i = 0; i < cartItems.length; i++) {
+        const result = await fetchProductById(cartItems[i].id);
         if (!ignore && result) {
           tempCart.push(result);
         }
-      });
+      }
       setCurrentCart(tempCart);
     }
 
