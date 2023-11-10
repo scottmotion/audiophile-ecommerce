@@ -66,6 +66,7 @@ export default function CartModal({ setShowCart }: CartModalProps) {
 
   // console.log("cart modal cartItems: ", cartItems);
   // console.log("cart modal currentCart: ", currentCart);
+  console.log("cart quantity: ", cartQuantity);
 
   return (
     <>
@@ -82,8 +83,9 @@ export default function CartModal({ setShowCart }: CartModalProps) {
         <div className="flex flex-row items-center justify-between">
           <p className="heading-7 opacity-100">Cart ({cartQuantity})</p>
           <button
-            className="underline opacity-50 hover:text-dark-orange hover:opacity-100"
+            className="underline opacity-50 hover:text-dark-orange hover:opacity-100 disabled:hover:text-black disabled:hover:opacity-50"
             onClick={removeAllFromCart}
+            disabled={cartQuantity < 1}
           >
             Remove All
           </button>
