@@ -99,7 +99,7 @@ export default function ProductLayout() {
                 </h2>
                 <p>{currentProduct.description}</p>
                 <p className="heading-7 opacity-100">
-                  ${currentProduct.price.toLocaleString()}
+                  $ {currentProduct.price.toLocaleString()}
                 </p>
                 <div className="flex flex-row items-start gap-4">
                   <div className="flex flex-row items-center justify-center bg-light-grey">
