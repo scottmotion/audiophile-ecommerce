@@ -19,18 +19,42 @@ export default function CartModal({ setShowCart }: CartModalProps) {
   } = useShoppingCart();
 
   const [currentCart, setCurrentCart] = useState<ProductData[] | null>(null);
+  const [currentTotal, setCurrentTotal] = useState<number>(0);
 
   // Get all product data
+  // useEffect(() => {
+  //   let tempCart: ProductData[] = [];
+  //   async function startFetching() {
+  //     for (let i = 0; i < cartItems.length; i++) {
+  //       const result = await fetchProductById(cartItems[i].id);
+  //       if (!ignore && result) {
+  //         tempCart.push(result);
+  //       }
+  //     }
+  //     setCurrentCart(tempCart);
+  //   }
+
+  //   let ignore = false;
+  //   startFetching();
+  //   return () => {
+  //     ignore = true;
+  //   };
+  // }, [cartItems]);
+
   useEffect(() => {
     let tempCart: ProductData[] = [];
+    let tempTotal = 0;
+
     async function startFetching() {
       for (let i = 0; i < cartItems.length; i++) {
         const result = await fetchProductById(cartItems[i].id);
         if (!ignore && result) {
           tempCart.push(result);
+          tempTotal = tempTotal + cartItems[i].quantity * result.price;
         }
       }
       setCurrentCart(tempCart);
+      setCurrentTotal(tempTotal);
     }
 
     let ignore = false;
@@ -40,8 +64,8 @@ export default function CartModal({ setShowCart }: CartModalProps) {
     };
   }, [cartItems]);
 
-  console.log("cart modal cartItems: ", cartItems);
-  console.log("cart modal currentCart: ", currentCart);
+  // console.log("cart modal cartItems: ", cartItems);
+  // console.log("cart modal currentCart: ", currentCart);
 
   return (
     <>
@@ -73,7 +97,7 @@ export default function CartModal({ setShowCart }: CartModalProps) {
           >
             <div className="flex flex-row gap-4">
               <img
-                src="/assets/cart/image-zx9-speaker.jpg"
+                src={`/assets/cart/image-${item.slug}.jpg`}
                 className="w-16 rounded-lg"
               />
               <div className="flex flex-col justify-center">
@@ -105,7 +129,9 @@ export default function CartModal({ setShowCart }: CartModalProps) {
         {/* Cart Footer */}
         <div className="flex flex-row items-center justify-between">
           <p>Total</p>
-          <p className="heading-7 opacity-100">$12345</p>
+          <p className="heading-7 opacity-100">
+            $ {currentTotal.toLocaleString()}
+          </p>
           {/* add toLocaleString() */}
         </div>
 
