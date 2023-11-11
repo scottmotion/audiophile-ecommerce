@@ -81,9 +81,12 @@ export default function CartModal({ setShowCart }: CartModalProps) {
       >
         {/* Cart Header */}
         <div className="flex flex-row items-center justify-between">
+          {/* {cartQuantity > 0 && (
+            <p className="heading-7 opacity-100">Cart ({cartQuantity})</p>
+          )} */}
           <p className="heading-7 opacity-100">Cart ({cartQuantity})</p>
           <button
-            className="underline opacity-50 hover:text-dark-orange hover:opacity-100 disabled:hover:text-black disabled:hover:opacity-50"
+            className="underline opacity-50 hover:text-dark-orange hover:opacity-100 disabled:invisible"
             onClick={removeAllFromCart}
             disabled={cartQuantity < 1}
           >
@@ -129,21 +132,27 @@ export default function CartModal({ setShowCart }: CartModalProps) {
         ))}
 
         {/* Cart Footer */}
-        <div className="flex flex-row items-center justify-between">
-          <p>Total</p>
-          <p className="heading-7 opacity-100">
-            $ {currentTotal.toLocaleString()}
-          </p>
-          {/* add toLocaleString() */}
-        </div>
+        {cartQuantity > 0 ? (
+          <div className="flex flex-row items-center justify-between">
+            <p>Total</p>
+            <p className="heading-7 opacity-100">
+              $ {currentTotal.toLocaleString()}
+            </p>
+            {/* add toLocaleString() */}
+          </div>
+        ) : (
+          <p className="flex justify-center">Your cart is empty</p>
+        )}
 
-        <Link
-          to={"/checkout"}
-          className="btn btn-1"
-          onClick={() => setShowCart(false)}
-        >
-          <button>Checkout</button>
-        </Link>
+        {cartQuantity > 0 ? (
+          <Link to={"/checkout"} onClick={() => setShowCart(false)}>
+            <button className="btn btn-1 w-full">Checkout</button>
+          </Link>
+        ) : (
+          <button className="btn btn-1" onClick={() => setShowCart(false)}>
+            Continue Shopping
+          </button>
+        )}
       </div>
     </>
   );
