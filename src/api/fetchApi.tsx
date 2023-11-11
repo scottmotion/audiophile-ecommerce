@@ -19,11 +19,20 @@ export async function fetchCategory(category: string) {
   return newData;
 }
 
-export async function fetchProduct(slug: string) {
+export async function fetchProductBySlug(slug: string) {
   let response = await fetch(apiUrl);
   let data: ProductData[] = await response.json();
   let productData: ProductData | undefined = data.find(
     element => element.slug == slug,
+  );
+  return productData;
+}
+
+export async function fetchProductById(id: number) {
+  let response = await fetch(apiUrl);
+  let data: ProductData[] = await response.json();
+  let productData: ProductData | undefined = data.find(
+    element => element.id == id,
   );
   return productData;
 }

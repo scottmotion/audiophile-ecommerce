@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
-import { fetchProduct } from "../api/fetchApi";
+import { fetchProductBySlug } from "../api/fetchApi";
 import { ProductData } from "../types/ProductType";
 
 import ProductOthers from "../components/ProductOthers";
@@ -13,17 +14,19 @@ type ProductLayoutParams = {
 };
 
 export default function ProductLayout() {
+  const { addItemToCart } = useShoppingCart();
   const params = useParams() as ProductLayoutParams;
   const productSlug = params.slug;
   const [currentProduct, setCurrentProduct] = useState<ProductData | null>(
     null,
   );
+  const [quantity, setQuantity] = useState(1);
 
   // Get single product data
   useEffect(() => {
     async function startFetching() {
       setCurrentProduct(null);
-      const result = await fetchProduct(productSlug);
+      const result = await fetchProductBySlug(productSlug);
       if (!ignore && result) {
         setCurrentProduct(result);
       } else {
@@ -37,6 +40,22 @@ export default function ProductLayout() {
       ignore = true;
     };
   }, [params]);
+
+  function incrementQuantity() {
+    setQuantity(prev => prev + 1);
+  }
+  function decrementQuantity() {
+    if (quantity > 1) {
+      setQuantity(prev => prev - 1);
+    }
+  }
+
+  function handleAddToCart() {
+    if (currentProduct !== null) {
+      addItemToCart(currentProduct.id, quantity);
+      setQuantity(1);
+    }
+  }
 
   return (
     <>
@@ -80,19 +99,29 @@ export default function ProductLayout() {
                 </h2>
                 <p>{currentProduct.description}</p>
                 <p className="heading-7 opacity-100">
-                  ${currentProduct.price.toLocaleString()}
+                  $ {currentProduct.price.toLocaleString()}
                 </p>
                 <div className="flex flex-row items-start gap-4">
                   <div className="flex flex-row items-center justify-center bg-light-grey">
-                    <button className="btn-quantity opacity-50 hover:text-dark-orange hover:opacity-100">
+                    <button
+                      className="btn-quantity opacity-50 hover:text-dark-orange hover:opacity-100"
+                      onClick={decrementQuantity}
+                    >
                       -
                     </button>
-                    <p className="btn-quantity select-none opacity-100">1</p>
-                    <button className="btn-quantity opacity-50 hover:text-dark-orange hover:opacity-100">
+                    <p className="btn-quantity select-none opacity-100">
+                      {quantity}
+                    </p>
+                    <button
+                      className="btn-quantity opacity-50 hover:text-dark-orange hover:opacity-100"
+                      onClick={incrementQuantity}
+                    >
                       +
                     </button>
                   </div>
-                  <button className="btn btn-1">Add to Cart</button>
+                  <button className="btn btn-1" onClick={handleAddToCart}>
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             </div>

@@ -5,6 +5,8 @@ import {
   Route,
 } from "react-router-dom";
 
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+
 import Layout from "./pages/Layout";
 import CategoryLayout from "./pages/CategoryLayout";
 import ProductLayout from "./pages/ProductLayout";
@@ -39,7 +41,11 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <ShoppingCartProvider>
+      <RouterProvider router={router} />
+    </ShoppingCartProvider>
+  );
 }
 
 export default App;
