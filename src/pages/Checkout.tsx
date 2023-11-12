@@ -26,7 +26,7 @@ export default function Checkout() {
         </section>
         <section className="flex w-full max-w-content flex-col items-center rounded-lg bg-white">
           <h2 className="heading-7">Summary</h2>
-          <button className="btn btn-1"> Continue & Pay</button>
+          <button className="btn btn-1 w-full"> Continue & Pay</button>
         </section>
       </main>
     </>
