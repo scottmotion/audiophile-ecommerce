@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 export default function Checkout() {
   return (
     <>
-      <nav className="flex w-full flex-col items-center justify-center px-6 md:px-10 lg:bg-light-grey">
+      <nav className="flex w-full flex-col items-center justify-center bg-light-grey px-6 md:px-10">
         <div className="flex w-full max-w-content flex-row pb-6 pt-4 md:pt-8 lg:pb-14 lg:pt-20">
           <Link to={".."} relative="path">
             <button>
@@ -11,9 +11,22 @@ export default function Checkout() {
           </Link>
         </div>
       </nav>
-      <main className="flex w-full flex-col items-center gap-[7.5rem] px-6 md:px-10 lg:gap-[10rem] lg:bg-light-grey">
-        <section className="mb-[7.5rem] flex w-full max-w-content flex-col items-center gap-20 rounded-lg bg-white lg:mb-[12.5rem]">
-          <h1 className="heading-4">Checkout</h1>
+      <main className="flex w-full flex-col items-center gap-[2rem] bg-light-grey px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
+        <section className="flex w-full max-w-content flex-col items-center rounded-lg bg-white">
+          <h1 className="heading-5 md:heading-4">Checkout</h1>
+          <div>
+            <h2>Billing Details</h2>
+          </div>
+          <div>
+            <h2>Shipping Info</h2>
+          </div>
+          <div>
+            <h2>Payment Details</h2>
+          </div>
+        </section>
+        <section className="flex w-full max-w-content flex-col items-center rounded-lg bg-white">
+          <h2 className="heading-7">Summary</h2>
+          <button className="btn btn-1"> Continue & Pay</button>
         </section>
       </main>
     </>
