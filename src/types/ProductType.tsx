@@ -2,6 +2,7 @@ export type ProductData = {
   id: number;
   slug: string;
   name: string;
+  shortName: string;
   image: { mobile: string; tablet: string; desktop: string };
   category: string;
   categoryImage: { mobile: string; tablet: string; desktop: string };

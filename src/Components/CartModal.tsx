@@ -106,7 +106,9 @@ export default function CartModal({ setShowCart }: CartModalProps) {
                 className="w-16 rounded-lg"
               />
               <div className="flex flex-col justify-center">
-                <p className="font-bold uppercase opacity-100">{item.name}</p>
+                <p className="font-bold uppercase opacity-100">
+                  {item.shortName}
+                </p>
                 <p>$ {item.price.toLocaleString()}</p>
               </div>
             </div>
