@@ -53,14 +53,25 @@ export default function Checkout() {
 
           <div className="flex flex-col">
             <h2 className="text-subtitle">Payment Details</h2>
-            <div className="flex flex-col gap-2">
+            {/* <div className="flex flex-row gap-2">
+              <input type="radio" id="eMoneyNum" name="eMoney"></input>
               <label htmlFor="eMoneyNum">e-Money Number</label>
-              <input type="text" id="eMoneyNum"></input>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-row gap-2">
+              <input type="radio" id="eMoneyPin" name="eMoney"></input>
               <label htmlFor="eMoneyPin">e-Money PIN</label>
-              <input type="text" id="eMoneyPin"></input>
-            </div>
+            </div> */}
+            <fieldset className="flex flex-col gap-2">
+              <legend>Payment Methods</legend>
+              <div className="flex flex-row gap-2">
+                <input type="radio" id="eMoneyNum" name="eMoney"></input>
+                <label htmlFor="eMoneyNum">e-Money Number</label>
+              </div>
+              <div className="flex flex-row gap-2">
+                <input type="radio" id="eMoneyPin" name="eMoney"></input>
+                <label htmlFor="eMoneyPin">e-Money PIN</label>
+              </div>
+            </fieldset>
           </div>
         </section>
         <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 py-8 uppercase">
@@ -79,7 +90,7 @@ export default function Checkout() {
               <p>VAT (included)</p>
               <p className="heading-7 opacity-100">$1076</p>
             </div>
-            <div className="flex justify-between">
+            <div className="mt-4 flex justify-between">
               <p>Grand Total</p>
               <p className="heading-7 text-dark-orange opacity-100">$5446</p>
             </div>
