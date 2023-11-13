@@ -21,26 +21,6 @@ export default function CartModal({ setShowCart }: CartModalProps) {
   const [currentCart, setCurrentCart] = useState<ProductData[] | null>(null);
   const [currentTotal, setCurrentTotal] = useState<number>(0);
 
-  // Get all product data
-  // useEffect(() => {
-  //   let tempCart: ProductData[] = [];
-  //   async function startFetching() {
-  //     for (let i = 0; i < cartItems.length; i++) {
-  //       const result = await fetchProductById(cartItems[i].id);
-  //       if (!ignore && result) {
-  //         tempCart.push(result);
-  //       }
-  //     }
-  //     setCurrentCart(tempCart);
-  //   }
-
-  //   let ignore = false;
-  //   startFetching();
-  //   return () => {
-  //     ignore = true;
-  //   };
-  // }, [cartItems]);
-
   useEffect(() => {
     let tempCart: ProductData[] = [];
     let tempTotal = 0;
@@ -81,9 +61,6 @@ export default function CartModal({ setShowCart }: CartModalProps) {
       >
         {/* Cart Header */}
         <div className="flex flex-row items-center justify-between">
-          {/* {cartQuantity > 0 && (
-            <p className="heading-7 opacity-100">Cart ({cartQuantity})</p>
-          )} */}
           <p className="heading-7 opacity-100">Cart ({cartQuantity})</p>
           <button
             className="underline opacity-50 hover:text-dark-orange hover:opacity-100 disabled:invisible"
@@ -140,7 +117,6 @@ export default function CartModal({ setShowCart }: CartModalProps) {
             <p className="heading-7 opacity-100">
               $ {currentTotal.toLocaleString()}
             </p>
-            {/* add toLocaleString() */}
           </div>
         ) : (
           <p className="flex justify-center">Your cart is empty</p>
