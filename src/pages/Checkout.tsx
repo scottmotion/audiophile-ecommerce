@@ -11,7 +11,7 @@ export default function Checkout() {
           </Link>
         </div>
       </nav>
-      <main className="flex w-full flex-col gap-[2rem] bg-light-grey px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
+      <main className="flex w-full flex-col items-center gap-[2rem] bg-light-grey px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
         <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 pb-8 pt-6">
           <h1 className="heading-5 md:heading-4">Checkout</h1>
           <div>
