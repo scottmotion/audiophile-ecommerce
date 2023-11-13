@@ -45,13 +45,19 @@ export default {
           lineHeight: "25px",
           letterSpacing: "0px",
         },
-        "p": { opacity: "0.5", whiteSpace: "pre-line" },
+        "input": {
+          borderWidth: "1px",
+          borderStyle: "solid",
+          borderColor: "#CFCFCF",
+          borderRadius: "0.5rem",
+        },
         "label": {
           fontSize: "12px",
           fontWeight: "700",
           lineHeight: "16px",
           letterSpacing: "-.21px",
         },
+        "p": { opacity: "0.5", whiteSpace: "pre-line" },
       });
     }),
     plugin(function ({ addComponents, theme }) {
