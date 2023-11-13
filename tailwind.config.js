@@ -46,7 +46,7 @@ export default {
           letterSpacing: "0px",
         },
         "p": { opacity: "0.5", whiteSpace: "pre-line" },
-        "label, legend": {
+        "label": {
           fontSize: "12px",
           fontWeight: "700",
           lineHeight: "16px",
@@ -172,6 +172,12 @@ export default {
           letterSpacing: "1.07px",
           fontWeight: "700",
           textTransform: "uppercase",
+        },
+        ".label, .legend": {
+          fontSize: "12px",
+          fontWeight: "700",
+          lineHeight: "16px",
+          letterSpacing: "-.21px",
         },
         ".nav-item": {
           "fontSize": "13px",

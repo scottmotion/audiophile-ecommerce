@@ -15,63 +15,79 @@ export default function Checkout() {
         <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 pb-8 pt-6">
           <h1 className="heading-5 md:heading-4">Checkout</h1>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-4">
             <h2 className="text-subtitle">Billing Details</h2>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name"></input>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="email">Email Address</label>
-              <input type="email" id="email"></input>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="tel">Phone Number</label>
-              <input type="tel" id="tel"></input>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="name">Name</label>
+                <input type="text" id="name"></input>
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="email">Email Address</label>
+                <input type="email" id="email"></input>
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="tel">Phone Number</label>
+                <input type="tel" id="tel"></input>
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-4">
             <h2 className="text-subtitle">Shipping Info</h2>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="address">Address</label>
-              <input type="text" id="address"></input>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="zipcode">ZIP Code</label>
-              <input type="text" id="zipcode"></input>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="city">City</label>
-              <input type="text" id="city"></input>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="country">Country</label>
-              <input type="text" id="country"></input>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="address">Address</label>
+                <input type="text" id="address"></input>
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="zipcode">ZIP Code</label>
+                <input type="text" id="zipcode"></input>
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="city">City</label>
+                <input type="text" id="city"></input>
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="country">Country</label>
+                <input type="text" id="country"></input>
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-4">
             <h2 className="text-subtitle">Payment Details</h2>
-            {/* <div className="flex flex-row gap-2">
-              <input type="radio" id="eMoneyNum" name="eMoney"></input>
-              <label htmlFor="eMoneyNum">e-Money Number</label>
-            </div>
-            <div className="flex flex-row gap-2">
-              <input type="radio" id="eMoneyPin" name="eMoney"></input>
-              <label htmlFor="eMoneyPin">e-Money PIN</label>
-            </div> */}
-            <fieldset className="flex flex-col gap-2">
-              <legend>Payment Methods</legend>
-              <div className="flex flex-row gap-2">
-                <input type="radio" id="eMoneyNum" name="eMoney"></input>
+            <div className="flex flex-col gap-6">
+              <div
+                role="group"
+                aria-labelledby="paymentLegend"
+                className="flex flex-col gap-4"
+              >
+                <div id="paymentLegend" className="legend">
+                  Payment Method
+                </div>
+                <div className="flex flex-row gap-4">
+                  <input type="radio" id="eMoney" name="payMethod"></input>
+                  <label htmlFor="eMoney">e-Money</label>
+                </div>
+                <div className="flex flex-row gap-4">
+                  <input
+                    type="radio"
+                    id="cashOnDelivery"
+                    name="payMethod"
+                  ></input>
+                  <label htmlFor="cashOnDelivery">Cash on Delivery</label>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
                 <label htmlFor="eMoneyNum">e-Money Number</label>
+                <input type="text" id="eMoneyNum"></input>
               </div>
-              <div className="flex flex-row gap-2">
-                <input type="radio" id="eMoneyPin" name="eMoney"></input>
-                <label htmlFor="eMoneyPin">e-Money PIN</label>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="country">e-Money PIN</label>
+                <input type="text" id="country"></input>
               </div>
-            </fieldset>
+            </div>
           </div>
         </section>
         <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 py-8 uppercase">
