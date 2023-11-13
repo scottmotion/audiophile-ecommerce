@@ -46,6 +46,12 @@ export default {
           letterSpacing: "0px",
         },
         "p": { opacity: "0.5", whiteSpace: "pre-line" },
+        "label": {
+          fontSize: "12px",
+          fontWeight: "700",
+          lineHeight: "16px",
+          letterSpacing: "-.21px",
+        },
       });
     }),
     plugin(function ({ addComponents, theme }) {
