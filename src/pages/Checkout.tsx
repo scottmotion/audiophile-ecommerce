@@ -67,7 +67,12 @@ export default function Checkout() {
                   Payment Method
                 </div>
                 <div className="btn-select flex flex-row gap-4">
-                  <input type="radio" id="eMoney" name="payMethod"></input>
+                  <input
+                    type="radio"
+                    id="eMoney"
+                    name="payMethod"
+                    className="aspect-square w-5"
+                  ></input>
                   <label htmlFor="eMoney" className="label-select">
                     e-Money
                   </label>
@@ -77,6 +82,7 @@ export default function Checkout() {
                     type="radio"
                     id="cashOnDelivery"
                     name="payMethod"
+                    className="aspect-square w-5"
                   ></input>
                   <label htmlFor="cashOnDelivery" className="label-select">
                     Cash on Delivery
