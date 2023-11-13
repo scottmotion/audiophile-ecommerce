@@ -66,17 +66,21 @@ export default function Checkout() {
                 <div id="paymentLegend" className="legend">
                   Payment Method
                 </div>
-                <div className="flex flex-row gap-4">
+                <div className="btn-select flex flex-row gap-4">
                   <input type="radio" id="eMoney" name="payMethod"></input>
-                  <label htmlFor="eMoney">e-Money</label>
+                  <label htmlFor="eMoney" className="label-select">
+                    e-Money
+                  </label>
                 </div>
-                <div className="flex flex-row gap-4">
+                <div className="btn-select flex flex-row gap-4">
                   <input
                     type="radio"
                     id="cashOnDelivery"
                     name="payMethod"
                   ></input>
-                  <label htmlFor="cashOnDelivery">Cash on Delivery</label>
+                  <label htmlFor="cashOnDelivery" className="label-select">
+                    Cash on Delivery
+                  </label>
                 </div>
               </div>
               <div className="flex flex-col gap-2">
