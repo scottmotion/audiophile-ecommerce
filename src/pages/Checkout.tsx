@@ -12,7 +12,7 @@ export default function Checkout() {
         </div>
       </nav>
       <main className="flex w-full flex-col gap-[2rem] bg-light-grey px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
-        <section className="flex w-full max-w-content flex-col rounded-lg bg-white px-6 pb-8 pt-6">
+        <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 pb-8 pt-6">
           <h1 className="heading-5 md:heading-4">Checkout</h1>
           <div>
             <h2 className="text-subtitle">Billing Details</h2>
@@ -24,23 +24,26 @@ export default function Checkout() {
             <h2 className="text-subtitle">Payment Details</h2>
           </div>
         </section>
-        <section className="flex w-full max-w-content flex-col rounded-lg bg-white px-6 py-8 uppercase">
+        <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 py-8 uppercase">
           <h2 className="heading-7">Summary</h2>
-          <div className="flex justify-between">
-            <p>Total</p>
-            <p className="heading-7 opacity-100">$5396</p>
-          </div>
-          <div className="flex justify-between">
-            <p>Shipping</p>
-            <p className="heading-7 opacity-100">$50</p>
-          </div>
-          <div className="flex justify-between">
-            <p>VAT (included)</p>
-            <p className="heading-7 opacity-100">$1076</p>
-          </div>
-          <div className="flex justify-between">
-            <p>Grand Total</p>
-            <p className="heading-7 text-dark-orange opacity-100">$5446</p>
+          <div>Products</div>
+          <div className="flex flex-col gap-2">
+            <div className="flex justify-between">
+              <p>Total</p>
+              <p className="heading-7 opacity-100">$5396</p>
+            </div>
+            <div className="flex justify-between">
+              <p>Shipping</p>
+              <p className="heading-7 opacity-100">$50</p>
+            </div>
+            <div className="flex justify-between">
+              <p>VAT (included)</p>
+              <p className="heading-7 opacity-100">$1076</p>
+            </div>
+            <div className="flex justify-between">
+              <p>Grand Total</p>
+              <p className="heading-7 text-dark-orange opacity-100">$5446</p>
+            </div>
           </div>
           <button className="btn btn-1 w-full"> Continue & Pay</button>
         </section>
