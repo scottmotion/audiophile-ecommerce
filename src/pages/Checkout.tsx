@@ -17,7 +17,7 @@ export default function Checkout() {
 
           <div className="flex flex-col gap-4">
             <h2 className="text-subtitle">Billing Details</h2>
-            <div className="flex flex-col gap-6">
+            <div className="grid gap-6 md:grid-cols-2">
               <div className="flex flex-col gap-2">
                 <label htmlFor="name">Name</label>
                 <input type="text" id="name" placeholder="Alexei Ward"></input>
@@ -43,8 +43,8 @@ export default function Checkout() {
 
           <div className="flex flex-col gap-4">
             <h2 className="text-subtitle">Shipping Info</h2>
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-col gap-2">
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="flex flex-col gap-2 md:col-span-2">
                 <label htmlFor="address">Address</label>
                 <input
                   type="text"
@@ -73,16 +73,16 @@ export default function Checkout() {
 
           <div className="flex flex-col gap-4">
             <h2 className="text-subtitle">Payment Details</h2>
-            <div className="flex flex-col gap-6">
+            <div className="grid gap-6 md:grid-cols-2">
               <div
                 role="group"
                 aria-labelledby="paymentLegend"
-                className="flex flex-col gap-4"
+                className="grid gap-4 md:col-span-2 md:grid-cols-2"
               >
                 <div id="paymentLegend" className="legend">
                   Payment Method
                 </div>
-                <div className="btn-select flex flex-row gap-4">
+                <div className="btn-select flex flex-row gap-4 md:col-start-2">
                   <input
                     type="radio"
                     id="eMoney"
@@ -94,7 +94,7 @@ export default function Checkout() {
                     e-Money
                   </label>
                 </div>
-                <div className="btn-select flex flex-row gap-4">
+                <div className="btn-select flex flex-row gap-4 md:col-start-2">
                   <input
                     type="radio"
                     id="cashOnDelivery"
