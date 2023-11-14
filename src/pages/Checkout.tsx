@@ -121,9 +121,28 @@ export default function Checkout() {
             </div>
           </div>
         </section>
-        <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 py-8 uppercase">
+        <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 py-8">
           <h2 className="heading-7">Summary</h2>
-          <div>Products</div>
+          <div className="flex flex-col">
+            <div className="flex flex-row justify-between">
+              <div className="flex w-full flex-row gap-4">
+                <img
+                  src={`/assets/cart/image-xx59-headphones.jpg`}
+                  className="w-16 rounded-lg"
+                />
+                <div className="flex w-full flex-col justify-center">
+                  <div className="flex flex-row justify-between">
+                    <p className="font-bold uppercase opacity-100">
+                      item shortname
+                    </p>
+                    <p>x1</p>
+                  </div>
+                  <p className="uppercase">$ item price</p>
+                </div>
+              </div>
+              {/* <p>x1</p> */}
+            </div>
+          </div>
           <div className="flex flex-col gap-2">
             <div className="flex justify-between">
               <p>Total</p>
