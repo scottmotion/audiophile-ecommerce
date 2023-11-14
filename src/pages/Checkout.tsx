@@ -1,7 +1,29 @@
+import { useState } from "react";
+
 import { Link } from "react-router-dom";
 
 export default function Checkout() {
-  // const [formData, setFormData]
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    tel: "",
+    address: "",
+    zipcode: "",
+    city: "",
+    country: "",
+    payMethod: "eMoney",
+    eMoneyNum: "",
+    eMoneyPin: "",
+  });
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = event.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  }
+
   return (
     <>
       <nav className="flex w-full flex-col items-center justify-center bg-light-grey px-6 md:px-10">
@@ -26,7 +48,10 @@ export default function Checkout() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     placeholder="Alexei Ward"
+                    value={formData.name}
+                    onChange={handleChange}
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -34,7 +59,10 @@ export default function Checkout() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     placeholder="alexei@email.com"
+                    value={formData.email}
+                    onChange={handleChange}
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -42,7 +70,10 @@ export default function Checkout() {
                   <input
                     type="tel"
                     id="tel"
+                    name="tel"
                     placeholder="+1 202-555-0136"
+                    value={formData.tel}
+                    onChange={handleChange}
                   ></input>
                 </div>
               </div>
@@ -56,23 +87,43 @@ export default function Checkout() {
                   <input
                     type="text"
                     id="address"
+                    name="address"
                     placeholder="1137 Williams Avenue"
+                    value={formData.address}
+                    onChange={handleChange}
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="zipcode">ZIP Code</label>
-                  <input type="text" id="zipcode" placeholder="10001"></input>
+                  <input
+                    type="text"
+                    id="zipcode"
+                    name="zipcode"
+                    placeholder="10001"
+                    value={formData.zipcode}
+                    onChange={handleChange}
+                  ></input>
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="city">City</label>
-                  <input type="text" id="city" placeholder="New York"></input>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="New York"
+                    value={formData.city}
+                    onChange={handleChange}
+                  ></input>
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="country">Country</label>
                   <input
                     type="text"
                     id="country"
+                    name="country"
                     placeholder="United States"
+                    value={formData.country}
+                    onChange={handleChange}
                   ></input>
                 </div>
               </div>
@@ -94,7 +145,9 @@ export default function Checkout() {
                       type="radio"
                       id="eMoney"
                       name="payMethod"
-                      defaultChecked
+                      value="eMoney"
+                      onChange={handleChange}
+                      checked={formData.payMethod === "eMoney"}
                     ></input>
                     <label htmlFor="eMoney" className="label-select">
                       e-Money
@@ -105,6 +158,9 @@ export default function Checkout() {
                       type="radio"
                       id="cashOnDelivery"
                       name="payMethod"
+                      value="cashOnDelivery"
+                      onChange={handleChange}
+                      checked={formData.payMethod === "cashOnDelivery"}
                     ></input>
                     <label htmlFor="cashOnDelivery" className="label-select">
                       Cash on Delivery
@@ -116,12 +172,18 @@ export default function Checkout() {
                   <input
                     type="text"
                     id="eMoneyNum"
+                    name="eMoneyNum"
                     placeholder="238521993"
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="eMoneyPin">e-Money PIN</label>
-                  <input type="text" id="eMoneyPin" placeholder="6891"></input>
+                  <input
+                    type="text"
+                    id="eMoneyPin"
+                    placeholder="6891"
+                    name="eMoneyPin"
+                  ></input>
                 </div>
               </div>
             </div>
@@ -168,7 +230,7 @@ export default function Checkout() {
                   </p>
                 </div>
               </div>
-              <button className="btn btn-1 w-full"> Continue & Pay</button>
+              <button className="btn btn-1 w-full">Continue & Pay</button>
             </div>
           </section>
         </div>
