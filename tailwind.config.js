@@ -33,6 +33,7 @@ export default {
     },
   },
   plugins: [
+    require("@tailwindcss/forms"),
     plugin(function ({ addBase, theme }) {
       addBase({
         "@font-face": {
@@ -45,7 +46,7 @@ export default {
           lineHeight: "25px",
           letterSpacing: "0px",
         },
-        "input": {
+        "input[type='text'], input[type='email'], input[type='tel']": {
           borderWidth: "1px",
           borderStyle: "solid",
           borderColor: "#CFCFCF",
@@ -57,6 +58,10 @@ export default {
           paddingBlock: "1.125rem",
           paddingInline: "1.5rem",
         },
+        "input[type='radio']:checked": {
+          color: theme("colors.dark-orange"),
+        },
+
         "label": {
           fontSize: "12px",
           fontWeight: "700",
