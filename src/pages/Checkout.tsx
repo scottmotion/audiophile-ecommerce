@@ -20,15 +20,23 @@ export default function Checkout() {
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name"></input>
+                <input type="text" id="name" placeholder="Alexei Ward"></input>
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="email">Email Address</label>
-                <input type="email" id="email"></input>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="alexei@email.com"
+                ></input>
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="tel">Phone Number</label>
-                <input type="tel" id="tel"></input>
+                <input
+                  type="tel"
+                  id="tel"
+                  placeholder="+1 202-555-0136"
+                ></input>
               </div>
             </div>
           </div>
@@ -38,19 +46,27 @@ export default function Checkout() {
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
                 <label htmlFor="address">Address</label>
-                <input type="text" id="address"></input>
+                <input
+                  type="text"
+                  id="address"
+                  placeholder="1137 Williams Avenue"
+                ></input>
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="zipcode">ZIP Code</label>
-                <input type="text" id="zipcode"></input>
+                <input type="text" id="zipcode" placeholder="10001"></input>
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="city">City</label>
-                <input type="text" id="city"></input>
+                <input type="text" id="city" placeholder="New York"></input>
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="country">Country</label>
-                <input type="text" id="country"></input>
+                <input
+                  type="text"
+                  id="country"
+                  placeholder="United States"
+                ></input>
               </div>
             </div>
           </div>
@@ -72,6 +88,7 @@ export default function Checkout() {
                     id="eMoney"
                     name="payMethod"
                     className="aspect-square w-5"
+                    defaultChecked
                   ></input>
                   <label htmlFor="eMoney" className="label-select">
                     e-Money
@@ -91,11 +108,15 @@ export default function Checkout() {
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="eMoneyNum">e-Money Number</label>
-                <input type="text" id="eMoneyNum"></input>
+                <input
+                  type="text"
+                  id="eMoneyNum"
+                  placeholder="238521993"
+                ></input>
               </div>
               <div className="flex flex-col gap-2">
-                <label htmlFor="country">e-Money PIN</label>
-                <input type="text" id="country"></input>
+                <label htmlFor="eMoneyPin">e-Money PIN</label>
+                <input type="text" id="eMoneyPin" placeholder="6891"></input>
               </div>
             </div>
           </div>
