@@ -98,6 +98,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   function removeAllFromCart() {
     setCartItems([]);
   }
+
   return (
     <ShoppingCartContext.Provider
       value={{
