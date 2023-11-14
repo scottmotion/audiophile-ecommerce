@@ -140,7 +140,6 @@ export default function Checkout() {
                   <p className="uppercase">$ item price</p>
                 </div>
               </div>
-              {/* <p>x1</p> */}
             </div>
           </div>
           <div className="flex flex-col gap-2">
