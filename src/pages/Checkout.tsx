@@ -18,7 +18,7 @@ export default function Checkout() {
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
-    console.log("name: ", name, " - value: ", value);
+    // console.log("name: ", name, " - value: ", value);
     setFormData(prevFormData => ({
       ...prevFormData,
       [name]: value,
