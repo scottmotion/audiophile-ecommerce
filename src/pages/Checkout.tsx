@@ -18,6 +18,7 @@ export default function Checkout() {
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
+    console.log("name: ", name, " - value: ", value);
     setFormData(prevFormData => ({
       ...prevFormData,
       [name]: value,
@@ -174,6 +175,8 @@ export default function Checkout() {
                     id="eMoneyNum"
                     name="eMoneyNum"
                     placeholder="238521993"
+                    value={formData.eMoneyNum}
+                    onChange={handleChange}
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -181,8 +184,10 @@ export default function Checkout() {
                   <input
                     type="text"
                     id="eMoneyPin"
-                    placeholder="6891"
                     name="eMoneyPin"
+                    placeholder="6891"
+                    value={formData.eMoneyPin}
+                    onChange={handleChange}
                   ></input>
                 </div>
               </div>
