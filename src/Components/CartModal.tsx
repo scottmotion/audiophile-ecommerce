@@ -29,6 +29,7 @@ export default function CartModal({ setShowCart }: CartModalProps) {
       for (let i = 0; i < cartItems.length; i++) {
         const result = await fetchProductById(cartItems[i].id);
         if (!ignore && result) {
+          // const newResult = { ...result, quantity: cartItems[i].quantity };
           tempCart.push(result);
           tempTotal = tempTotal + cartItems[i].quantity * result.price;
         }
