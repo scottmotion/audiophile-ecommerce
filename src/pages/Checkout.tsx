@@ -2,7 +2,12 @@ import { useState } from "react";
 
 import { Link } from "react-router-dom";
 
+import ConfirmationModal from "../components/ConfirmationModal";
+
 export default function Checkout() {
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const confirmationVisibility = showConfirmation ? "visible" : "invisible";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -235,11 +240,19 @@ export default function Checkout() {
                   </p>
                 </div>
               </div>
-              <button className="btn btn-1 w-full">Continue & Pay</button>
+              <button
+                className="btn btn-1 w-full"
+                onClick={() => setShowConfirmation(true)}
+              >
+                Continue & Pay
+              </button>
             </div>
           </section>
         </div>
       </main>
+      <div className={`${confirmationVisibility} z-50 w-full`}>
+        <ConfirmationModal setShowConfirmation={setShowConfirmation} />
+      </div>
     </>
   );
 }
