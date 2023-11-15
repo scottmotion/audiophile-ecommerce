@@ -10,7 +10,7 @@ export default function Checkout() {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const confirmationVisibility = showConfirmation ? "visible" : "invisible";
 
-  // hide overflow on body when mobile menu / modal is open
+  // hide overflow on body when modal is open
   useEffect(() => {
     if (showConfirmation) {
       document.body.classList.add("overflow-hidden");
