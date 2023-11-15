@@ -30,6 +30,13 @@ export default function Checkout() {
     }));
   }
 
+  function handleSetPaymentMethod(method: string) {
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      payMethod: method,
+    }));
+  }
+
   return (
     <>
       <nav className="flex w-full flex-col items-center justify-center bg-light-grey px-6 md:px-10">
@@ -146,7 +153,14 @@ export default function Checkout() {
                   <div id="paymentLegend" className="legend">
                     Payment Method
                   </div>
-                  <div className="btn-select flex flex-row gap-4 md:col-start-2">
+                  <div
+                    className={`btn-select flex flex-row gap-4 md:col-start-2 ${
+                      formData.payMethod === "eMoney"
+                        ? "border-dark-orange"
+                        : ""
+                    }`}
+                    onClick={() => handleSetPaymentMethod("eMoney")}
+                  >
                     <input
                       type="radio"
                       id="eMoney"
@@ -159,7 +173,14 @@ export default function Checkout() {
                       e-Money
                     </label>
                   </div>
-                  <div className="btn-select flex flex-row gap-4 md:col-start-2">
+                  <div
+                    className={`btn-select flex flex-row gap-4 md:col-start-2 ${
+                      formData.payMethod === "cashOnDelivery"
+                        ? "border-dark-orange"
+                        : ""
+                    }`}
+                    onClick={() => handleSetPaymentMethod("cashOnDelivery")}
+                  >
                     <input
                       type="radio"
                       id="cashOnDelivery"
@@ -173,6 +194,7 @@ export default function Checkout() {
                     </label>
                   </div>
                 </div>
+
                 <div className="flex flex-col gap-2">
                   <label htmlFor="eMoneyNum">e-Money Number</label>
                   <input
