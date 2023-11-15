@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type ConfirmationModalProps = {
   setShowConfirmation: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -16,8 +18,15 @@ export default function ConfirmationModal({
         id="confirmation"
         className="absolute left-1/2 top-1/2 z-40 flex max-h-[calc(100vh-8rem)] w-full max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-1/2 flex-col justify-start gap-3 overflow-y-auto rounded-lg bg-white p-6 md:max-w-[23.5rem]"
       >
+        <Link
+          to={"/"}
+          relative="path"
+          onClick={() => setShowConfirmation(false)}
+        >
+          <button className="btn btn-1 w-full">Back to Home</button>
+        </Link>
         <button
-          className="btn btn-1"
+          className="btn btn-2"
           onClick={() => setShowConfirmation(false)}
         >
           Close Modal
