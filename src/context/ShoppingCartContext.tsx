@@ -7,6 +7,9 @@ type ShoppingCartProviderProps = {
 
 type CartItem = {
   id: number;
+  slug: string;
+  shortName: string;
+  price: number;
   quantity: number;
 };
 
