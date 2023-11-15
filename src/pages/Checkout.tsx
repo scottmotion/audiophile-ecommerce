@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,15 @@ import ConfirmationModal from "../components/ConfirmationModal";
 export default function Checkout() {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const confirmationVisibility = showConfirmation ? "visible" : "invisible";
+
+  // hide overflow on body when mobile menu / modal is open
+  useEffect(() => {
+    if (showConfirmation) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [showConfirmation]);
 
   const [formData, setFormData] = useState({
     name: "",
