@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { Link } from "react-router-dom";
 
+import { ReactComponent as CashOnDeliveryIcon } from "/src/assets/icons/icon-cash-on-delivery.svg";
+
 import ConfirmationModal from "../components/ConfirmationModal";
 
 export default function Checkout() {
@@ -195,28 +197,43 @@ export default function Checkout() {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="eMoneyNum">e-Money Number</label>
-                  <input
-                    type="text"
-                    id="eMoneyNum"
-                    name="eMoneyNum"
-                    placeholder="238521993"
-                    value={formData.eMoneyNum}
-                    onChange={handleChange}
-                  ></input>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="eMoneyPin">e-Money PIN</label>
-                  <input
-                    type="text"
-                    id="eMoneyPin"
-                    name="eMoneyPin"
-                    placeholder="6891"
-                    value={formData.eMoneyPin}
-                    onChange={handleChange}
-                  ></input>
-                </div>
+                {formData.payMethod === "eMoney" && (
+                  <>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="eMoneyNum">e-Money Number</label>
+                      <input
+                        type="text"
+                        id="eMoneyNum"
+                        name="eMoneyNum"
+                        placeholder="238521993"
+                        value={formData.eMoneyNum}
+                        onChange={handleChange}
+                      ></input>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="eMoneyPin">e-Money PIN</label>
+                      <input
+                        type="text"
+                        id="eMoneyPin"
+                        name="eMoneyPin"
+                        placeholder="6891"
+                        value={formData.eMoneyPin}
+                        onChange={handleChange}
+                      ></input>
+                    </div>
+                  </>
+                )}
+                {formData.payMethod === "cashOnDelivery" && (
+                  <div className="flex flex-row gap-6 md:col-span-2 md:gap-8">
+                    <CashOnDeliveryIcon className="shrink-0" />
+                    <p>
+                      The ‘Cash on Delivery’ option enables you to pay in cash
+                      when our delivery courier arrives at your residence. Just
+                      make sure your address is correct so that your order will
+                      not be cancelled.
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </section>
