@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* lock page for modal */
+/* .scroll-locked {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+} */

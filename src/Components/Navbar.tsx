@@ -16,6 +16,15 @@ export default function Navbar() {
   const [showCart, setShowCart] = useState(false);
   const cartVisibility = showCart ? "visible" : "invisible";
 
+  // Lock scrollbar whne modal is showing
+  // useEffect(() => {
+  //   if (showMobileMenu || showCart) {
+  //     document.body.classList.add("scroll-locked");
+  //   } else {
+  //     document.body.classList.remove("scroll-locked");
+  //   }
+  // }, [showMobileMenu, showCart]);
+
   const match = useMatch("/");
   const scrollPosition = useScrollPosition();
   const backgroundColor =
