@@ -62,8 +62,22 @@ export default {
           "lineHeight": "19px",
           "paddingBlock": "1.125rem",
           "paddingInline": "1.5rem",
+          "&:focus": {
+            outline: "none",
+            outlineWidth: "0",
+            boxShadow: "none",
+            borderColor: theme("colors.dark-orange"),
+          },
           "&:focus::placeholder": {
             visibility: "hidden",
+          },
+        },
+        "input[type='radio']": {
+          "&:focus": {
+            outline: "none",
+            outlineWidth: "0",
+            boxShadow: "none",
+            borderColor: theme("colors.dark-orange"),
           },
         },
         "input[type='radio']:checked": {
