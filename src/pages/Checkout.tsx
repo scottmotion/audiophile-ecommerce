@@ -7,7 +7,7 @@ import ConfirmationModal from "../components/ConfirmationModal";
 import { ReactComponent as CashOnDeliveryIcon } from "/src/assets/icons/icon-cash-on-delivery.svg";
 
 export default function Checkout() {
-  const { cartItems, cartTotal } = useShoppingCart();
+  const { cartItems, cartTotal, cartShipping, cartVat } = useShoppingCart();
 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const confirmationVisibility = showConfirmation ? "visible" : "invisible";
@@ -282,16 +282,20 @@ export default function Checkout() {
                 </div>
                 <div className="flex justify-between">
                   <p>Shipping</p>
-                  <p className="heading-7 opacity-100">$50</p>
+                  <p className="heading-7 opacity-100">
+                    $ {cartShipping.toLocaleString()}
+                  </p>
                 </div>
                 <div className="flex justify-between">
                   <p>VAT (included)</p>
-                  <p className="heading-7 opacity-100">$1076</p>
+                  <p className="heading-7 opacity-100">
+                    $ {cartVat.toLocaleString()}
+                  </p>
                 </div>
                 <div className="mt-4 flex justify-between">
                   <p>Grand Total</p>
                   <p className="heading-7 text-dark-orange opacity-100">
-                    $5446
+                    $ {cartTotal + cartShipping + cartVat}
                   </p>
                 </div>
               </div>
