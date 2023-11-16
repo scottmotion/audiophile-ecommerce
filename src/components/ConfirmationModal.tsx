@@ -11,7 +11,7 @@ type ConfirmationModalProps = {
 export default function ConfirmationModal({
   setShowConfirmation,
 }: ConfirmationModalProps) {
-  const { cartItems, cartTotal } = useShoppingCart();
+  const { cartItems } = useShoppingCart();
 
   return (
     <>
