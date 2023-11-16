@@ -50,16 +50,11 @@ export default function Checkout() {
     }));
   }
 
-  function handleSubmit() {
-    setShowConfirmation(true);
-    console.log("SUBMIT");
-  }
-
   return (
     <>
       <nav className="flex w-full flex-col items-center justify-center bg-light-grey px-6 md:px-10">
         <div className="flex w-full max-w-content flex-row pb-6 pt-4 md:pt-8 lg:pb-14 lg:pt-20">
-          <BackButton />{" "}
+          <BackButton />
         </div>
       </nav>
       <main className="flex w-full flex-col items-center  bg-light-grey px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
@@ -302,9 +297,8 @@ export default function Checkout() {
                 </div>
               </div>
               <button
-                type="submit"
                 className="btn btn-1 w-full"
-                onClick={handleSubmit}
+                onClick={() => setShowConfirmation(true)}
                 disabled={cartTotal < 1}
               >
                 Continue & Pay
