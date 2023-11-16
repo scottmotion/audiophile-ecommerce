@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useContext } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import { fetchProductById } from "../api/fetchApi";
 
 type ShoppingCartProviderProps = {
   children: ReactNode;
@@ -22,6 +23,7 @@ type ShoppingCartContext = {
   removeAllFromCart: () => void;
   cartQuantity: number;
   cartItems: CartItem[];
+  cartTotal: number;
 };
 const ShoppingCartContext = createContext({} as ShoppingCartContext);
 
@@ -40,14 +42,50 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     0,
   );
 
+  const cartTotal = (cartItems as CartItem[]).reduce(
+    (total, item) => item.quantity * item.price + total,
+    0,
+  );
+
   function getItemQuantity(id: number) {
     return cartItems.find((item: CartItem) => item.id === id)?.quantity || 0;
   }
 
-  function addItemToCart(id: number, quantity: number) {
+  // function addItemToCart(id: number, quantity: number) {
+  //   setCartItems(async (currItems: CartItem[]) => {
+  //     if (currItems.find(item => item.id === id) == null) {
+  //       return [...currItems, { id, quantity }];
+  //     } else {
+  //       return currItems.map(item => {
+  //         if (item.id === id) {
+  //           return { ...item, quantity: item.quantity + quantity };
+  //         } else {
+  //           return item;
+  //         }
+  //       });
+  //     }
+  //   });
+  // }
+
+  async function addItemToCart(id: number, quantity: number) {
+    const result = await fetchProductById(id);
+
     setCartItems((currItems: CartItem[]) => {
       if (currItems.find(item => item.id === id) == null) {
-        return [...currItems, { id, quantity }];
+        if (result !== undefined) {
+          return [
+            ...currItems,
+            {
+              id: id,
+              slug: result.slug,
+              shortName: result.shortName,
+              price: result.price,
+              quantity: quantity,
+            },
+          ];
+        } else {
+          return [...currItems];
+        }
       } else {
         return currItems.map(item => {
           if (item.id === id) {
@@ -113,6 +151,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         removeAllFromCart,
         cartQuantity,
         cartItems,
+        cartTotal,
       }}
     >
       {children}
