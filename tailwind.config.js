@@ -17,6 +17,7 @@ export default {
         "off-white": "#fafafa",
         "white": "#ffffff",
         "black": "#000000",
+        "red": "#CD2C2C",
       },
       content: {
         "home-mobile": "url('/assets/home/mobile/image-header.jpg')",
