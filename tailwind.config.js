@@ -91,12 +91,18 @@ export default {
           "&:hover": {
             backgroundColor: theme("colors.light-orange"),
           },
+          "&:disabled": {
+            backgroundColor: theme("colors.dark-orange"),
+          },
         },
         ".btn-2": {
           "backgroundColor": theme("colors.black"),
           "color": theme("colors.white"),
           "&:hover": {
             backgroundColor: theme("colors.dark-grey"),
+          },
+          "&:disabled": {
+            backgroundColor: theme("colors.black"),
           },
         },
         ".btn-3": {
@@ -107,6 +113,10 @@ export default {
             color: theme("colors.white"),
             backgroundColor: theme("colors.black"),
           },
+          "&:disabled": {
+            backgroundColor: "transparent",
+            color: theme("colors.black"),
+          },
         },
         ".btn-4": {
           "backgroundColor": "transparent",
@@ -114,6 +124,9 @@ export default {
           "padding": "0",
           "&:hover": {
             color: theme("colors.dark-orange"),
+          },
+          "&:disabled": {
+            color: theme("colors.medium-grey"),
           },
           "&:after": {
             content: theme("content.icon-arrow-right"),
