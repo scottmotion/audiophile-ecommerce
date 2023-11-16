@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 import ConfirmationModal from "../components/ConfirmationModal";
 import BackButton from "../components/BackButton";
 
 import { ReactComponent as CashOnDeliveryIcon } from "/src/assets/icons/icon-cash-on-delivery.svg";
+
+type InputsType = {
+  name: string;
+};
 
 export default function Checkout() {
   const { cartItems, cartTotal, cartShipping, cartVat, cartGrandTotal } =
@@ -50,10 +55,20 @@ export default function Checkout() {
     }));
   }
 
-  function handleSubmit() {
-    // setShowConfirmation(true);
-    console.log("Submitted");
-  }
+  // function handleSubmit() {
+  //   // setShowConfirmation(true);
+  //   console.log("Submitted");
+  // }
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<InputsType>();
+  const onSubmit: SubmitHandler<InputsType> = data => {
+    console.log("formData: ", formData);
+    console.log(data);
+  };
 
   return (
     <>
@@ -64,7 +79,7 @@ export default function Checkout() {
       </nav>
       <main className="flex w-full flex-col items-center  bg-light-grey px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
         <form
-          onSubmit={e => e.preventDefault()}
+          onSubmit={handleSubmit(onSubmit)}
           className="grid w-full max-w-content gap-[2rem] lg:grid-cols-3"
         >
           <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 pb-8 pt-6 lg:col-span-2">
@@ -74,15 +89,23 @@ export default function Checkout() {
               <h2 className="text-subtitle">Billing Details</h2>
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name">Name</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="name">Name</label>
+                    {errors.name && (
+                      <div className="error">Name is required.</div>
+                    )}
+                  </div>
                   <input
+                    {...register("name", { required: true })}
                     type="text"
                     id="name"
-                    name="name"
+                    // name="name"
                     placeholder="Alexei Ward"
                     value={formData.name}
                     onChange={handleChange}
-                    required
+                    className={`${
+                      errors.name && "outline-red outline -outline-offset-1"
+                    }`}
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -94,7 +117,7 @@ export default function Checkout() {
                     placeholder="alexei@email.com"
                     value={formData.email}
                     onChange={handleChange}
-                    required
+                    // required
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -106,7 +129,7 @@ export default function Checkout() {
                     placeholder="+1 202-555-0136"
                     value={formData.tel}
                     onChange={handleChange}
-                    required
+                    // required
                   ></input>
                 </div>
               </div>
@@ -124,7 +147,7 @@ export default function Checkout() {
                     placeholder="1137 Williams Avenue"
                     value={formData.address}
                     onChange={handleChange}
-                    required
+                    // required
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -136,7 +159,7 @@ export default function Checkout() {
                     placeholder="10001"
                     value={formData.zipcode}
                     onChange={handleChange}
-                    required
+                    // required
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -148,7 +171,7 @@ export default function Checkout() {
                     placeholder="New York"
                     value={formData.city}
                     onChange={handleChange}
-                    required
+                    // required
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -160,7 +183,7 @@ export default function Checkout() {
                     placeholder="United States"
                     value={formData.country}
                     onChange={handleChange}
-                    required
+                    // required
                   ></input>
                 </div>
               </div>
@@ -230,7 +253,7 @@ export default function Checkout() {
                         placeholder="238521993"
                         value={formData.eMoneyNum}
                         onChange={handleChange}
-                        required={formData.payMethod === "eMoney"}
+                        // required={formData.payMethod === "eMoney"}
                       ></input>
                     </div>
                     <div className="flex flex-col gap-2">
@@ -242,7 +265,7 @@ export default function Checkout() {
                         placeholder="6891"
                         value={formData.eMoneyPin}
                         onChange={handleChange}
-                        required={formData.payMethod === "eMoney"}
+                        // required={formData.payMethod === "eMoney"}
                       ></input>
                     </div>
                   </>
@@ -314,8 +337,9 @@ export default function Checkout() {
                 </div>
               </div>
               <button
+                type="submit"
                 className="btn btn-1 w-full"
-                onClick={handleSubmit}
+                // onClick={handleSubmit}
                 disabled={cartTotal < 1}
               >
                 Continue & Pay
