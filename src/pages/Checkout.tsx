@@ -50,6 +50,11 @@ export default function Checkout() {
     }));
   }
 
+  function handleSubmit() {
+    // setShowConfirmation(true);
+    console.log("Submitted");
+  }
+
   return (
     <>
       <nav className="flex w-full flex-col items-center justify-center bg-light-grey px-6 md:px-10">
@@ -58,7 +63,10 @@ export default function Checkout() {
         </div>
       </nav>
       <main className="flex w-full flex-col items-center  bg-light-grey px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
-        <div className="grid w-full max-w-content gap-[2rem] lg:grid-cols-3">
+        <form
+          onSubmit={e => e.preventDefault()}
+          className="grid w-full max-w-content gap-[2rem] lg:grid-cols-3"
+        >
           <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 pb-8 pt-6 lg:col-span-2">
             <h1 className="heading-5 md:heading-4">Checkout</h1>
 
@@ -74,6 +82,7 @@ export default function Checkout() {
                     placeholder="Alexei Ward"
                     value={formData.name}
                     onChange={handleChange}
+                    required
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -85,6 +94,7 @@ export default function Checkout() {
                     placeholder="alexei@email.com"
                     value={formData.email}
                     onChange={handleChange}
+                    required
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -96,6 +106,7 @@ export default function Checkout() {
                     placeholder="+1 202-555-0136"
                     value={formData.tel}
                     onChange={handleChange}
+                    required
                   ></input>
                 </div>
               </div>
@@ -113,6 +124,7 @@ export default function Checkout() {
                     placeholder="1137 Williams Avenue"
                     value={formData.address}
                     onChange={handleChange}
+                    required
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -124,6 +136,7 @@ export default function Checkout() {
                     placeholder="10001"
                     value={formData.zipcode}
                     onChange={handleChange}
+                    required
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -135,6 +148,7 @@ export default function Checkout() {
                     placeholder="New York"
                     value={formData.city}
                     onChange={handleChange}
+                    required
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -146,6 +160,7 @@ export default function Checkout() {
                     placeholder="United States"
                     value={formData.country}
                     onChange={handleChange}
+                    required
                   ></input>
                 </div>
               </div>
@@ -215,6 +230,7 @@ export default function Checkout() {
                         placeholder="238521993"
                         value={formData.eMoneyNum}
                         onChange={handleChange}
+                        required={formData.payMethod === "eMoney"}
                       ></input>
                     </div>
                     <div className="flex flex-col gap-2">
@@ -226,6 +242,7 @@ export default function Checkout() {
                         placeholder="6891"
                         value={formData.eMoneyPin}
                         onChange={handleChange}
+                        required={formData.payMethod === "eMoney"}
                       ></input>
                     </div>
                   </>
@@ -298,14 +315,14 @@ export default function Checkout() {
               </div>
               <button
                 className="btn btn-1 w-full"
-                onClick={() => setShowConfirmation(true)}
+                onClick={handleSubmit}
                 disabled={cartTotal < 1}
               >
                 Continue & Pay
               </button>
             </div>
           </section>
-        </div>
+        </form>
       </main>
       <div className={`${confirmationVisibility} z-50 w-full`}>
         <ConfirmationModal setShowConfirmation={setShowConfirmation} />
