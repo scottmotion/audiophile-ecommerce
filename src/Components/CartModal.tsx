@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 
 import { useShoppingCart } from "../context/ShoppingCartContext";
-// import { fetchProductById } from "../api/fetchApi";
-// import { ProductData } from "../types/ProductType";
-// import { useEffect, useState } from "react";
 
 type CartModalProps = {
   setShowCart: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,37 +15,6 @@ export default function CartModal({ setShowCart }: CartModalProps) {
     decreaseItemQuantity,
     removeAllFromCart,
   } = useShoppingCart();
-
-  // const [currentCart, setCurrentCart] = useState<ProductData[] | null>(null);
-  // const [currentTotal, setCurrentTotal] = useState<number>(0);
-
-  // useEffect(() => {
-  //   let tempCart: ProductData[] = [];
-  //   let tempTotal = 0;
-
-  //   async function startFetching() {
-  //     for (let i = 0; i < cartItems.length; i++) {
-  //       const result = await fetchProductById(cartItems[i].id);
-  //       if (!ignore && result) {
-  //         // const newResult = { ...result, quantity: cartItems[i].quantity };
-  //         tempCart.push(result);
-  //         tempTotal = tempTotal + cartItems[i].quantity * result.price;
-  //       }
-  //     }
-  //     setCurrentCart(tempCart);
-  //     setCurrentTotal(tempTotal);
-  //   }
-
-  //   let ignore = false;
-  //   startFetching();
-  //   return () => {
-  //     ignore = true;
-  //   };
-  // }, [cartItems]);
-
-  // console.log("cart modal cartItems: ", cartItems);
-  // console.log("cart modal currentCart: ", currentCart);
-  // console.log("cart quantity: ", cartQuantity);
 
   return (
     <>
