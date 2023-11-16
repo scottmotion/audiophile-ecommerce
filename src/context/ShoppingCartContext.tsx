@@ -15,7 +15,7 @@ type CartItem = {
 };
 
 type ShoppingCartContext = {
-  getItemQuantity: (id: number) => number;
+  // getItemQuantity: (id: number) => number;
   addItemToCart: (id: number, quantity: number) => void;
   increaseItemQuantity: (id: number) => void;
   decreaseItemQuantity: (id: number) => void;
@@ -47,9 +47,9 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     0,
   );
 
-  function getItemQuantity(id: number) {
-    return cartItems.find((item: CartItem) => item.id === id)?.quantity || 0;
-  }
+  // function getItemQuantity(id: number) {
+  //   return cartItems.find((item: CartItem) => item.id === id)?.quantity || 0;
+  // }
 
   // function addItemToCart(id: number, quantity: number) {
   //   setCartItems(async (currItems: CartItem[]) => {
@@ -143,7 +143,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   return (
     <ShoppingCartContext.Provider
       value={{
-        getItemQuantity,
+        // getItemQuantity,
         addItemToCart,
         increaseItemQuantity,
         decreaseItemQuantity,
