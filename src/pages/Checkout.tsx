@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-
 import { Link } from "react-router-dom";
-
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
-import { ReactComponent as CashOnDeliveryIcon } from "/src/assets/icons/icon-cash-on-delivery.svg";
-
 import ConfirmationModal from "../components/ConfirmationModal";
+
+import { ReactComponent as CashOnDeliveryIcon } from "/src/assets/icons/icon-cash-on-delivery.svg";
 
 export default function Checkout() {
   const { cartItems, cartTotal } = useShoppingCart();
@@ -38,7 +36,6 @@ export default function Checkout() {
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
-    // console.log("name: ", name, " - value: ", value);
     setFormData(prevFormData => ({
       ...prevFormData,
       [name]: value,

@@ -69,7 +69,6 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
 
   async function addItemToCart(id: number, quantity: number) {
     const result = await fetchProductById(id);
-
     setCartItems((currItems: CartItem[]) => {
       if (currItems.find(item => item.id === id) == null) {
         if (result !== undefined) {
