@@ -47,23 +47,28 @@ export default {
           lineHeight: "25px",
           letterSpacing: "0px",
         },
+        "input": {
+          cursor: "pointer",
+        },
         "input[type='text'], input[type='email'], input[type='tel']": {
-          borderWidth: "1px",
-          borderStyle: "solid",
-          borderColor: "#CFCFCF",
-          borderRadius: "0.5rem",
-          caretColor: theme("colors.dark-orange"),
-          fontSize: "14px",
-          fontWeight: "700",
-          letterSpacing: "-0.25px",
-          lineHeight: "19px",
-          paddingBlock: "1.125rem",
-          paddingInline: "1.5rem",
+          "borderWidth": "1px",
+          "borderStyle": "solid",
+          "borderColor": "#CFCFCF",
+          "borderRadius": "0.5rem",
+          "caretColor": theme("colors.dark-orange"),
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "letterSpacing": "-0.25px",
+          "lineHeight": "19px",
+          "paddingBlock": "1.125rem",
+          "paddingInline": "1.5rem",
+          "&:focus::placeholder": {
+            visibility: "hidden",
+          },
         },
         "input[type='radio']:checked": {
           color: theme("colors.dark-orange"),
         },
-
         "label": {
           fontSize: "12px",
           fontWeight: "700",
@@ -157,10 +162,12 @@ export default {
           border: "none",
         },
         ".btn-select": {
+          "alignItems": "center",
           "borderWidth": "1px",
           "borderStyle": "solid",
           "borderColor": "#CFCFCF",
           "borderRadius": "0.5rem",
+          "cursor": "pointer",
           "paddingBlock": "1.125rem",
           "paddingInline": "1.5rem",
           "&:hover": {
@@ -230,6 +237,7 @@ export default {
           letterSpacing: "-0.21px",
         },
         ".label-select": {
+          cursor: "pointer",
           fontSize: "14px",
           fontWeight: "700",
           lineHeight: "19px",
