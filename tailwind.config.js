@@ -52,6 +52,7 @@ export default {
           borderStyle: "solid",
           borderColor: "#CFCFCF",
           borderRadius: "0.5rem",
+          caretColor: theme("colors.dark-orange"),
           fontSize: "14px",
           fontWeight: "700",
           letterSpacing: "-0.25px",
