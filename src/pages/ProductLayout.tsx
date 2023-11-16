@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 import { fetchProductBySlug } from "../api/fetchApi";
@@ -8,6 +8,8 @@ import { ProductData } from "../types/ProductType";
 import ProductOthers from "../components/ProductOthers";
 import CategoryNav from "../components/CategoryNav";
 import BestGear from "../components/BestGear";
+
+import BackButton from "../components/BackButton";
 
 type ProductLayoutParams = {
   slug: string;
@@ -61,11 +63,7 @@ export default function ProductLayout() {
     <>
       <nav className="flex w-full flex-col items-center justify-center px-6 md:px-10">
         <div className="flex w-full max-w-content flex-row pb-6 pt-4 md:pt-8 lg:pb-14 lg:pt-20">
-          <Link to={".."} relative="path">
-            <button>
-              <p className="hover:text-dark-orange">Go Back</p>
-            </button>
-          </Link>
+          <BackButton />{" "}
         </div>
       </nav>
 

@@ -134,6 +134,13 @@ export default {
             verticalAlign: "middle",
           },
         },
+        ".btn-back": {
+          "opacity": "0.5",
+          "&:hover": {
+            opacity: "1",
+            color: theme("colors.dark-orange"),
+          },
+        },
         ".btn-quantity": {
           display: "flex",
           width: "2.5rem",

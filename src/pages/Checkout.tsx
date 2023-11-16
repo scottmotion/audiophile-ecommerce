@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 import ConfirmationModal from "../components/ConfirmationModal";
+import BackButton from "../components/BackButton";
 
 import { ReactComponent as CashOnDeliveryIcon } from "/src/assets/icons/icon-cash-on-delivery.svg";
 
@@ -54,11 +54,7 @@ export default function Checkout() {
     <>
       <nav className="flex w-full flex-col items-center justify-center bg-light-grey px-6 md:px-10">
         <div className="flex w-full max-w-content flex-row pb-6 pt-4 md:pt-8 lg:pb-14 lg:pt-20">
-          <Link to={".."} relative="path">
-            <button>
-              <p>Go Back</p>
-            </button>
-          </Link>
+          <BackButton />{" "}
         </div>
       </nav>
       <main className="flex w-full flex-col items-center  bg-light-grey px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
