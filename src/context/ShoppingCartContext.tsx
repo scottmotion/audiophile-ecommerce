@@ -26,6 +26,7 @@ type ShoppingCartContext = {
   cartTotal: number;
   cartShipping: number;
   cartVat: number;
+  cartGrandTotal: number;
 };
 const ShoppingCartContext = createContext({} as ShoppingCartContext);
 
@@ -51,6 +52,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
 
   const cartShipping = cartTotal > 0 ? 50 : 0;
   const cartVat = cartTotal > 0 ? 1079 : 0;
+  const cartGrandTotal = cartTotal + cartShipping + cartVat;
 
   // function getItemQuantity(id: number) {
   //   return cartItems.find((item: CartItem) => item.id === id)?.quantity || 0;
@@ -158,6 +160,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         cartTotal,
         cartShipping,
         cartVat,
+        cartGrandTotal,
       }}
     >
       {children}
