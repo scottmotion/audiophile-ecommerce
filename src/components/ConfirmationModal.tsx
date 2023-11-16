@@ -11,7 +11,7 @@ type ConfirmationModalProps = {
 export default function ConfirmationModal({
   setShowConfirmation,
 }: ConfirmationModalProps) {
-  const { cartItems } = useShoppingCart();
+  const { cartItems, cartGrandTotal } = useShoppingCart();
 
   return (
     <>
@@ -64,7 +64,9 @@ export default function ConfirmationModal({
             </div>
             <div className="flex flex-col gap-2 bg-black p-6 text-white">
               <p className="uppercase">Grand Total</p>
-              <p className="heading-7 opacity-100">$ 5446</p>
+              <p className="heading-7 opacity-100">
+                $ {cartGrandTotal.toLocaleString()}
+              </p>
             </div>
           </div>
         )}
