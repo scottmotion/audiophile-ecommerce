@@ -50,6 +50,11 @@ export default function Checkout() {
     }));
   }
 
+  function handleSubmit() {
+    setShowConfirmation(true);
+    console.log("SUBMIT");
+  }
+
   return (
     <>
       <nav className="flex w-full flex-col items-center justify-center bg-light-grey px-6 md:px-10">
@@ -59,7 +64,7 @@ export default function Checkout() {
       </nav>
       <main className="flex w-full flex-col items-center  bg-light-grey px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
         <div className="grid w-full max-w-content gap-[2rem] lg:grid-cols-3">
-          <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 pb-8 pt-6 lg:col-span-2">
+          <form className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 pb-8 pt-6 lg:col-span-2">
             <h1 className="heading-5 md:heading-4">Checkout</h1>
 
             <div className="flex flex-col gap-4">
@@ -243,7 +248,7 @@ export default function Checkout() {
                 )}
               </div>
             </div>
-          </section>
+          </form>
           <section className="flex w-full max-w-content flex-col">
             <div className="flex w-full flex-col gap-8 rounded-lg bg-white px-6 py-8">
               <h2 className="heading-7">Summary</h2>
@@ -297,8 +302,9 @@ export default function Checkout() {
                 </div>
               </div>
               <button
+                type="submit"
                 className="btn btn-1 w-full"
-                onClick={() => setShowConfirmation(true)}
+                onClick={handleSubmit}
                 disabled={cartTotal < 1}
               >
                 Continue & Pay
