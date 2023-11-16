@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import { useShoppingCart } from "../context/ShoppingCartContext";
+
 import { ReactComponent as ConfirmationIcon } from "/src/assets/icons/icon-order-confirmation.svg";
 
 type ConfirmationModalProps = {
@@ -9,6 +11,8 @@ type ConfirmationModalProps = {
 export default function ConfirmationModal({
   setShowConfirmation,
 }: ConfirmationModalProps) {
+  const { cartItems } = useShoppingCart();
+
   return (
     <>
       <div
@@ -27,17 +31,41 @@ export default function ConfirmationModal({
           for your order
         </h2>
         <p>You will receive an email confirmation shortly.</p>
-        <div className="flex shrink-0 flex-col overflow-hidden rounded-lg">
-          <div className="flex flex-col items-center gap-3 bg-light-grey p-6">
-            <div>1st Item</div>
-            <hr className="w-full text-medium-grey" />
-            <div className="label opacity-50">and 2 other item(s)</div>
+        {cartItems.length > 0 && (
+          <div className="flex shrink-0 flex-col overflow-hidden rounded-lg">
+            <div className="flex flex-col items-center gap-3 bg-light-grey p-6">
+              <div className="flex w-full flex-row justify-between">
+                <div className="flex w-full flex-row gap-4">
+                  <img
+                    src={`/assets/cart/image-${cartItems[0].slug}.jpg`}
+                    className="w-16 rounded-lg"
+                  />
+                  <div className="flex w-full flex-col justify-center">
+                    <div className="flex flex-row justify-between">
+                      <p className="font-bold uppercase opacity-100">
+                        {cartItems[0].shortName}
+                      </p>
+                      <p>x{cartItems[0].quantity}</p>
+                    </div>
+                    <p className="uppercase">
+                      $ {cartItems[0].price.toLocaleString()}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <hr className="w-full text-medium-grey" />
+              <div className="label opacity-50">
+                and {cartItems.length - 1} other item(s)
+              </div>
+            </div>
+            <div className="flex flex-col gap-2 bg-black p-6 text-white">
+              <p className="uppercase">Grand Total</p>
+              <p className="heading-7 opacity-100">$ 5446</p>
+            </div>
           </div>
-          <div className="flex flex-col gap-2 bg-black p-6 text-white">
-            <p className="uppercase">Grand Total</p>
-            <p className="heading-7 opacity-100">$ 5432</p>
-          </div>
-        </div>
+        )}
+
         <Link
           to={"/"}
           relative="path"

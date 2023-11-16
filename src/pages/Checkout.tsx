@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-
 import { Link } from "react-router-dom";
-
-import { ReactComponent as CashOnDeliveryIcon } from "/src/assets/icons/icon-cash-on-delivery.svg";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 import ConfirmationModal from "../components/ConfirmationModal";
 
+import { ReactComponent as CashOnDeliveryIcon } from "/src/assets/icons/icon-cash-on-delivery.svg";
+
 export default function Checkout() {
+  const { cartItems, cartTotal, cartShipping, cartVat } = useShoppingCart();
+
   const [showConfirmation, setShowConfirmation] = useState(false);
   const confirmationVisibility = showConfirmation ? "visible" : "invisible";
 
@@ -34,7 +36,6 @@ export default function Checkout() {
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
-    // console.log("name: ", name, " - value: ", value);
     setFormData(prevFormData => ({
       ...prevFormData,
       [name]: value,
@@ -249,42 +250,52 @@ export default function Checkout() {
           <section className="flex w-full max-w-content flex-col">
             <div className="flex w-full flex-col gap-8 rounded-lg bg-white px-6 py-8">
               <h2 className="heading-7">Summary</h2>
-              <div className="flex flex-col">
-                <div className="flex flex-row justify-between">
-                  <div className="flex w-full flex-row gap-4">
-                    <img
-                      src={`/assets/cart/image-xx59-headphones.jpg`}
-                      className="w-16 rounded-lg"
-                    />
-                    <div className="flex w-full flex-col justify-center">
-                      <div className="flex flex-row justify-between">
-                        <p className="font-bold uppercase opacity-100">
-                          item shortname
+              {cartItems.map(item => (
+                <div className="flex flex-col" key={item.id}>
+                  <div className="flex flex-row justify-between">
+                    <div className="flex w-full flex-row gap-4">
+                      <img
+                        src={`/assets/cart/image-${item.slug}.jpg`}
+                        className="w-16 rounded-lg"
+                      />
+                      <div className="flex w-full flex-col justify-center">
+                        <div className="flex flex-row justify-between">
+                          <p className="font-bold uppercase opacity-100">
+                            {item.shortName}
+                          </p>
+                          <p>x{item.quantity}</p>
+                        </div>
+                        <p className="uppercase">
+                          $ {item.price.toLocaleString()}
                         </p>
-                        <p>x1</p>
                       </div>
-                      <p className="uppercase">$ item price</p>
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between">
                   <p>Total</p>
-                  <p className="heading-7 opacity-100">$5396</p>
+                  <p className="heading-7 opacity-100">
+                    $ {cartTotal.toLocaleString()}
+                  </p>
                 </div>
                 <div className="flex justify-between">
                   <p>Shipping</p>
-                  <p className="heading-7 opacity-100">$50</p>
+                  <p className="heading-7 opacity-100">
+                    $ {cartShipping.toLocaleString()}
+                  </p>
                 </div>
                 <div className="flex justify-between">
                   <p>VAT (included)</p>
-                  <p className="heading-7 opacity-100">$1076</p>
+                  <p className="heading-7 opacity-100">
+                    $ {cartVat.toLocaleString()}
+                  </p>
                 </div>
                 <div className="mt-4 flex justify-between">
                   <p>Grand Total</p>
                   <p className="heading-7 text-dark-orange opacity-100">
-                    $5446
+                    $ {cartTotal + cartShipping + cartVat}
                   </p>
                 </div>
               </div>

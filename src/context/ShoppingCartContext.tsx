@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useContext } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import { fetchProductById } from "../api/fetchApi";
 
 type ShoppingCartProviderProps = {
   children: ReactNode;
@@ -7,11 +8,14 @@ type ShoppingCartProviderProps = {
 
 type CartItem = {
   id: number;
+  slug: string;
+  shortName: string;
+  price: number;
   quantity: number;
 };
 
 type ShoppingCartContext = {
-  getItemQuantity: (id: number) => number;
+  // getItemQuantity: (id: number) => number;
   addItemToCart: (id: number, quantity: number) => void;
   increaseItemQuantity: (id: number) => void;
   decreaseItemQuantity: (id: number) => void;
@@ -19,6 +23,9 @@ type ShoppingCartContext = {
   removeAllFromCart: () => void;
   cartQuantity: number;
   cartItems: CartItem[];
+  cartTotal: number;
+  cartShipping: number;
+  cartVat: number;
 };
 const ShoppingCartContext = createContext({} as ShoppingCartContext);
 
@@ -37,14 +44,52 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     0,
   );
 
-  function getItemQuantity(id: number) {
-    return cartItems.find((item: CartItem) => item.id === id)?.quantity || 0;
-  }
+  const cartTotal = (cartItems as CartItem[]).reduce(
+    (total, item) => item.quantity * item.price + total,
+    0,
+  );
 
-  function addItemToCart(id: number, quantity: number) {
+  const cartShipping = 50;
+  const cartVat = 1079;
+
+  // function getItemQuantity(id: number) {
+  //   return cartItems.find((item: CartItem) => item.id === id)?.quantity || 0;
+  // }
+
+  // function addItemToCart(id: number, quantity: number) {
+  //   setCartItems(async (currItems: CartItem[]) => {
+  //     if (currItems.find(item => item.id === id) == null) {
+  //       return [...currItems, { id, quantity }];
+  //     } else {
+  //       return currItems.map(item => {
+  //         if (item.id === id) {
+  //           return { ...item, quantity: item.quantity + quantity };
+  //         } else {
+  //           return item;
+  //         }
+  //       });
+  //     }
+  //   });
+  // }
+
+  async function addItemToCart(id: number, quantity: number) {
+    const result = await fetchProductById(id);
     setCartItems((currItems: CartItem[]) => {
       if (currItems.find(item => item.id === id) == null) {
-        return [...currItems, { id, quantity }];
+        if (result !== undefined) {
+          return [
+            ...currItems,
+            {
+              id: id,
+              slug: result.slug,
+              shortName: result.shortName,
+              price: result.price,
+              quantity: quantity,
+            },
+          ];
+        } else {
+          return [...currItems];
+        }
       } else {
         return currItems.map(item => {
           if (item.id === id) {
@@ -102,7 +147,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   return (
     <ShoppingCartContext.Provider
       value={{
-        getItemQuantity,
+        // getItemQuantity,
         addItemToCart,
         increaseItemQuantity,
         decreaseItemQuantity,
@@ -110,6 +155,9 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         removeAllFromCart,
         cartQuantity,
         cartItems,
+        cartTotal,
+        cartShipping,
+        cartVat,
       }}
     >
       {children}
