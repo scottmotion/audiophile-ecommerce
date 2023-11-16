@@ -302,6 +302,7 @@ export default function Checkout() {
               <button
                 className="btn btn-1 w-full"
                 onClick={() => setShowConfirmation(true)}
+                disabled={cartTotal < 1}
               >
                 Continue & Pay
               </button>

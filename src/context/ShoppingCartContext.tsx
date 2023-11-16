@@ -49,8 +49,8 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     0,
   );
 
-  const cartShipping = 50;
-  const cartVat = 1079;
+  const cartShipping = cartTotal > 0 ? 50 : 0;
+  const cartVat = cartTotal > 0 ? 1079 : 0;
 
   // function getItemQuantity(id: number) {
   //   return cartItems.find((item: CartItem) => item.id === id)?.quantity || 0;

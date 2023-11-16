@@ -53,11 +53,14 @@ export default function ConfirmationModal({
                   </div>
                 </div>
               </div>
-
-              <hr className="w-full text-medium-grey" />
-              <div className="label opacity-50">
-                and {cartItems.length - 1} other item(s)
-              </div>
+              {cartItems.length > 1 && (
+                <>
+                  <hr className="w-full text-medium-grey" />
+                  <div className="label opacity-50">
+                    and {cartItems.length - 1} other item(s)
+                  </div>
+                </>
+              )}
             </div>
             <div className="flex flex-col gap-2 bg-black p-6 text-white">
               <p className="uppercase">Grand Total</p>
