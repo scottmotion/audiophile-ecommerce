@@ -175,6 +175,20 @@ export default {
           textTransform: "uppercase",
           border: "none",
         },
+        ".btn-quantity-modal": {
+          display: "flex",
+          width: "2rem",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: ".5rem 1rem",
+          fontSize: "13px",
+          lineHeight: "16px",
+          letterSpacing: "1px",
+          fontWeight: "700",
+          textTransform: "uppercase",
+          border: "none",
+        },
+
         ".btn-select": {
           "alignItems": "center",
           "borderWidth": "1px",
