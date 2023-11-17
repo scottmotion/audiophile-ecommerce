@@ -76,11 +76,6 @@ export default function Checkout() {
     setFormData(defaultFormData);
   }
 
-  // function handleSubmit() {
-  //   // setShowConfirmation(true);
-  //   console.log("Submitted");
-  // }
-
   const {
     register,
     handleSubmit,
