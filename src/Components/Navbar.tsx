@@ -16,7 +16,7 @@ export default function Navbar() {
   const [showCart, setShowCart] = useState(false);
   const cartVisibility = showCart ? "visible" : "invisible";
 
-  // Lock scrollbar whne modal is showing
+  // Lock scrollbar when modal is showing
   // useEffect(() => {
   //   if (showMobileMenu || showCart) {
   //     document.body.classList.add("scroll-locked");
