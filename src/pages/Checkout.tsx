@@ -36,7 +36,7 @@ export default function Checkout() {
     }
   }, [showConfirmation]);
 
-  const [formData, setFormData] = useState({
+  const defaultFormData = {
     name: "",
     email: "",
     phone: "",
@@ -47,7 +47,9 @@ export default function Checkout() {
     payMethod: "eMoney",
     eMoneyNum: "",
     eMoneyPin: "",
-  });
+  };
+
+  const [formData, setFormData] = useState(defaultFormData);
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
@@ -64,6 +66,10 @@ export default function Checkout() {
     }));
   }
 
+  function resetFormData() {
+    setFormData(defaultFormData);
+  }
+
   // function handleSubmit() {
   //   // setShowConfirmation(true);
   //   console.log("Submitted");
@@ -77,7 +83,9 @@ export default function Checkout() {
 
   const onSubmit: SubmitHandler<InputsType> = data => {
     console.log("formData: ", formData);
-    console.log(data);
+    console.log("onSubmit data: ", data);
+    resetFormData();
+    console.log("formData reset");
   };
 
   return (
