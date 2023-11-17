@@ -115,7 +115,10 @@ export default function Checkout() {
                     {errors.name && <div className="error">Required</div>}
                   </div>
                   <input
-                    {...register("name", { required: true })}
+                    {...register("name", {
+                      required: true,
+                      pattern: /[a-zA-Z]/,
+                    })}
                     type="text"
                     id="name"
                     // name="name"
@@ -338,8 +341,6 @@ export default function Checkout() {
                           errors.eMoneyNum &&
                           "outline-red outline -outline-offset-1"
                         }`}
-
-                        // required={formData.payMethod === "eMoney"}
                       ></input>
                     </div>
                     <div className="flex flex-col gap-2">
@@ -352,6 +353,7 @@ export default function Checkout() {
                       <input
                         {...register("eMoneyPin", {
                           required: formData.payMethod === "eMoney",
+                          pattern: /^[0-9]{4}$/,
                         })}
                         type="text"
                         id="eMoneyPin"
@@ -363,8 +365,6 @@ export default function Checkout() {
                           errors.eMoneyPin &&
                           "outline-red outline -outline-offset-1"
                         }`}
-
-                        // required={formData.payMethod === "eMoney"}
                       ></input>
                     </div>
                   </>
