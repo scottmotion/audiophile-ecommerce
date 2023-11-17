@@ -78,7 +78,7 @@ export default function Checkout() {
 
   const onSubmit: SubmitHandler<InputsType> = data => {
     // console.log("formData: ", formData);
-    // console.log("onSubmit data: ", data);
+    console.log("onSubmit data: ", data);
     setShowConfirmation(true);
   };
 
@@ -112,7 +112,6 @@ export default function Checkout() {
                     })}
                     type="text"
                     id="name"
-                    // name="name"
                     placeholder="Alexei Ward"
                     value={formData.name}
                     onChange={handleChange}
@@ -134,15 +133,12 @@ export default function Checkout() {
                     })}
                     type="email"
                     id="email"
-                    // name="email"
                     placeholder="alexei@email.com"
                     value={formData.email}
                     onChange={handleChange}
                     className={`${
                       errors.email && "outline -outline-offset-1 outline-red"
                     }`}
-
-                    // required
                   ></input>
                 </div>
 
@@ -155,15 +151,12 @@ export default function Checkout() {
                     {...register("phone", { required: true })}
                     type="tel"
                     id="phone"
-                    // name="phone"
                     placeholder="+1 202-555-0136"
                     value={formData.phone}
                     onChange={handleChange}
                     className={`${
                       errors.phone && "outline -outline-offset-1 outline-red"
                     }`}
-
-                    // required
                   ></input>
                 </div>
               </div>
@@ -181,14 +174,12 @@ export default function Checkout() {
                     {...register("address", { required: true })}
                     type="text"
                     id="address"
-                    // name="address"
                     placeholder="1137 Williams Avenue"
                     value={formData.address}
                     onChange={handleChange}
                     className={`${
                       errors.address && "outline -outline-offset-1 outline-red"
                     }`}
-                    // required
                   ></input>
                 </div>
 
@@ -201,14 +192,12 @@ export default function Checkout() {
                     {...register("zipcode", { required: true })}
                     type="text"
                     id="zipcode"
-                    // name="zipcode"
                     placeholder="10001"
                     value={formData.zipcode}
                     onChange={handleChange}
                     className={`${
                       errors.zipcode && "outline -outline-offset-1 outline-red"
                     }`}
-                    // required
                   ></input>
                 </div>
 
@@ -221,14 +210,12 @@ export default function Checkout() {
                     {...register("city", { required: true })}
                     type="text"
                     id="city"
-                    // name="city"
                     placeholder="New York"
                     value={formData.city}
                     onChange={handleChange}
                     className={`${
                       errors.city && "outline -outline-offset-1 outline-red"
                     }`}
-                    // required
                   ></input>
                 </div>
 
@@ -241,14 +228,12 @@ export default function Checkout() {
                     {...register("country", { required: true })}
                     type="text"
                     id="country"
-                    // name="country"
                     placeholder="United States"
                     value={formData.country}
                     onChange={handleChange}
                     className={`${
                       errors.country && "outline -outline-offset-1 outline-red"
                     }`}
-                    // required
                   ></input>
                 </div>
               </div>
@@ -277,7 +262,6 @@ export default function Checkout() {
                       {...register("payMethod", { required: true })}
                       type="radio"
                       id="eMoney"
-                      // name="payMethod"
                       value="eMoney"
                       onChange={handleChange}
                       checked={formData.payMethod === "eMoney"}
@@ -298,7 +282,6 @@ export default function Checkout() {
                       {...register("payMethod", { required: true })}
                       type="radio"
                       id="cashOnDelivery"
-                      // name="payMethod"
                       value="cashOnDelivery"
                       onChange={handleChange}
                       checked={formData.payMethod === "cashOnDelivery"}
@@ -324,7 +307,6 @@ export default function Checkout() {
                         })}
                         type="text"
                         id="eMoneyNum"
-                        // name="eMoneyNum"
                         placeholder="238521993"
                         value={formData.eMoneyNum}
                         onChange={handleChange}
@@ -348,7 +330,6 @@ export default function Checkout() {
                         })}
                         type="text"
                         id="eMoneyPin"
-                        // name="eMoneyPin"
                         placeholder="6891"
                         value={formData.eMoneyPin}
                         onChange={handleChange}
@@ -429,7 +410,6 @@ export default function Checkout() {
               <button
                 type="submit"
                 className="btn btn-1 w-full"
-                // onClick={handleSubmit}
                 disabled={cartTotal < 1}
               >
                 Continue & Pay
