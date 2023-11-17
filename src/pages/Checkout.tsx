@@ -84,12 +84,12 @@ export default function Checkout() {
 
   return (
     <>
-      <nav className="flex w-full flex-col items-center justify-center bg-light-grey px-6 md:px-10">
+      <nav className="flex w-full flex-col items-center justify-center bg-off-white px-6 md:px-10">
         <div className="flex w-full max-w-content flex-row pb-6 pt-4 md:pt-8 lg:pb-14 lg:pt-20">
           <BackButton />
         </div>
       </nav>
-      <main className="flex w-full flex-col items-center  bg-light-grey px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
+      <main className="flex w-full flex-col items-center bg-off-white px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="grid w-full max-w-content gap-[2rem] lg:grid-cols-3"
@@ -358,29 +358,31 @@ export default function Checkout() {
           <section className="flex w-full max-w-content flex-col">
             <div className="flex w-full flex-col gap-8 rounded-lg bg-white px-6 py-8">
               <h2 className="heading-7">Summary</h2>
-              {cartItems.map(item => (
-                <div className="flex flex-col" key={item.id}>
-                  <div className="flex flex-row justify-between">
-                    <div className="flex w-full flex-row gap-4">
-                      <img
-                        src={`/assets/cart/image-${item.slug}.jpg`}
-                        className="w-16 rounded-lg"
-                      />
-                      <div className="flex w-full flex-col justify-center">
-                        <div className="flex flex-row justify-between">
-                          <p className="font-bold uppercase opacity-100">
-                            {item.shortName}
+              <div className="flex flex-col gap-6">
+                {cartItems.map(item => (
+                  <div className="flex flex-col" key={item.id}>
+                    <div className="flex flex-row justify-between">
+                      <div className="flex w-full flex-row gap-4">
+                        <img
+                          src={`/assets/cart/image-${item.slug}.jpg`}
+                          className="w-16 rounded-lg"
+                        />
+                        <div className="flex w-full flex-col justify-center">
+                          <div className="flex flex-row justify-between">
+                            <p className="font-bold uppercase opacity-100">
+                              {item.shortName}
+                            </p>
+                            <p>x{item.quantity}</p>
+                          </div>
+                          <p className="uppercase">
+                            $ {item.price.toLocaleString()}
                           </p>
-                          <p>x{item.quantity}</p>
                         </div>
-                        <p className="uppercase">
-                          $ {item.price.toLocaleString()}
-                        </p>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between">
                   <p>Total</p>

@@ -40,45 +40,47 @@ export default function CartModal({ setShowCart }: CartModalProps) {
         </div>
 
         {/* Cart Items */}
-        <div className="flex flex-col gap-6">
-          {cartItems.map(item => (
-            <div
-              className="flex flex-row items-center justify-between gap-4"
-              key={item.id}
-            >
-              <div className="flex flex-row gap-4">
-                <img
-                  src={`/assets/cart/image-${item.slug}.jpg`}
-                  className="w-16 rounded-lg"
-                />
-                <div className="flex flex-col justify-center">
-                  <p className="font-bold uppercase opacity-100">
-                    {item.shortName}
+        {cartItems.length > 0 && (
+          <div className="flex flex-col gap-6">
+            {cartItems.map(item => (
+              <div
+                className="flex flex-row items-center justify-between gap-4"
+                key={item.id}
+              >
+                <div className="flex flex-row gap-4">
+                  <img
+                    src={`/assets/cart/image-${item.slug}.jpg`}
+                    className="w-16 rounded-lg"
+                  />
+                  <div className="flex flex-col justify-center">
+                    <p className="font-bold uppercase opacity-100">
+                      {item.shortName}
+                    </p>
+                    <p className="font-bold">$ {item.price.toLocaleString()}</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-row items-center justify-center bg-light-grey">
+                  <button
+                    className="btn-quantity-modal opacity-50 hover:text-dark-orange hover:opacity-100"
+                    onClick={() => decreaseItemQuantity(item.id)}
+                  >
+                    -
+                  </button>
+                  <p className="btn-quantity-modal select-none opacity-100">
+                    {cartItems.find(i => i.id === item.id)?.quantity}
                   </p>
-                  <p className="font-bold">$ {item.price.toLocaleString()}</p>
+                  <button
+                    className="btn-quantity-modal opacity-50 hover:text-dark-orange hover:opacity-100"
+                    onClick={() => increaseItemQuantity(item.id)}
+                  >
+                    +
+                  </button>
                 </div>
               </div>
-
-              <div className="flex flex-row items-center justify-center bg-light-grey">
-                <button
-                  className="btn-quantity-modal opacity-50 hover:text-dark-orange hover:opacity-100"
-                  onClick={() => decreaseItemQuantity(item.id)}
-                >
-                  -
-                </button>
-                <p className="btn-quantity-modal select-none opacity-100">
-                  {cartItems.find(i => i.id === item.id)?.quantity}
-                </p>
-                <button
-                  className="btn-quantity-modal opacity-50 hover:text-dark-orange hover:opacity-100"
-                  onClick={() => increaseItemQuantity(item.id)}
-                >
-                  +
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* Cart Footer */}
         <div className="flex flex-col gap-6">

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
@@ -32,30 +32,30 @@ export default function ConfirmationModal({
       ></div>
       <div
         id="confirmationModal"
-        className="fixed left-1/2 top-1/2 z-40 flex max-h-[calc(100vh-8rem)] w-full max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-1/2 flex-col justify-start gap-3 overflow-y-auto rounded-lg bg-white p-8 md:max-w-[23.5rem]"
+        className="fixed left-1/2 top-1/2 z-40 flex max-h-[calc(100vh-8rem)] w-full max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-1/2 flex-col justify-start overflow-y-auto rounded-lg bg-white p-8 md:max-w-[23.5rem]"
       >
-        <ConfirmationIcon className="shrink-0" />
-        <h2 className="heading-6 leading-[28px] tracking-[0.86px] md:heading-4">
+        <ConfirmationIcon className="mb-6 shrink-0" />
+        <h2 className="heading-6 mb-4 leading-[28px] tracking-[0.86px] md:heading-4">
           Thank you
           <br />
           for your order
         </h2>
-        <p>You will receive an email confirmation shortly.</p>
+        <p className="mb-6">You will receive an email confirmation shortly.</p>
         {cartItems.length > 0 && (
-          <div className="flex shrink-0 flex-col overflow-hidden rounded-lg">
+          <div className="mb-6 flex shrink-0 flex-col overflow-hidden rounded-lg">
             <div className="flex flex-col items-center gap-3 bg-light-grey p-6">
               <div className="flex w-full flex-row justify-between">
                 <div className="flex w-full flex-row gap-4">
                   <img
                     src={`/assets/cart/image-${cartItems[0].slug}.jpg`}
-                    className="w-16 rounded-lg"
+                    className="w-12 rounded-lg"
                   />
                   <div className="flex w-full flex-col justify-center">
                     <div className="flex flex-row justify-between">
                       <p className="font-bold uppercase opacity-100">
                         {cartItems[0].shortName}
                       </p>
-                      <p>x{cartItems[0].quantity}</p>
+                      <p className="font-bold">x{cartItems[0].quantity}</p>
                     </div>
                     <p className="uppercase">
                       $ {cartItems[0].price.toLocaleString()}
@@ -72,7 +72,7 @@ export default function ConfirmationModal({
                 </>
               )}
             </div>
-            <div className="flex flex-col gap-2 bg-black p-6 text-white">
+            <div className="flex flex-col gap-2 bg-black px-6 py-4 text-white">
               <p className="uppercase">Grand Total</p>
               <p className="heading-7 opacity-100">
                 $ {cartGrandTotal.toLocaleString()}
@@ -88,12 +88,12 @@ export default function ConfirmationModal({
           Back to Home
         </button>
 
-        <button
+        {/* <button
           className="btn btn-3"
           onClick={() => setShowConfirmation(false)}
         >
           Close Modal
-        </button>
+        </button> */}
       </div>
     </>
   );
