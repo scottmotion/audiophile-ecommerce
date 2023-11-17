@@ -9,6 +9,7 @@ import { ReactComponent as CashOnDeliveryIcon } from "/src/assets/icons/icon-cas
 
 type InputsType = {
   name: string;
+  email: string;
 };
 
 export default function Checkout() {
@@ -65,6 +66,7 @@ export default function Checkout() {
     handleSubmit,
     formState: { errors },
   } = useForm<InputsType>();
+
   const onSubmit: SubmitHandler<InputsType> = data => {
     console.log("formData: ", formData);
     console.log(data);
@@ -91,9 +93,7 @@ export default function Checkout() {
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-row justify-between">
                     <label htmlFor="name">Name</label>
-                    {errors.name && (
-                      <div className="error">Name is required.</div>
-                    )}
+                    {errors.name && <div className="error">Required</div>}
                   </div>
                   <input
                     {...register("name", { required: true })}
@@ -109,14 +109,22 @@ export default function Checkout() {
                   ></input>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="email">Email Address</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="email">Email Address</label>
+                    {errors.email && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("email", { required: true })}
                     type="email"
                     id="email"
-                    name="email"
+                    // name="email"
                     placeholder="alexei@email.com"
                     value={formData.email}
                     onChange={handleChange}
+                    className={`${
+                      errors.name && "outline-red outline -outline-offset-1"
+                    }`}
+
                     // required
                   ></input>
                 </div>
