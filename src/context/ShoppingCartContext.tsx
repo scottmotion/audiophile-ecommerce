@@ -58,22 +58,6 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   //   return cartItems.find((item: CartItem) => item.id === id)?.quantity || 0;
   // }
 
-  // function addItemToCart(id: number, quantity: number) {
-  //   setCartItems(async (currItems: CartItem[]) => {
-  //     if (currItems.find(item => item.id === id) == null) {
-  //       return [...currItems, { id, quantity }];
-  //     } else {
-  //       return currItems.map(item => {
-  //         if (item.id === id) {
-  //           return { ...item, quantity: item.quantity + quantity };
-  //         } else {
-  //           return item;
-  //         }
-  //       });
-  //     }
-  //   });
-  // }
-
   async function addItemToCart(id: number, quantity: number) {
     const result = await fetchProductById(id);
     setCartItems((currItems: CartItem[]) => {
