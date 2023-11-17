@@ -21,8 +21,14 @@ type InputsType = {
 };
 
 export default function Checkout() {
-  const { cartItems, cartTotal, cartShipping, cartVat, cartGrandTotal } =
-    useShoppingCart();
+  const {
+    cartItems,
+    cartTotal,
+    cartShipping,
+    cartVat,
+    cartGrandTotal,
+    removeAllFromCart,
+  } = useShoppingCart();
 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const confirmationVisibility = showConfirmation ? "visible" : "invisible";
@@ -86,6 +92,8 @@ export default function Checkout() {
     console.log("onSubmit data: ", data);
     resetFormData();
     console.log("formData reset");
+    removeAllFromCart();
+    console.log("cart cleared");
   };
 
   return (
@@ -261,7 +269,7 @@ export default function Checkout() {
                       {...register("payMethod", { required: true })}
                       type="radio"
                       id="eMoney"
-                      name="payMethod"
+                      // name="payMethod"
                       value="eMoney"
                       onChange={handleChange}
                       checked={formData.payMethod === "eMoney"}
