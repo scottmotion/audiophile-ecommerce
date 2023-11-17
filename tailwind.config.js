@@ -188,6 +188,13 @@ export default {
             borderColor: theme("colors.dark-orange"),
           },
         },
+        ".error": {
+          color: theme("colors.red"),
+          fontSize: "12px",
+          fontWeight: "500",
+          lineHeight: "16px",
+          letterSpacing: "-0.21px",
+        },
         ".heading-1": {
           fontSize: "56px",
           lineHeight: "58px",

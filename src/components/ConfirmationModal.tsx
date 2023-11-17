@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
@@ -6,19 +6,29 @@ import { ReactComponent as ConfirmationIcon } from "/src/assets/icons/icon-order
 
 type ConfirmationModalProps = {
   setShowConfirmation: React.Dispatch<React.SetStateAction<boolean>>;
+  resetFormData: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function ConfirmationModal({
   setShowConfirmation,
+  resetFormData,
 }: ConfirmationModalProps) {
-  const { cartItems, cartGrandTotal } = useShoppingCart();
+  const { cartItems, cartGrandTotal, removeAllFromCart } = useShoppingCart();
+  const navigate = useNavigate();
+
+  function clearTransaction() {
+    navigate("/", { replace: true });
+    setShowConfirmation(false);
+    resetFormData;
+    removeAllFromCart();
+  }
 
   return (
     <>
       <div
         id="confirmationBackdrop"
         className="fixed left-1/2 top-1/2 h-screen w-screen -translate-x-1/2 -translate-y-1/2 bg-black opacity-50"
-        onClick={() => setShowConfirmation(false)}
+        onClick={() => clearTransaction()}
       ></div>
       <div
         id="confirmationModal"
@@ -71,13 +81,13 @@ export default function ConfirmationModal({
           </div>
         )}
 
-        <Link
-          to={"/"}
-          relative="path"
-          onClick={() => setShowConfirmation(false)}
-        >
+        {/* <Link to={"/"} relative="path" onClick={() => clearTransaction()}>
           <button className="btn btn-1 w-full">Back to Home</button>
-        </Link>
+        </Link> */}
+        <button className="btn btn-1 w-full" onClick={() => clearTransaction()}>
+          Back to Home
+        </button>
+
         <button
           className="btn btn-3"
           onClick={() => setShowConfirmation(false)}

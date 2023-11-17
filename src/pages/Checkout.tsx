@@ -1,14 +1,49 @@
 import { useEffect, useState } from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 import ConfirmationModal from "../components/ConfirmationModal";
 import BackButton from "../components/BackButton";
 
 import { ReactComponent as CashOnDeliveryIcon } from "/src/assets/icons/icon-cash-on-delivery.svg";
 
+type InputsType = {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  zipcode: string;
+  city: string;
+  country: string;
+  payMethod: string;
+  eMoneyNum: string;
+  eMoneyPin: string;
+};
+
 export default function Checkout() {
   const { cartItems, cartTotal, cartShipping, cartVat, cartGrandTotal } =
     useShoppingCart();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<InputsType>();
+
+  const defaultFormData = {
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    zipcode: "",
+    city: "",
+    country: "",
+    payMethod: "eMoney",
+    eMoneyNum: "",
+    eMoneyPin: "",
+  };
+
+  const [formData, setFormData] = useState(defaultFormData);
 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const confirmationVisibility = showConfirmation ? "visible" : "invisible";
@@ -21,19 +56,6 @@ export default function Checkout() {
       document.body.classList.remove("overflow-hidden");
     }
   }, [showConfirmation]);
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    tel: "",
-    address: "",
-    zipcode: "",
-    city: "",
-    country: "",
-    payMethod: "eMoney",
-    eMoneyNum: "",
-    eMoneyPin: "",
-  });
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
@@ -50,10 +72,15 @@ export default function Checkout() {
     }));
   }
 
-  function handleSubmit() {
-    // setShowConfirmation(true);
-    console.log("Submitted");
+  function resetFormData() {
+    setFormData(defaultFormData);
   }
+
+  const onSubmit: SubmitHandler<InputsType> = data => {
+    // console.log("formData: ", formData);
+    // console.log("onSubmit data: ", data);
+    setShowConfirmation(true);
+  };
 
   return (
     <>
@@ -64,7 +91,7 @@ export default function Checkout() {
       </nav>
       <main className="flex w-full flex-col items-center  bg-light-grey px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
         <form
-          onSubmit={e => e.preventDefault()}
+          onSubmit={handleSubmit(onSubmit)}
           className="grid w-full max-w-content gap-[2rem] lg:grid-cols-3"
         >
           <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 pb-8 pt-6 lg:col-span-2">
@@ -74,39 +101,69 @@ export default function Checkout() {
               <h2 className="text-subtitle">Billing Details</h2>
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name">Name</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="name">Name</label>
+                    {errors.name && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("name", {
+                      required: true,
+                      pattern: /[a-zA-Z]/,
+                    })}
                     type="text"
                     id="name"
-                    name="name"
+                    // name="name"
                     placeholder="Alexei Ward"
                     value={formData.name}
                     onChange={handleChange}
-                    required
+                    className={`${
+                      errors.name && "outline -outline-offset-1 outline-red"
+                    }`}
                   ></input>
                 </div>
+
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="email">Email Address</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="email">Email Address</label>
+                    {errors.email && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("email", {
+                      required: true,
+                      pattern: /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$/,
+                    })}
                     type="email"
                     id="email"
-                    name="email"
+                    // name="email"
                     placeholder="alexei@email.com"
                     value={formData.email}
                     onChange={handleChange}
-                    required
+                    className={`${
+                      errors.email && "outline -outline-offset-1 outline-red"
+                    }`}
+
+                    // required
                   ></input>
                 </div>
+
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="tel">Phone Number</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="phone">Phone Number</label>
+                    {errors.phone && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("phone", { required: true })}
                     type="tel"
-                    id="tel"
-                    name="tel"
+                    id="phone"
+                    // name="phone"
                     placeholder="+1 202-555-0136"
-                    value={formData.tel}
+                    value={formData.phone}
                     onChange={handleChange}
-                    required
+                    className={`${
+                      errors.phone && "outline -outline-offset-1 outline-red"
+                    }`}
+
+                    // required
                   ></input>
                 </div>
               </div>
@@ -116,51 +173,82 @@ export default function Checkout() {
               <h2 className="text-subtitle">Shipping Info</h2>
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="flex flex-col gap-2 md:col-span-2">
-                  <label htmlFor="address">Address</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="address">Address</label>
+                    {errors.address && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("address", { required: true })}
                     type="text"
                     id="address"
-                    name="address"
+                    // name="address"
                     placeholder="1137 Williams Avenue"
                     value={formData.address}
                     onChange={handleChange}
-                    required
+                    className={`${
+                      errors.address && "outline -outline-offset-1 outline-red"
+                    }`}
+                    // required
                   ></input>
                 </div>
+
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="zipcode">ZIP Code</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="zipcode">ZIP Code</label>
+                    {errors.zipcode && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("zipcode", { required: true })}
                     type="text"
                     id="zipcode"
-                    name="zipcode"
+                    // name="zipcode"
                     placeholder="10001"
                     value={formData.zipcode}
                     onChange={handleChange}
-                    required
+                    className={`${
+                      errors.zipcode && "outline -outline-offset-1 outline-red"
+                    }`}
+                    // required
                   ></input>
                 </div>
+
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="city">City</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="city">City</label>
+                    {errors.city && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("city", { required: true })}
                     type="text"
                     id="city"
-                    name="city"
+                    // name="city"
                     placeholder="New York"
                     value={formData.city}
                     onChange={handleChange}
-                    required
+                    className={`${
+                      errors.city && "outline -outline-offset-1 outline-red"
+                    }`}
+                    // required
                   ></input>
                 </div>
+
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="country">Country</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="country">Country</label>
+                    {errors.country && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("country", { required: true })}
                     type="text"
                     id="country"
-                    name="country"
+                    // name="country"
                     placeholder="United States"
                     value={formData.country}
                     onChange={handleChange}
-                    required
+                    className={`${
+                      errors.country && "outline -outline-offset-1 outline-red"
+                    }`}
+                    // required
                   ></input>
                 </div>
               </div>
@@ -186,9 +274,10 @@ export default function Checkout() {
                     onClick={() => handleSetPaymentMethod("eMoney")}
                   >
                     <input
+                      {...register("payMethod", { required: true })}
                       type="radio"
                       id="eMoney"
-                      name="payMethod"
+                      // name="payMethod"
                       value="eMoney"
                       onChange={handleChange}
                       checked={formData.payMethod === "eMoney"}
@@ -206,9 +295,10 @@ export default function Checkout() {
                     onClick={() => handleSetPaymentMethod("cashOnDelivery")}
                   >
                     <input
+                      {...register("payMethod", { required: true })}
                       type="radio"
                       id="cashOnDelivery"
-                      name="payMethod"
+                      // name="payMethod"
                       value="cashOnDelivery"
                       onChange={handleChange}
                       checked={formData.payMethod === "cashOnDelivery"}
@@ -222,27 +312,50 @@ export default function Checkout() {
                 {formData.payMethod === "eMoney" && (
                   <>
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="eMoneyNum">e-Money Number</label>
+                      <div className="flex flex-row justify-between">
+                        <label htmlFor="eMoneyNum">e-Money Number</label>
+                        {errors.eMoneyNum && (
+                          <div className="error">Required</div>
+                        )}
+                      </div>
                       <input
+                        {...register("eMoneyNum", {
+                          required: formData.payMethod === "eMoney",
+                        })}
                         type="text"
                         id="eMoneyNum"
-                        name="eMoneyNum"
+                        // name="eMoneyNum"
                         placeholder="238521993"
                         value={formData.eMoneyNum}
                         onChange={handleChange}
-                        required={formData.payMethod === "eMoney"}
+                        className={`${
+                          errors.eMoneyNum &&
+                          "outline -outline-offset-1 outline-red"
+                        }`}
                       ></input>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="eMoneyPin">e-Money PIN</label>
+                      <div className="flex flex-row justify-between">
+                        <label htmlFor="eMoneyPin">e-Money PIN</label>
+                        {errors.eMoneyPin && (
+                          <div className="error">Required</div>
+                        )}
+                      </div>
                       <input
+                        {...register("eMoneyPin", {
+                          required: formData.payMethod === "eMoney",
+                          pattern: /^[0-9]{4}$/,
+                        })}
                         type="text"
                         id="eMoneyPin"
-                        name="eMoneyPin"
+                        // name="eMoneyPin"
                         placeholder="6891"
                         value={formData.eMoneyPin}
                         onChange={handleChange}
-                        required={formData.payMethod === "eMoney"}
+                        className={`${
+                          errors.eMoneyPin &&
+                          "outline -outline-offset-1 outline-red"
+                        }`}
                       ></input>
                     </div>
                   </>
@@ -314,8 +427,9 @@ export default function Checkout() {
                 </div>
               </div>
               <button
+                type="submit"
                 className="btn btn-1 w-full"
-                onClick={handleSubmit}
+                // onClick={handleSubmit}
                 disabled={cartTotal < 1}
               >
                 Continue & Pay
@@ -325,7 +439,10 @@ export default function Checkout() {
         </form>
       </main>
       <div className={`${confirmationVisibility} z-50 w-full`}>
-        <ConfirmationModal setShowConfirmation={setShowConfirmation} />
+        <ConfirmationModal
+          setShowConfirmation={setShowConfirmation}
+          resetFormData={resetFormData}
+        />
       </div>
     </>
   );
