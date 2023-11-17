@@ -147,7 +147,7 @@ export default function Checkout() {
                     value={formData.email}
                     onChange={handleChange}
                     className={`${
-                      errors.name && "outline-red outline -outline-offset-1"
+                      errors.email && "outline-red outline -outline-offset-1"
                     }`}
 
                     // required
@@ -167,6 +167,10 @@ export default function Checkout() {
                     placeholder="+1 202-555-0136"
                     value={formData.phone}
                     onChange={handleChange}
+                    className={`${
+                      errors.phone && "outline-red outline -outline-offset-1"
+                    }`}
+
                     // required
                   ></input>
                 </div>
@@ -189,6 +193,9 @@ export default function Checkout() {
                     placeholder="1137 Williams Avenue"
                     value={formData.address}
                     onChange={handleChange}
+                    className={`${
+                      errors.address && "outline-red outline -outline-offset-1"
+                    }`}
                     // required
                   ></input>
                 </div>
@@ -206,6 +213,9 @@ export default function Checkout() {
                     placeholder="10001"
                     value={formData.zipcode}
                     onChange={handleChange}
+                    className={`${
+                      errors.zipcode && "outline-red outline -outline-offset-1"
+                    }`}
                     // required
                   ></input>
                 </div>
@@ -223,6 +233,9 @@ export default function Checkout() {
                     placeholder="New York"
                     value={formData.city}
                     onChange={handleChange}
+                    className={`${
+                      errors.city && "outline-red outline -outline-offset-1"
+                    }`}
                     // required
                   ></input>
                 </div>
@@ -240,6 +253,9 @@ export default function Checkout() {
                     placeholder="United States"
                     value={formData.country}
                     onChange={handleChange}
+                    className={`${
+                      errors.country && "outline-red outline -outline-offset-1"
+                    }`}
                     // required
                   ></input>
                 </div>
@@ -320,6 +336,11 @@ export default function Checkout() {
                         placeholder="238521993"
                         value={formData.eMoneyNum}
                         onChange={handleChange}
+                        className={`${
+                          errors.eMoneyNum &&
+                          "outline-red outline -outline-offset-1"
+                        }`}
+
                         // required={formData.payMethod === "eMoney"}
                       ></input>
                     </div>
@@ -340,6 +361,11 @@ export default function Checkout() {
                         placeholder="6891"
                         value={formData.eMoneyPin}
                         onChange={handleChange}
+                        className={`${
+                          errors.eMoneyPin &&
+                          "outline-red outline -outline-offset-1"
+                        }`}
+
                         // required={formData.payMethod === "eMoney"}
                       ></input>
                     </div>
