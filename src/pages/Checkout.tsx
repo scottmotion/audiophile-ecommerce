@@ -10,6 +10,14 @@ import { ReactComponent as CashOnDeliveryIcon } from "/src/assets/icons/icon-cas
 type InputsType = {
   name: string;
   email: string;
+  phone: string;
+  address: string;
+  zipcode: string;
+  city: string;
+  country: string;
+  payMethod: string;
+  eMoneyNum: string;
+  eMoneyPin: string;
 };
 
 export default function Checkout() {
@@ -31,7 +39,7 @@ export default function Checkout() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    tel: "",
+    phone: "",
     address: "",
     zipcode: "",
     city: "",
@@ -108,6 +116,7 @@ export default function Checkout() {
                     }`}
                   ></input>
                 </div>
+
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-row justify-between">
                     <label htmlFor="email">Email Address</label>
@@ -128,14 +137,19 @@ export default function Checkout() {
                     // required
                   ></input>
                 </div>
+
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="tel">Phone Number</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="phone">Phone Number</label>
+                    {errors.phone && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("phone", { required: true })}
                     type="tel"
-                    id="tel"
-                    name="tel"
+                    id="phone"
+                    // name="phone"
                     placeholder="+1 202-555-0136"
-                    value={formData.tel}
+                    value={formData.phone}
                     onChange={handleChange}
                     // required
                   ></input>
@@ -147,47 +161,66 @@ export default function Checkout() {
               <h2 className="text-subtitle">Shipping Info</h2>
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="flex flex-col gap-2 md:col-span-2">
-                  <label htmlFor="address">Address</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="address">Address</label>
+                    {errors.address && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("address", { required: true })}
                     type="text"
                     id="address"
-                    name="address"
+                    // name="address"
                     placeholder="1137 Williams Avenue"
                     value={formData.address}
                     onChange={handleChange}
                     // required
                   ></input>
                 </div>
+
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="zipcode">ZIP Code</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="zipcode">ZIP Code</label>
+                    {errors.zipcode && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("zipcode", { required: true })}
                     type="text"
                     id="zipcode"
-                    name="zipcode"
+                    // name="zipcode"
                     placeholder="10001"
                     value={formData.zipcode}
                     onChange={handleChange}
                     // required
                   ></input>
                 </div>
+
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="city">City</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="city">City</label>
+                    {errors.city && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("city", { required: true })}
                     type="text"
                     id="city"
-                    name="city"
+                    // name="city"
                     placeholder="New York"
                     value={formData.city}
                     onChange={handleChange}
                     // required
                   ></input>
                 </div>
+
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="country">Country</label>
+                  <div className="flex flex-row justify-between">
+                    <label htmlFor="country">Country</label>
+                    {errors.country && <div className="error">Required</div>}
+                  </div>
                   <input
+                    {...register("country", { required: true })}
                     type="text"
                     id="country"
-                    name="country"
+                    // name="country"
                     placeholder="United States"
                     value={formData.country}
                     onChange={handleChange}
@@ -217,6 +250,7 @@ export default function Checkout() {
                     onClick={() => handleSetPaymentMethod("eMoney")}
                   >
                     <input
+                      {...register("payMethod", { required: true })}
                       type="radio"
                       id="eMoney"
                       name="payMethod"
@@ -237,9 +271,10 @@ export default function Checkout() {
                     onClick={() => handleSetPaymentMethod("cashOnDelivery")}
                   >
                     <input
+                      {...register("payMethod", { required: true })}
                       type="radio"
                       id="cashOnDelivery"
-                      name="payMethod"
+                      // name="payMethod"
                       value="cashOnDelivery"
                       onChange={handleChange}
                       checked={formData.payMethod === "cashOnDelivery"}
@@ -253,11 +288,19 @@ export default function Checkout() {
                 {formData.payMethod === "eMoney" && (
                   <>
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="eMoneyNum">e-Money Number</label>
+                      <div className="flex flex-row justify-between">
+                        <label htmlFor="eMoneyNum">e-Money Number</label>
+                        {errors.eMoneyNum && (
+                          <div className="error">Required</div>
+                        )}
+                      </div>
                       <input
+                        {...register("eMoneyNum", {
+                          required: formData.payMethod === "eMoney",
+                        })}
                         type="text"
                         id="eMoneyNum"
-                        name="eMoneyNum"
+                        // name="eMoneyNum"
                         placeholder="238521993"
                         value={formData.eMoneyNum}
                         onChange={handleChange}
@@ -265,11 +308,19 @@ export default function Checkout() {
                       ></input>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="eMoneyPin">e-Money PIN</label>
+                      <div className="flex flex-row justify-between">
+                        <label htmlFor="eMoneyPin">e-Money PIN</label>
+                        {errors.eMoneyPin && (
+                          <div className="error">Required</div>
+                        )}
+                      </div>
                       <input
+                        {...register("eMoneyPin", {
+                          required: formData.payMethod === "eMoney",
+                        })}
                         type="text"
                         id="eMoneyPin"
-                        name="eMoneyPin"
+                        // name="eMoneyPin"
                         placeholder="6891"
                         value={formData.eMoneyPin}
                         onChange={handleChange}
