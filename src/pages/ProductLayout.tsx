@@ -69,7 +69,7 @@ export default function ProductLayout() {
 
       <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:px-10 lg:mb-[12.5rem] lg:gap-[10rem]">
         {currentProduct && (
-          <section className="flex max-w-content flex-col items-center gap-20">
+          <section className="flex max-w-content flex-col items-center gap-20 md:gap-[7.5rem]">
             <div
               id="productDescription"
               className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:grid-rows-1 md:gap-0 lg:gap-5"
@@ -124,7 +124,7 @@ export default function ProductLayout() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-20 lg:flex-row lg:gap-12">
+            <div className="flex flex-col gap-20 md:gap-[7.5rem] lg:flex-row lg:gap-12">
               <div
                 id="productFeatures"
                 className="flex w-full basis-3/5 flex-col gap-6"
