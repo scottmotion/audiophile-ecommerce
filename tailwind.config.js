@@ -191,7 +191,7 @@ export default {
         ".error": {
           color: theme("colors.red"),
           fontSize: "12px",
-          fontWeight: "700",
+          fontWeight: "500",
           lineHeight: "16px",
           letterSpacing: "-0.21px",
         },
