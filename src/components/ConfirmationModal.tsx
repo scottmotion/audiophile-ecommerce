@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
@@ -14,11 +14,13 @@ export default function ConfirmationModal({
   resetFormData,
 }: ConfirmationModalProps) {
   const { cartItems, cartGrandTotal, removeAllFromCart } = useShoppingCart();
+  const navigate = useNavigate();
 
   function clearTransaction() {
+    navigate("/", { replace: true });
+    setShowConfirmation(false);
     resetFormData;
     removeAllFromCart();
-    setShowConfirmation(false);
   }
 
   return (
@@ -79,9 +81,13 @@ export default function ConfirmationModal({
           </div>
         )}
 
-        <Link to={"/"} relative="path" onClick={() => clearTransaction()}>
+        {/* <Link to={"/"} relative="path" onClick={() => clearTransaction()}>
           <button className="btn btn-1 w-full">Back to Home</button>
-        </Link>
+        </Link> */}
+        <button className="btn btn-1 w-full" onClick={() => clearTransaction()}>
+          Back to Home
+        </button>
+
         <button
           className="btn btn-3"
           onClick={() => setShowConfirmation(false)}
