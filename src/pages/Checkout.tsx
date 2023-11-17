@@ -21,14 +21,8 @@ type InputsType = {
 };
 
 export default function Checkout() {
-  const {
-    cartItems,
-    cartTotal,
-    cartShipping,
-    cartVat,
-    cartGrandTotal,
-    removeAllFromCart,
-  } = useShoppingCart();
+  const { cartItems, cartTotal, cartShipping, cartVat, cartGrandTotal } =
+    useShoppingCart();
 
   const {
     register,
@@ -85,10 +79,7 @@ export default function Checkout() {
   const onSubmit: SubmitHandler<InputsType> = data => {
     console.log("formData: ", formData);
     console.log("onSubmit data: ", data);
-    resetFormData();
-    console.log("formData reset");
-    // removeAllFromCart();
-    // console.log("cart cleared");
+    setShowConfirmation(true);
   };
 
   return (
@@ -448,7 +439,10 @@ export default function Checkout() {
         </form>
       </main>
       <div className={`${confirmationVisibility} z-50 w-full`}>
-        <ConfirmationModal setShowConfirmation={setShowConfirmation} />
+        <ConfirmationModal
+          setShowConfirmation={setShowConfirmation}
+          resetFormData={resetFormData}
+        />
       </div>
     </>
   );

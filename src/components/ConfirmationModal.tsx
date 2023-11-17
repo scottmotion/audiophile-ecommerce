@@ -6,19 +6,27 @@ import { ReactComponent as ConfirmationIcon } from "/src/assets/icons/icon-order
 
 type ConfirmationModalProps = {
   setShowConfirmation: React.Dispatch<React.SetStateAction<boolean>>;
+  resetFormData: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function ConfirmationModal({
   setShowConfirmation,
+  resetFormData,
 }: ConfirmationModalProps) {
-  const { cartItems, cartGrandTotal } = useShoppingCart();
+  const { cartItems, cartGrandTotal, removeAllFromCart } = useShoppingCart();
+
+  function clearTransaction() {
+    resetFormData;
+    removeAllFromCart();
+    setShowConfirmation(false);
+  }
 
   return (
     <>
       <div
         id="confirmationBackdrop"
         className="fixed left-1/2 top-1/2 h-screen w-screen -translate-x-1/2 -translate-y-1/2 bg-black opacity-50"
-        onClick={() => setShowConfirmation(false)}
+        onClick={() => clearTransaction()}
       ></div>
       <div
         id="confirmationModal"
@@ -71,11 +79,7 @@ export default function ConfirmationModal({
           </div>
         )}
 
-        <Link
-          to={"/"}
-          relative="path"
-          onClick={() => setShowConfirmation(false)}
-        >
+        <Link to={"/"} relative="path" onClick={() => clearTransaction()}>
           <button className="btn btn-1 w-full">Back to Home</button>
         </Link>
         <button
