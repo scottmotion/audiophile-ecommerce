@@ -76,11 +76,6 @@ export default function Checkout() {
     setFormData(defaultFormData);
   }
 
-  // function handleSubmit() {
-  //   // setShowConfirmation(true);
-  //   console.log("Submitted");
-  // }
-
   const {
     register,
     handleSubmit,
@@ -92,8 +87,8 @@ export default function Checkout() {
     console.log("onSubmit data: ", data);
     resetFormData();
     console.log("formData reset");
-    removeAllFromCart();
-    console.log("cart cleared");
+    // removeAllFromCart();
+    // console.log("cart cleared");
   };
 
   return (
@@ -136,10 +131,18 @@ export default function Checkout() {
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-row justify-between">
                     <label htmlFor="email">Email Address</label>
-                    {errors.email && <div className="error">Required</div>}
+                    {errors.email?.type === "required" && (
+                      <div className="error">Required</div>
+                    )}
+                    {errors.email?.type === "pattern" && (
+                      <div className="error">Pattern</div>
+                    )}
                   </div>
                   <input
-                    {...register("email", { required: true })}
+                    {...register("email", {
+                      required: true,
+                      pattern: /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$/,
+                    })}
                     type="email"
                     id="email"
                     // name="email"
