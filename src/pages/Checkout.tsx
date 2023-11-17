@@ -30,17 +30,11 @@ export default function Checkout() {
     removeAllFromCart,
   } = useShoppingCart();
 
-  const [showConfirmation, setShowConfirmation] = useState(false);
-  const confirmationVisibility = showConfirmation ? "visible" : "invisible";
-
-  // hide overflow on body when modal is open
-  useEffect(() => {
-    if (showConfirmation) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-  }, [showConfirmation]);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<InputsType>();
 
   const defaultFormData = {
     name: "",
@@ -56,6 +50,18 @@ export default function Checkout() {
   };
 
   const [formData, setFormData] = useState(defaultFormData);
+
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const confirmationVisibility = showConfirmation ? "visible" : "invisible";
+
+  // hide overflow on body when modal is open
+  useEffect(() => {
+    if (showConfirmation) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [showConfirmation]);
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
@@ -75,12 +81,6 @@ export default function Checkout() {
   function resetFormData() {
     setFormData(defaultFormData);
   }
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<InputsType>();
 
   const onSubmit: SubmitHandler<InputsType> = data => {
     console.log("formData: ", formData);
@@ -126,7 +126,7 @@ export default function Checkout() {
                     value={formData.name}
                     onChange={handleChange}
                     className={`${
-                      errors.name && "outline-red outline -outline-offset-1"
+                      errors.name && "outline -outline-offset-1 outline-red"
                     }`}
                   ></input>
                 </div>
@@ -148,7 +148,7 @@ export default function Checkout() {
                     value={formData.email}
                     onChange={handleChange}
                     className={`${
-                      errors.email && "outline-red outline -outline-offset-1"
+                      errors.email && "outline -outline-offset-1 outline-red"
                     }`}
 
                     // required
@@ -169,7 +169,7 @@ export default function Checkout() {
                     value={formData.phone}
                     onChange={handleChange}
                     className={`${
-                      errors.phone && "outline-red outline -outline-offset-1"
+                      errors.phone && "outline -outline-offset-1 outline-red"
                     }`}
 
                     // required
@@ -195,7 +195,7 @@ export default function Checkout() {
                     value={formData.address}
                     onChange={handleChange}
                     className={`${
-                      errors.address && "outline-red outline -outline-offset-1"
+                      errors.address && "outline -outline-offset-1 outline-red"
                     }`}
                     // required
                   ></input>
@@ -215,7 +215,7 @@ export default function Checkout() {
                     value={formData.zipcode}
                     onChange={handleChange}
                     className={`${
-                      errors.zipcode && "outline-red outline -outline-offset-1"
+                      errors.zipcode && "outline -outline-offset-1 outline-red"
                     }`}
                     // required
                   ></input>
@@ -235,7 +235,7 @@ export default function Checkout() {
                     value={formData.city}
                     onChange={handleChange}
                     className={`${
-                      errors.city && "outline-red outline -outline-offset-1"
+                      errors.city && "outline -outline-offset-1 outline-red"
                     }`}
                     // required
                   ></input>
@@ -255,7 +255,7 @@ export default function Checkout() {
                     value={formData.country}
                     onChange={handleChange}
                     className={`${
-                      errors.country && "outline-red outline -outline-offset-1"
+                      errors.country && "outline -outline-offset-1 outline-red"
                     }`}
                     // required
                   ></input>
@@ -339,7 +339,7 @@ export default function Checkout() {
                         onChange={handleChange}
                         className={`${
                           errors.eMoneyNum &&
-                          "outline-red outline -outline-offset-1"
+                          "outline -outline-offset-1 outline-red"
                         }`}
                       ></input>
                     </div>
@@ -363,7 +363,7 @@ export default function Checkout() {
                         onChange={handleChange}
                         className={`${
                           errors.eMoneyPin &&
-                          "outline-red outline -outline-offset-1"
+                          "outline -outline-offset-1 outline-red"
                         }`}
                       ></input>
                     </div>
