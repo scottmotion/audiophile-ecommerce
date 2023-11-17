@@ -76,6 +76,11 @@ export default function Checkout() {
     setFormData(defaultFormData);
   }
 
+  // function handleSubmit() {
+  //   // setShowConfirmation(true);
+  //   console.log("Submitted");
+  // }
+
   const {
     register,
     handleSubmit,
@@ -131,12 +136,7 @@ export default function Checkout() {
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-row justify-between">
                     <label htmlFor="email">Email Address</label>
-                    {errors.email?.type === "required" && (
-                      <div className="error">Required</div>
-                    )}
-                    {errors.email?.type === "pattern" && (
-                      <div className="error">Pattern</div>
-                    )}
+                    {errors.email && <div className="error">Required</div>}
                   </div>
                   <input
                     {...register("email", {
