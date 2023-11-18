@@ -37,11 +37,11 @@ export async function fetchProductById(id: number) {
   return productData;
 }
 
-export async function fetchProductCategoryById(id: number) {
+export async function fetchProductCategoryBySlug(slug: string) {
   let response = await fetch(apiUrl);
   let data: ProductData[] = await response.json();
   let productCategory: string | undefined = data.find(
-    element => element.id == id,
+    element => element.slug == slug,
   )?.category;
   // let productData: ProductData | undefined = data.find(
   //   element => element.id == id,
