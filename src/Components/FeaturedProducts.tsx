@@ -21,12 +21,12 @@ export default function FeaturedProducts() {
               />
               <img
                 src="/assets/home/mobile/image-speaker-zx9.png"
-                className="z-10 w-1/2 translate-y-20 lg:w-2/3"
+                className="z-10 w-1/2 lg:w-2/3 lg:translate-y-20"
               />
             </picture>
           </div>
 
-          <div className="z-10 flex flex-col items-center justify-between gap-6 px-6 text-center md:pl-28 lg:items-start lg:justify-center lg:text-left">
+          <div className="z-10 flex flex-col items-center justify-between gap-6 px-6 text-center lg:items-start lg:justify-center lg:pl-28 lg:text-left">
             <h2 className="heading-3 text-white opacity-100 md:heading-1">
               ZX9
               <br />
