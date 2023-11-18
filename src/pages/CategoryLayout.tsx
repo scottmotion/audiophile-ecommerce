@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { fetchCategory } from "../api/fetchApi";
+import { fetchCategoryProducts } from "../api/fetchApi";
 import { ProductData } from "../types/ProductType";
 
 import ProductCard from "../components/ProductCard";
@@ -18,7 +18,7 @@ export default function CategoryLayout({ category }: CategoryLayoutProps) {
   useEffect(() => {
     async function startFetching() {
       setProducts(null);
-      const result = await fetchCategory(category);
+      const result = await fetchCategoryProducts(category);
       if (!ignore) {
         setProducts(result.reverse());
       }
