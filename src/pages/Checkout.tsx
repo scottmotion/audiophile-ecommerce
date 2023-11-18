@@ -94,7 +94,7 @@ export default function Checkout() {
           onSubmit={handleSubmit(onSubmit)}
           className="grid w-full max-w-content gap-8 lg:grid-cols-3"
         >
-          <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 pb-8 pt-6 md:px-7 md:pt-8 lg:col-span-2">
+          <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 pb-8 pt-6 md:px-7 md:pt-8 lg:col-span-2 lg:pb-12 lg:pt-[3.25rem]">
             <h1 className="heading-5 md:heading-4">Checkout</h1>
 
             <div className="flex flex-col gap-4 md:mb-9">
