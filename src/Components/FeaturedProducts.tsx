@@ -5,13 +5,12 @@ export default function FeaturedProducts() {
     <section className="flex w-full max-w-content flex-col items-center gap-8">
       <div className="grid w-full grid-cols-1 gap-y-6 lg:gap-y-12">
         <div className="col-span-1 grid grid-cols-1 grid-rows-2 overflow-hidden rounded-lg bg-dark-orange py-12 md:col-span-2 md:pb-16 lg:grid-cols-2 lg:grid-rows-1">
-          <div className="relative flex w-full flex-col items-center justify-center pb-8">
+          <div className="relative flex w-full flex-col items-center justify-center pb-8 lg:pb-0">
             <img
               src="/assets/home/desktop/pattern-circles.svg"
-              className="absolute w-[170%] max-w-none md:w-[135%]"
+              className="absolute w-[170%] max-w-none md:w-[135%] lg:w-[170%] lg:translate-x-12 lg:translate-y-[10rem]"
             />
-
-            <picture className="flex justify-center">
+            <picture className="flex justify-center lg:translate-x-12">
               <source
                 media="(min-width: 1024px)"
                 srcSet="/assets/home/desktop/image-speaker-zx9.png"
@@ -22,12 +21,12 @@ export default function FeaturedProducts() {
               />
               <img
                 src="/assets/home/mobile/image-speaker-zx9.png"
-                className="z-10 w-1/2"
+                className="z-10 w-1/2 translate-y-20 lg:w-2/3"
               />
             </picture>
           </div>
 
-          <div className="z-10 flex flex-col items-center justify-between gap-6 px-6 text-center lg:items-start lg:justify-center lg:text-left">
+          <div className="z-10 flex flex-col items-center justify-between gap-6 px-6 text-center md:pl-28 lg:items-start lg:justify-center lg:text-left">
             <h2 className="heading-3 text-white opacity-100 md:heading-1">
               ZX9
               <br />
@@ -58,7 +57,7 @@ export default function FeaturedProducts() {
               className="w-full rounded-lg"
             />
           </picture>
-          <div className="absolute flex flex-col gap-8 p-6 md:pl-16">
+          <div className="absolute flex flex-col gap-8 p-6 md:pl-16 lg:pl-24">
             <h2 className="heading-5">ZX7 Speaker</h2>
             <Link to={"/speakers/zx7-speaker"}>
               <button className="btn btn-3">See Product</button>
@@ -83,7 +82,7 @@ export default function FeaturedProducts() {
               />
             </picture>
           </div>
-          <div className="col-span-1 flex flex-col items-start justify-center gap-8 rounded-lg bg-light-grey p-6 md:pl-10">
+          <div className="col-span-1 flex flex-col items-start justify-center gap-8 rounded-lg bg-light-grey p-6 md:pl-10 lg:pl-24">
             <h2 className="heading-5">YX1 Earphones</h2>
             <Link to={"/earphones/yx1-earphones"}>
               <button className="btn btn-3">See Product</button>
