@@ -32,18 +32,20 @@ export default function ConfirmationModal({
       ></div>
       <div
         id="confirmationModal"
-        className="fixed left-1/2 top-1/2 z-40 flex max-h-[calc(100vh-8rem)] w-full max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-1/2 flex-col justify-start overflow-y-auto rounded-lg bg-white p-8 md:max-w-[23.5rem]"
+        className="fixed left-1/2 top-1/2 z-40 flex max-h-[calc(100vh-8rem)] w-full max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-1/2 flex-col justify-start overflow-y-auto rounded-lg bg-white p-8 md:max-w-[33.75rem] md:p-12"
       >
-        <ConfirmationIcon className="mb-6 shrink-0" />
+        <ConfirmationIcon className="mb-6 shrink-0 md:mb-8" />
         <h2 className="heading-6 mb-4 leading-[28px] tracking-[0.86px] md:heading-4">
           Thank you
           <br />
           for your order
         </h2>
-        <p className="mb-6">You will receive an email confirmation shortly.</p>
+        <p className="mb-6 md:mb-8">
+          You will receive an email confirmation shortly.
+        </p>
         {cartItems.length > 0 && (
-          <div className="mb-6 flex shrink-0 flex-col overflow-hidden rounded-lg">
-            <div className="flex flex-col items-center gap-3 bg-light-grey p-6">
+          <div className="mb-6 flex w-full shrink-0 flex-col overflow-hidden rounded-lg md:mb-12 md:flex-row">
+            <div className="flex w-full flex-col items-center gap-3 bg-light-grey p-6">
               <div className="flex w-full flex-row justify-between">
                 <div className="flex w-full flex-row gap-4">
                   <img
@@ -72,7 +74,7 @@ export default function ConfirmationModal({
                 </>
               )}
             </div>
-            <div className="flex flex-col gap-2 bg-black px-6 py-4 text-white">
+            <div className="flex w-full flex-col justify-center gap-2 bg-black px-6 py-4 text-white md:py-0 md:pr-0">
               <p className="uppercase">Grand Total</p>
               <p className="heading-7 opacity-100">
                 $ {cartGrandTotal.toLocaleString()}
