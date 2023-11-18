@@ -27,7 +27,7 @@ export default function FeaturedProducts() {
             </picture>
           </div>
 
-          <div className="z-10 flex flex-col items-center justify-between gap-6 px-6 text-center lg:justify-center">
+          <div className="z-10 flex flex-col items-center justify-between gap-6 px-6 text-center lg:items-start lg:justify-center lg:text-left">
             <h2 className="heading-3 text-white opacity-100 md:heading-1">
               ZX9
               <br />
