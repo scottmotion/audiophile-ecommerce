@@ -7,7 +7,7 @@ export async function fetchData() {
   return data;
 }
 
-export async function fetchCategory(category: string) {
+export async function fetchCategoryProducts(category: string) {
   let response = await fetch(apiUrl);
   let data: ProductData[] = await response.json();
   let newData: ProductData[] = [];
@@ -35,4 +35,16 @@ export async function fetchProductById(id: number) {
     element => element.id == id,
   );
   return productData;
+}
+
+export async function fetchProductCategoryById(id: number) {
+  let response = await fetch(apiUrl);
+  let data: ProductData[] = await response.json();
+  let productCategory: string | undefined = data.find(
+    element => element.id == id,
+  )?.category;
+  // let productData: ProductData | undefined = data.find(
+  //   element => element.id == id,
+  // );
+  return productCategory;
 }
