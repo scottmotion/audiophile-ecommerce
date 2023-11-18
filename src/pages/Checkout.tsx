@@ -85,19 +85,19 @@ export default function Checkout() {
   return (
     <>
       <nav className="flex w-full flex-col items-center justify-center bg-off-white px-6 md:px-10">
-        <div className="flex w-full max-w-content flex-row pb-6 pt-4 md:pt-8 lg:pb-14 lg:pt-20">
+        <div className="flex w-full max-w-content flex-row pb-6 pt-4 md:pt-12 lg:pb-14 lg:pt-20">
           <BackButton />
         </div>
       </nav>
       <main className="flex w-full flex-col items-center bg-off-white px-6 pb-24 md:px-10 md:pb-[7.25rem] lg:pb-[8.75rem]">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="grid w-full max-w-content gap-[2rem] lg:grid-cols-3"
+          className="grid w-full max-w-content gap-8 lg:grid-cols-3"
         >
-          <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 pb-8 pt-6 lg:col-span-2">
+          <section className="flex w-full max-w-content flex-col gap-8 rounded-lg bg-white px-6 pb-8 pt-6 md:px-7 md:pt-8 lg:col-span-2">
             <h1 className="heading-5 md:heading-4">Checkout</h1>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 md:mb-9">
               <h2 className="text-subtitle">Billing Details</h2>
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="flex flex-col gap-2">
@@ -162,7 +162,7 @@ export default function Checkout() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 md:mb-9">
               <h2 className="text-subtitle">Shipping Info</h2>
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="flex flex-col gap-2 md:col-span-2">
@@ -356,7 +356,7 @@ export default function Checkout() {
             </div>
           </section>
           <section className="flex w-full max-w-content flex-col">
-            <div className="flex w-full flex-col gap-8 rounded-lg bg-white px-6 py-8">
+            <div className="flex w-full flex-col gap-8 rounded-lg bg-white px-6 py-8 md:px-8">
               <h2 className="heading-7">Summary</h2>
               <div className="flex flex-col gap-6">
                 {cartItems.map(item => (
@@ -372,9 +372,9 @@ export default function Checkout() {
                             <p className="font-bold uppercase opacity-100">
                               {item.shortName}
                             </p>
-                            <p>x{item.quantity}</p>
+                            <p className="font-bold">x{item.quantity}</p>
                           </div>
-                          <p className="uppercase">
+                          <p className="font-bold uppercase">
                             $ {item.price.toLocaleString()}
                           </p>
                         </div>
@@ -385,25 +385,25 @@ export default function Checkout() {
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between">
-                  <p>Total</p>
+                  <p className="uppercase">Total</p>
                   <p className="heading-7 opacity-100">
                     $ {cartTotal.toLocaleString()}
                   </p>
                 </div>
                 <div className="flex justify-between">
-                  <p>Shipping</p>
+                  <p className="uppercase">Shipping</p>
                   <p className="heading-7 opacity-100">
                     $ {cartShipping.toLocaleString()}
                   </p>
                 </div>
                 <div className="flex justify-between">
-                  <p>VAT (included)</p>
+                  <p className="uppercase">VAT (included)</p>
                   <p className="heading-7 opacity-100">
                     $ {cartVat.toLocaleString()}
                   </p>
                 </div>
                 <div className="mt-4 flex justify-between">
-                  <p>Grand Total</p>
+                  <p className="uppercase">Grand Total</p>
                   <p className="heading-7 text-dark-orange opacity-100">
                     $ {cartGrandTotal.toLocaleString()}
                   </p>
