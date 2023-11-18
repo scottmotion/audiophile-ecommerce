@@ -67,7 +67,7 @@ export default function ProductLayout() {
         </div>
       </nav>
 
-      <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:px-10 lg:mb-40 lg:mb-[12.5rem] lg:gap-[10rem]">
+      <main className="mb-[7.5rem] flex w-full flex-col items-center gap-[7.5rem] px-6 md:px-10 lg:mb-40 lg:gap-[10rem]">
         {currentProduct && (
           <section className="flex max-w-content flex-col items-center gap-20 md:gap-[7.5rem] lg:gap-40">
             <div
