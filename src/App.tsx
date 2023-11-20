@@ -1,6 +1,5 @@
 import {
   createBrowserRouter,
-  createHashRouter,
   createRoutesFromElements,
   RouterProvider,
   Route,
@@ -15,7 +14,7 @@ import ProductLayout from "./pages/ProductLayout";
 import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
 
-const router = createHashRouter(
+const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
@@ -37,7 +36,7 @@ const router = createHashRouter(
     </Route>,
   ),
   {
-    basename: "/",
+    basename: "/audiophile-ecommerce/",
   },
 );
 
