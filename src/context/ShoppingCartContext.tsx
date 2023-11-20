@@ -51,7 +51,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   );
 
   const cartShipping = cartTotal > 0 ? 50 : 0;
-  const cartVat = cartTotal > 0 ? 1079 : 0;
+  const cartVat = Math.round(cartTotal * 0.2);
   const cartGrandTotal = cartTotal + cartShipping + cartVat;
 
   // function getItemQuantity(id: number) {
