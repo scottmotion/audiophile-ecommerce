@@ -36,7 +36,7 @@ const router = createBrowserRouter(
     </Route>,
   ),
   {
-    basename: "/projects/audiophile-ecommerce/",
+    basename: "/audiophile-ecommerce/",
   },
 );
 
