@@ -8,7 +8,10 @@ export default function CategoryNav() {
         className="group flex basis-1/3 flex-col content-end items-center rounded-lg bg-light-grey p-5 lg:p-7"
       >
         <img
-          src="/assets/shared/thumbnails/image-category-thumbnail-headphones.png"
+          src={
+            import.meta.env.BASE_URL +
+            "/assets/shared/thumbnails/image-category-thumbnail-headphones.png"
+          }
           alt="Headphones"
           className="-mt-20 w-40 lg:-mt-28 lg:w-[13.5rem]"
         ></img>
