@@ -1,4 +1,4 @@
-const apiUrl = import.meta.env.BASE_URL + "/data/data.json";
+const apiUrl = "/data/data.json";
 import { ProductData } from "../types/ProductType";
 
 export async function fetchData() {
