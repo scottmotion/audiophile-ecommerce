@@ -4,6 +4,6 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/projects/audiophile-ecommerce/',
+  base: '/projects/audiophile-ecommerce',
   plugins: [react(), svgr()],
 })
