@@ -15,7 +15,6 @@ export default function CartModal({ setShowCart }: CartModalProps) {
     decreaseItemQuantity,
     removeAllFromCart,
   } = useShoppingCart();
-  console.log("Testing useScrollPosition");
 
   return (
     <>
