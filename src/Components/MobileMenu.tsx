@@ -19,11 +19,14 @@ export default function MobileMenu({ toggleMobileMenu }: MobileMenuProps) {
           className="flex basis-1/3 flex-col items-center rounded-lg bg-light-grey p-5"
         >
           <img
-            src="/assets/shared/thumbnails/image-category-thumbnail-headphones.png"
+            src={
+              import.meta.env.BASE_URL +
+              "/assets/shared/thumbnails/image-category-thumbnail-headphones.png"
+            }
             alt="Headphones"
             className="-mt-[5rem] w-40"
           ></img>
-          <p className="heading-8 lg:heading-7 pb-3 text-center text-black opacity-100">
+          <p className="heading-8 pb-3 text-center text-black opacity-100 lg:heading-7">
             Headphones
           </p>
           <button className="btn btn-4">Shop</button>
@@ -35,11 +38,14 @@ export default function MobileMenu({ toggleMobileMenu }: MobileMenuProps) {
           className="flex basis-1/3 flex-col items-center rounded-lg bg-light-grey p-5"
         >
           <img
-            src="/assets/shared/thumbnails/image-category-thumbnail-speakers.png"
+            src={
+              import.meta.env.BASE_URL +
+              "/assets/shared/thumbnails/image-category-thumbnail-speakers.png"
+            }
             alt="Headphones"
             className="-mt-[5rem] w-40"
           ></img>
-          <p className="heading-8 lg:heading-7 pb-3 text-center text-black opacity-100">
+          <p className="heading-8 pb-3 text-center text-black opacity-100 lg:heading-7">
             Speakers
           </p>
           <button className="btn btn-4">Shop</button>
@@ -51,11 +57,14 @@ export default function MobileMenu({ toggleMobileMenu }: MobileMenuProps) {
           className="flex basis-1/3 flex-col items-center rounded-lg bg-light-grey p-5"
         >
           <img
-            src="/assets/shared/thumbnails/image-category-thumbnail-earphones.png"
+            src={
+              import.meta.env.BASE_URL +
+              "/assets/shared/thumbnails/image-category-thumbnail-earphones.png"
+            }
             alt="Headphones"
             className="-mt-[5rem] w-48"
           ></img>
-          <p className="heading-8 lg:heading-7 pb-3 text-center text-black opacity-100">
+          <p className="heading-8 pb-3 text-center text-black opacity-100 lg:heading-7">
             Earphones
           </p>
           <button className="btn btn-4">Shop</button>

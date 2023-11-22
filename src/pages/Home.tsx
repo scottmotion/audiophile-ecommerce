@@ -13,7 +13,9 @@ export default function Home() {
       >
         <div className="w-full bg-black">
           <img
-            src="/assets/home/tablet/image-header.jpg"
+            src={
+              import.meta.env.BASE_URL + "/assets/home/tablet/image-header.jpg"
+            }
             alt="Page header"
             className="w-full opacity-50 content-home-mobile md:content-home-tablet lg:content-home-desktop"
           ></img>

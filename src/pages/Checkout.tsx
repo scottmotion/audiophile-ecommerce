@@ -364,7 +364,10 @@ export default function Checkout() {
                     <div className="flex flex-row justify-between">
                       <div className="flex w-full flex-row gap-4">
                         <img
-                          src={`/assets/cart/image-${item.slug}.jpg`}
+                          src={
+                            import.meta.env.BASE_URL +
+                            `/assets/cart/image-${item.slug}.jpg`
+                          }
                           className="w-16 rounded-lg"
                         />
                         <div className="flex w-full flex-col justify-center">

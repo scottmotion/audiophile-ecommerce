@@ -16,11 +16,17 @@ export default function FeaturedProducts() {
             <picture className="flex justify-center lg:translate-x-12">
               <source
                 media="(min-width: 1024px)"
-                srcSet="/assets/home/desktop/image-speaker-zx9.png"
+                srcSet={
+                  import.meta.env.BASE_URL +
+                  "/assets/home/desktop/image-speaker-zx9.png"
+                }
               />
               <source
                 media="(min-width: 768px)"
-                srcSet="/assets/home/tablet/image-speaker-zx9.png"
+                srcSet={
+                  import.meta.env.BASE_URL +
+                  "/assets/home/tablet/image-speaker-zx9.png"
+                }
               />
               <img
                 src={
@@ -52,11 +58,17 @@ export default function FeaturedProducts() {
           <picture>
             <source
               media="(min-width: 1024px)"
-              srcSet="/assets/home/desktop/image-speaker-zx7.jpg"
+              srcSet={
+                import.meta.env.BASE_URL +
+                "/assets/home/desktop/image-speaker-zx7.jpg"
+              }
             />
             <source
               media="(min-width: 768px)"
-              srcSet="/assets/home/tablet/image-speaker-zx7.jpg"
+              srcSet={
+                import.meta.env.BASE_URL +
+                "/assets/home/tablet/image-speaker-zx7.jpg"
+              }
             />
             <img
               src={
@@ -79,11 +91,17 @@ export default function FeaturedProducts() {
             <picture>
               <source
                 media="(min-width: 1024px)"
-                srcSet="/assets/home/desktop/image-earphones-yx1.jpg"
+                srcSet={
+                  import.meta.env.BASE_URL +
+                  "/assets/home/desktop/image-earphones-yx1.jpg"
+                }
               />
               <source
                 media="(min-width: 768px)"
-                srcSet="/assets/home/tablet/image-earphones-yx1.jpg"
+                srcSet={
+                  import.meta.env.BASE_URL +
+                  "/assets/home/tablet/image-earphones-yx1.jpg"
+                }
               />
               <img
                 src={

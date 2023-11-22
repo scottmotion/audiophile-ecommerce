@@ -77,14 +77,18 @@ export default function ProductLayout() {
               <picture className="col-span-1 col-start-1">
                 <source
                   media="(min-width: 1024px)"
-                  srcSet={currentProduct.image.desktop}
+                  srcSet={
+                    import.meta.env.BASE_URL + currentProduct.image.desktop
+                  }
                 />
                 <source
                   media="(min-width: 768px)"
-                  srcSet={currentProduct.image.tablet}
+                  srcSet={
+                    import.meta.env.BASE_URL + currentProduct.image.tablet
+                  }
                 />
                 <img
-                  src={currentProduct.image.mobile}
+                  src={import.meta.env.BASE_URL + currentProduct.image.mobile}
                   className="rounded-lg md:w-[82%] lg:w-full"
                 />
               </picture>
@@ -164,14 +168,23 @@ export default function ProductLayout() {
                 <picture>
                   <source
                     media="(min-width: 1024px)"
-                    srcSet={currentProduct.gallery.first.desktop}
+                    srcSet={
+                      import.meta.env.BASE_URL +
+                      currentProduct.gallery.first.desktop
+                    }
                   />
                   <source
                     media="(min-width: 768px)"
-                    srcSet={currentProduct.gallery.first.tablet}
+                    srcSet={
+                      import.meta.env.BASE_URL +
+                      currentProduct.gallery.first.tablet
+                    }
                   />
                   <img
-                    src={currentProduct.gallery.first.mobile}
+                    src={
+                      import.meta.env.BASE_URL +
+                      currentProduct.gallery.first.mobile
+                    }
                     className="rounded-lg"
                   />
                 </picture>
@@ -179,14 +192,23 @@ export default function ProductLayout() {
                 <picture>
                   <source
                     media="(min-width: 1024px)"
-                    srcSet={currentProduct.gallery.second.desktop}
+                    srcSet={
+                      import.meta.env.BASE_URL +
+                      currentProduct.gallery.second.desktop
+                    }
                   />
                   <source
                     media="(min-width: 768px)"
-                    srcSet={currentProduct.gallery.second.tablet}
+                    srcSet={
+                      import.meta.env.BASE_URL +
+                      currentProduct.gallery.second.tablet
+                    }
                   />
                   <img
-                    src={currentProduct.gallery.second.mobile}
+                    src={
+                      import.meta.env.BASE_URL +
+                      currentProduct.gallery.second.mobile
+                    }
                     className="rounded-lg"
                   />
                 </picture>
@@ -195,14 +217,23 @@ export default function ProductLayout() {
               <picture>
                 <source
                   media="(min-width: 1024px)"
-                  srcSet={currentProduct.gallery.third.desktop}
+                  srcSet={
+                    import.meta.env.BASE_URL +
+                    currentProduct.gallery.third.desktop
+                  }
                 />
                 <source
                   media="(min-width: 768px)"
-                  srcSet={currentProduct.gallery.third.tablet}
+                  srcSet={
+                    import.meta.env.BASE_URL +
+                    currentProduct.gallery.third.tablet
+                  }
                 />
                 <img
-                  src={currentProduct.gallery.third.mobile}
+                  src={
+                    import.meta.env.BASE_URL +
+                    currentProduct.gallery.third.mobile
+                  }
                   className="rounded-lg"
                 />
               </picture>

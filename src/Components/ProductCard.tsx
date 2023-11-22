@@ -23,13 +23,16 @@ export default function ProductCard({
         >
           <source
             media="(min-width: 1024px)"
-            srcSet={product.categoryImage.desktop}
+            srcSet={import.meta.env.BASE_URL + product.categoryImage.desktop}
           />
           <source
             media="(min-width: 768px)"
-            srcSet={product.categoryImage.tablet}
+            srcSet={import.meta.env.BASE_URL + product.categoryImage.tablet}
           />
-          <img src={product.categoryImage.mobile} className="rounded-lg" />
+          <img
+            src={import.meta.env.BASE_URL + product.categoryImage.mobile}
+            className="rounded-lg"
+          />
         </picture>
 
         <div

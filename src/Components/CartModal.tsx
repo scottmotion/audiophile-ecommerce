@@ -49,7 +49,10 @@ export default function CartModal({ setShowCart }: CartModalProps) {
               >
                 <div className="flex flex-row gap-4">
                   <img
-                    src={`/assets/cart/image-${item.slug}.jpg`}
+                    src={
+                      import.meta.env.BASE_URL +
+                      `/assets/cart/image-${item.slug}.jpg`
+                    }
                     className="w-16 rounded-lg"
                   />
                   <div className="flex flex-col justify-center">

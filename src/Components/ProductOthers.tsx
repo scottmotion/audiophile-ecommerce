@@ -60,10 +60,13 @@ export default function ProductOthers({ products }: ProductOthersProps) {
             <picture>
               <source
                 media="(min-width: 1024px)"
-                srcSet={other.image.desktop}
+                srcSet={import.meta.env.BASE_URL + other.image.desktop}
               />
               <source media="(min-width: 768px)" srcSet={other.image.tablet} />
-              <img src={other.image.mobile} className="rounded-lg" />
+              <img
+                src={import.meta.env.BASE_URL + other.image.mobile}
+                className="rounded-lg"
+              />
             </picture>
             <div className="flex flex-col items-center gap-8">
               <h5 className="heading-6">{other.name}</h5>
