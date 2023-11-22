@@ -76,10 +76,9 @@ export default function Checkout() {
     setFormData(defaultFormData);
   }
 
-  // const onSubmit: SubmitHandler<InputsType> = data => {
-  const onSubmit: SubmitHandler<InputsType> = () => {
+  const onSubmit: SubmitHandler<InputsType> = data => {
     // console.log("formData: ", formData);
-    // console.log("onSubmit data: ", data);
+    console.log("onSubmit data: ", data);
     setShowConfirmation(true);
   };
 
