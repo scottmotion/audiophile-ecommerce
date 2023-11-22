@@ -7,7 +7,10 @@ export default function FeaturedProducts() {
         <div className="col-span-1 grid grid-cols-1 grid-rows-2 overflow-hidden rounded-lg bg-dark-orange py-12 md:col-span-2 md:pb-16 lg:grid-cols-2 lg:grid-rows-1">
           <div className="relative flex w-full flex-col items-center justify-center pb-8 lg:pb-0">
             <img
-              src="/assets/home/desktop/pattern-circles.svg"
+              src={
+                import.meta.env.BASE_URL +
+                "/assets/home/desktop/pattern-circles.svg"
+              }
               className="absolute w-[170%] max-w-none md:w-[135%] lg:w-[170%] lg:translate-x-12 lg:translate-y-[10rem]"
             />
             <picture className="flex justify-center lg:translate-x-12">
@@ -20,7 +23,10 @@ export default function FeaturedProducts() {
                 srcSet="/assets/home/tablet/image-speaker-zx9.png"
               />
               <img
-                src="/assets/home/mobile/image-speaker-zx9.png"
+                src={
+                  import.meta.env.BASE_URL +
+                  "/assets/home/mobile/image-speaker-zx9.png"
+                }
                 className="z-10 w-1/2 lg:w-2/3 lg:translate-y-20"
               />
             </picture>
@@ -53,7 +59,10 @@ export default function FeaturedProducts() {
               srcSet="/assets/home/tablet/image-speaker-zx7.jpg"
             />
             <img
-              src="/assets/home/mobile/image-speaker-zx7.jpg"
+              src={
+                import.meta.env.BASE_URL +
+                "/assets/home/mobile/image-speaker-zx7.jpg"
+              }
               className="w-full rounded-lg"
             />
           </picture>
@@ -77,7 +86,10 @@ export default function FeaturedProducts() {
                 srcSet="/assets/home/tablet/image-earphones-yx1.jpg"
               />
               <img
-                src="/assets/home/mobile/image-earphones-yx1.jpg"
+                src={
+                  import.meta.env.BASE_URL +
+                  "/assets/home/mobile/image-earphones-yx1.jpg"
+                }
                 className="w-full rounded-lg"
               />
             </picture>
