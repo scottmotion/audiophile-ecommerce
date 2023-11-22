@@ -5,7 +5,12 @@ export const useScrollPosition = () => {
 
   useEffect(() => {
     const updatePosition = () => {
-      setScrollPosition(window.scrollY);
+      if (window.scrollY > 0) {
+        setScrollPosition(1);
+      } else {
+        setScrollPosition(0);
+      }
+      // setScrollPosition(window.scrollY);
     };
 
     window.addEventListener("scroll", updatePosition);
