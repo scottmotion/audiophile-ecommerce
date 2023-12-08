@@ -1,5 +1,11 @@
 # Audiophile e-commerce website
 
+![](./screenshot.png)
+
+### Links
+
+- Live Site URL: [ScottWinn.dev](https://www.scottwinn.dev/projects/audiophile-ecommerce/)
+
 ## Table of contents
 
 - [Overview](#overview)
@@ -28,14 +34,6 @@ Users should be able to:
   - VAT is calculated as 20% of the product total, excluding shipping
 - See an order confirmation modal after checking out with an order summary
 - Keep track of what's in the cart, even after refreshing the browser.
-
-### Screenshot
-
-![](./screenshot.png)
-
-### Links
-
-- Live Site URL: [ScottWinn.dev](https://www.scottwinn.dev/projects/audiophile-ecommerce/)
 
 ## My process
 
