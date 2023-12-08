@@ -1,6 +1,4 @@
-# Frontend Mentor - Audiophile e-commerce website solution
-
-This is a solution to the [Audiophile e-commerce website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+# Audiophile e-commerce website
 
 ## Table of contents
 
@@ -37,8 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [GitHub Pages](https://your-live-site-url.com)
-- Solution URL: [Frontend Mentor](https://your-solution-url.com)
+- Live Site URL: [ScottWinn.dev](https://www.scottwinn.dev/projects/audiophile-ecommerce/)
 
 ## My process
 
