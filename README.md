@@ -2,20 +2,7 @@
 
 ![](./screenshot.png)
 
-### Links
-
-- Live Site URL: [ScottWinn.dev](https://www.scottwinn.dev/projects/audiophile-ecommerce/)
-
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-- [Author](#author)
+### Live Site URL: [ScottWinn.dev/projects/audiophile-ecommerce/](https://www.scottwinn.dev/projects/audiophile-ecommerce/)
 
 ## Overview
 
