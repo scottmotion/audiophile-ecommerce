@@ -1,17 +1,8 @@
-# Frontend Mentor - Audiophile e-commerce website solution
+# Audiophile e-commerce website
 
-This is a solution to the [Audiophile e-commerce website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+![](./screenshot.png)
 
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-- [Author](#author)
+### Live Site URL: [ScottWinn.dev/projects/audiophile-ecommerce/](https://www.scottwinn.dev/projects/audiophile-ecommerce/)
 
 ## Overview
 
@@ -30,15 +21,6 @@ Users should be able to:
   - VAT is calculated as 20% of the product total, excluding shipping
 - See an order confirmation modal after checking out with an order summary
 - Keep track of what's in the cart, even after refreshing the browser.
-
-### Screenshot
-
-![](./screenshot.png)
-
-### Links
-
-- Live Site URL: [GitHub Pages](https://your-live-site-url.com)
-- Solution URL: [Frontend Mentor](https://your-solution-url.com)
 
 ## My process
 
