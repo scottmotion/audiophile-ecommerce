@@ -6,6 +6,8 @@ import { ReactComponent as SiteLogo } from "/src/assets/logo.svg";
 import { ReactComponent as CartIcon } from "/src/assets/icons/icon-cart.svg";
 import { ReactComponent as MobileMenuIcon } from "/src/assets/icons/icon-hamburger.svg";
 
+import { useShoppingCart } from "../context/ShoppingCartContext";
+
 import MobileMenu from "./MobileMenu";
 import CartModal from "./CartModal";
 
@@ -32,6 +34,11 @@ export default function Navbar() {
       ? "bg-black"
       : "";
   const navBorder = scrollPosition > 0 ? "" : "border-b border-white/[.10]";
+
+  const {
+    cartQuantity,
+  } = useShoppingCart();
+  const cartIconClass = cartQuantity < 1 ? "opacity-50" : "opacity-100";
 
   function toggleMobileMenu() {
     setShowCart(false);
@@ -95,7 +102,7 @@ export default function Navbar() {
           </ul>
           <div className="relative flex shrink basis-1/5 flex-row justify-end">
             <button onClick={toggleCart}>
-              <CartIcon />
+              <CartIcon className={`${cartIconClass}`} />
             </button>
             <div className={`${cartVisibility} fixed -z-10 w-full`}>
               <CartModal setShowCart={setShowCart} />
